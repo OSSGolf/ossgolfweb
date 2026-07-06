@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Node / static site generators (if added later)
+node_modules/
+dist/
+.cache/
+
+# Logs
+*.log

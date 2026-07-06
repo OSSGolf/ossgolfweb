@@ -1,0 +1,32 @@
+[
+  {
+    "type": "post",
+    "title": "OSSTempo: a DIY LED tempo trainer for golf",
+    "body": "OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving \"comet\" of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consistent stroke. No audio, no phone screen to stare at mid stroke. Just a light that moves the way a good stroke moves.\n\nIt is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. Control happens over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo, stroke length, and mode without reflashing anything.\n\n## Two modes\n\n- **Putting (2:1).** The comet sweeps from center out to the top of the backswing, eases to a stop, then accelerates back through center at impact and out the far side on the follow through.\n- **Full swing.** The firmware models a full swing arc projected onto the one dimensional strip, so a one meter strip can represent a stroke that travels back and up behind you. Reference dots mark the ball, the top of the backswing, and an optional aim point.\n\n## Build it two ways\n\nSame firmware, same app, two hardware paths:\n\n- **Full DIY.** A bare ESP32 dev board, a strip, one resistor, and one capacitor on a breadboard. Lowest cost.\n- **QuinLED Dig2go.** A pre assembled controller. Screw in three wires, flash, done.\n\nBoth are documented end to end: bill of materials, wiring, flashing, and a pinned, ready to flash sketch.\n\n## What is here today\n\nThe firmware, the Web Bluetooth control page, and a native SwiftUI iOS controller are all open source and working on real hardware. The build guides cover both hardware paths.\n\nPhotos and video of the trainer in action are coming soon. For now, the code and the full hardware spec are on GitHub.\n\n- [osstempo (firmware, web control, docs)](https://github.com/OSSGolf/osstempo)\n- [osstempo-ios (native iOS controller)](https://github.com/OSSGolf/osstempo-ios)",
+    "slug": "osstempo",
+    "tags": [
+      "osstempo",
+      "hardware",
+      "esp32"
+    ],
+    "createdAt": "2026-07-06T19:11:02.616Z",
+    "updatedAt": "2026-07-06T19:11:02.616Z",
+    "url": "https://ossgolf.com/posts/osstempo/index.html",
+    "publishedAt": "2026-07-06T19:11:02.745Z"
+  },
+  {
+    "type": "post",
+    "title": "R10Kit: an unofficial Swift SDK for the Garmin R10",
+    "body": "R10Kit is a native Swift SDK that connects directly to the Garmin Approach R10 launch monitor over Bluetooth Low Energy. No first party app, no PC tether. Your iPhone talks to the R10 and reads every shot it emits.\n\n> This is an unofficial SDK. The protocol layer is reverse engineered from publicly available work ([mholow/gsp-r10-adapter](https://github.com/mholow/gsp-r10-adapter)).\n\n## The practice swing unlock\n\nThe interesting part is what the R10 gives you without a ball. On a full practice swing with no ball, the radar still reports club speed, club path, attack angle, and the full swing timing in milliseconds. R10Kit exposes all of it. That means you can build a tempo trainer around a launch monitor you already own, not just a ball flight tracer.\n\nBall metrics (ball speed, launch angle and direction, spin rate, spin axis) populate only when the radar sees a ball leave. Everything else populates on every swing.\n\n## Screenshots\n\nThe repo ships a runnable demo app. It shows connection state, device info, and a live list of recent shots. Tap a shot to see every field the SDK exposes.\n\n![R10Kit demo showing connection state, device model and firmware, battery level, and a list of recent shots labeled by club speed](/images/r10-shot-list.png)\n\n![Shot detail showing identity fields and club metrics: club speed, club path, and attack angle](/images/r10-shot-detail.png)\n\n![Shot detail scrolled to swing timing and the derived metrics: backswing, downswing, follow through, total duration, and tempo ratio](/images/r10-tempo.png)\n\n## What it parses\n\nR10Kit does full proto parsing for every shot the device emits: club speed, ball speed, launch angle and direction, spin rate with axis and provenance, attack angle, club face and path, swing timing in milliseconds, shot type, and tilt at impact. The API is AsyncStream first, modern Swift Concurrency, no delegates.\n\n- iOS 17+, watchOS 10+, macOS 14+. Pure Swift package.\n- 70 unit tests covering framing, COBS, CRC, proto parsing, time base conversion, and the swing rejection detector.\n- Real byte regression fixtures captured from the device, so future changes cannot silently break protocol compatibility.\n\nTested against an R10 on firmware 4.50 with an iPhone 16 Pro.\n\n## Get it\n\n- [unofficial-r10-ios-sdk on GitHub](https://github.com/OSSGolf/unofficial-r10-ios-sdk)\n\nBuilds on [mholow/gsp-r10-adapter](https://github.com/mholow/gsp-r10-adapter), under the same MIT license.",
+    "slug": "r10kit",
+    "tags": [
+      "launch-monitor",
+      "swift",
+      "ble"
+    ],
+    "createdAt": "2026-07-06T19:10:57.825Z",
+    "updatedAt": "2026-07-06T19:10:57.825Z",
+    "url": "https://ossgolf.com/posts/r10kit/index.html",
+    "publishedAt": "2026-07-06T19:10:57.974Z"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "domain": "ossgolf.com",
+  "title": "OSSGolf",
+  "description": "Open source golf hardware and software. DIY training aids and launch monitor SDKs you can build and own.",
+  "author": "OSSGolf",
+  "language": "en",
+  "style": {
+    "preset": "minimal"
+  },
+  "repo": "",
+  "permalink": "/posts/:slug/index.html"
+}

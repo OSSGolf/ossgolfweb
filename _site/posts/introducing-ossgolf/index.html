@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OSSTempo: a DIY LED tempo trainer for golf | OSSGolf</title>
-  <meta name="description" content="OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving &quot;comet&quot; of light that sweeps along a channel, and you match your putter or…">
+  <title>Introducing OSSGolf | OSSGolf</title>
+  <meta name="description" content="Have you ever seen an overpriced golf gadget and thought &quot;I could build that&quot;? You probably could. That is the whole idea behind OSSGolf. Golf has a proud DIY …">
   <meta name="author" content="OSSGolf">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="OSSTempo: a DIY LED tempo trainer for golf">
-  <meta property="og:description" content="OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving &quot;comet&quot; of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consis…">
-  <meta property="og:url" content="https://ossgolf.com/posts/osstempo/index.html">
+  <meta property="og:title" content="Introducing OSSGolf">
+  <meta property="og:description" content="Have you ever seen an overpriced golf gadget and thought &quot;I could build that&quot;? You probably could. That is the whole idea behind OSSGolf. Golf has a proud DIY history. Long before the big brands, pla…">
+  <meta property="og:url" content="https://ossgolf.com/posts/introducing-ossgolf/index.html">
   <meta property="og:site_name" content="OSSGolf">
   <meta property="og:locale" content="en">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="OSSTempo: a DIY LED tempo trainer for golf">
-  <meta name="twitter:description" content="OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving &quot;comet&quot; of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consis…">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"OSSTempo: a DIY LED tempo trainer for golf","url":"https://ossgolf.com/posts/osstempo/index.html","datePublished":"2026-07-06T19:11:02.616Z","dateModified":"2026-07-06T19:11:02.616Z","author":{"@type":"Person","name":"OSSGolf"},"publisher":{"@type":"Person","name":"OSSGolf"},"description":"OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving \"comet\" of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consis…","inLanguage":"en","keywords":"osstempo, hardware, esp32"}</script>
+  <meta name="twitter:title" content="Introducing OSSGolf">
+  <meta name="twitter:description" content="Have you ever seen an overpriced golf gadget and thought &quot;I could build that&quot;? You probably could. That is the whole idea behind OSSGolf. Golf has a proud DIY history. Long before the big brands, pla…">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Introducing OSSGolf","url":"https://ossgolf.com/posts/introducing-ossgolf/index.html","datePublished":"2026-07-08T03:21:30.679Z","dateModified":"2026-07-08T03:21:30.679Z","author":{"@type":"Person","name":"OSSGolf"},"publisher":{"@type":"Person","name":"OSSGolf"},"description":"Have you ever seen an overpriced golf gadget and thought \"I could build that\"? You probably could. That is the whole idea behind OSSGolf. Golf has a proud DIY history. Long before the big brands, pla…","inLanguage":"en","keywords":"ossgolf, diy, open-source"}</script>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%230000EE%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2236%22%20font-weight%3D%22700%22%20fill%3D%22%23FFFFF0%22%20text-anchor%3D%22middle%22%3EO%3C%2Ftext%3E%3C%2Fsvg%3E">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/icon.png">
@@ -523,37 +523,22 @@ nav a, button, .tag {
   </header>
   <main id="main">
     <article>
-      <h1>OSSTempo: a DIY LED tempo trainer for golf</h1>
-      <div><p>OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving “comet” of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consistent stroke. No audio, no phone screen to stare at mid stroke. Just a light that moves the way a good stroke moves.</p>
-<p>It is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. Control happens over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo, stroke length, and mode without reflashing anything.</p>
-<h3>Two modes</h3>
-<ul>
-<li><strong>Putting (2:1).</strong> The comet sweeps from center out to the top of the backswing, eases to a stop, then accelerates back through center at impact and out the far side on the follow through.</li>
-<li><strong>Full swing.</strong> The firmware models a full swing arc projected onto the one dimensional strip, so a one meter strip can represent a stroke that travels back and up behind you. Reference dots mark the ball, the top of the backswing, and an optional aim point.</li>
-</ul>
-<h3>Build it two ways</h3>
-<p>Same firmware, same app, two hardware paths:</p>
-<ul>
-<li><strong>Full DIY.</strong> A bare ESP32 dev board, a strip, one resistor, and one capacitor on a breadboard. Lowest cost.</li>
-<li><strong>QuinLED Dig2go.</strong> A pre assembled controller. Screw in three wires, flash, done.</li>
-</ul>
-<p>Both are documented end to end: bill of materials, wiring, flashing, and a pinned, ready to flash sketch.</p>
-<h3>What is here today</h3>
-<p>The firmware, the Web Bluetooth control page, and a native SwiftUI iOS controller are all open source and working on real hardware. The build guides cover both hardware paths.</p>
-<p>Photos and video of the trainer in action are coming soon. For now, the code and the full hardware spec are on GitHub.</p>
-<ul>
-<li><a href="https://github.com/OSSGolf/osstempo">osstempo (firmware, web control, docs)</a></li>
-<li><a href="https://github.com/OSSGolf/osstempo-ios">osstempo-ios (native iOS controller)</a></li>
-</ul>
+      <h1>Introducing OSSGolf</h1>
+      <div><p>Have you ever seen an overpriced golf gadget and thought “I could build that”?</p>
+<p>You probably could. That is the whole idea behind OSSGolf.</p>
+<p>Golf has a proud DIY history. Long before the big brands, players forged their own irons, turned persimmon heads by hand, and tweaked shafts in the garage until something worked. Tinkering helped build this game. Somewhere along the way, we handed all of it over to a checkout page.</p>
+<p>Other hobbies never let that spirit die. People design and build experimental aircraft in their garages and actually fly them. Ham radio operators still solder their own rigs. There is no reason golf training should be any different.</p>
+<p>OSSGolf brings it back. Open, free hardware and software for real training aids, documented well enough that you can build them yourself. A tempo trainer that costs tens of dollars in parts instead of the hundred plus you would pay off the shelf. A launch monitor SDK that lets your phone read a device you already own, with no subscription and no extra hardware.</p>
+<p>None of it is magic. It is an ESP32, a strip of LEDs, some careful firmware, and honest documentation. The point is that you own it, you understand it, and you can change it.</p>
+<p>Good training should not be locked behind a premium price tag. If you have ever wanted to build your own, this is the place.</p>
 </div>
       <footer class="meta">
-        <time datetime="2026-07-06T19:11:02.616Z">July 6, 2026</time>
-        <span class="tag">osstempo</span> <span class="tag">hardware</span> <span class="tag">esp32</span>
+        <time datetime="2026-07-08T03:21:30.679Z">July 7, 2026</time>
+        <span class="tag">ossgolf</span> <span class="tag">diy</span> <span class="tag">open-source</span>
       </footer>
     </article>
     <nav class="post-nav" aria-label="Post navigation">
-      <a href="https://ossgolf.com/posts/introducing-ossgolf/index.html" class="post-nav-prev">&larr; Introducing OSSGolf</a>
-      <a href="https://ossgolf.com/posts/r10kit/index.html" class="post-nav-next">R10Kit: an unofficial Swift SDK for the Garmin R10 &rarr;</a>
+      <a href="https://ossgolf.com/posts/osstempo/index.html" class="post-nav-next">OSSTempo: a DIY LED tempo trainer for golf &rarr;</a>
     </nav>
   </main>
   <footer class="site-footer">

@@ -30,7 +30,13 @@ rsslobster publish "$(cat body.md)" --type post --title "Title" --slug my-slug -
 rsslobster regenerate .
 ```
 
-Commit the updated `posts.json` and `_site/`, then push. The Cloudflare build
-deploys the new `_site/` automatically.
+Commit the updated `posts.json` and `_site/`, then push. If the git-connected
+Cloudflare build does not pick it up, deploy the built assets directly:
+
+```
+wrangler deploy
+```
+
+`wrangler.toml` deploys `_site/` to the `ossgolfweb` Worker (assets only).
 
 Licensed under [MIT](LICENSE).

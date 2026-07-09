@@ -1,8 +1,9 @@
 {
   "domain": "ossgolf.com",
   "title": "OSSGolf",
-  "description": "Open source golf hardware and software. DIY training aids and launch monitor SDKs you can build and own.",
+  "description": "Open source golf hardware and software. DIY training aids and launch monitor SDKs you can build and own. OSSGolf on GitHub.",
   "author": "OSSGolf",
+  "authorUrl": "https://github.com/OSSGolf",
   "language": "en",
   "style": {
     "preset": "minimal"

@@ -17,7 +17,7 @@
   {
     "type": "post",
     "title": "OSSTempo: a DIY LED tempo trainer for golf",
-    "body": "OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving \"comet\" of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consistent stroke. No audio, no phone screen to stare at mid stroke. Just a light that moves the way a good stroke moves.\n\nIt is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. Control happens over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo, stroke length, and mode without reflashing anything.\n\n## Two modes\n\n- **Putting (2:1).** The comet sweeps from center out to the top of the backswing, eases to a stop, then accelerates back through center at impact and out the far side on the follow through.\n- **Full swing.** The firmware models a full swing arc projected onto the one dimensional strip, so a one meter strip can represent a stroke that travels back and up behind you. Reference dots mark the ball, the top of the backswing, and an optional aim point.\n\n## Build it two ways\n\nSame firmware, same app, two hardware paths:\n\n- **Full DIY.** A bare ESP32 dev board, a strip, one resistor, and one capacitor on a breadboard. Lowest cost.\n- **QuinLED Dig2go.** A pre assembled controller. Screw in three wires, flash, done.\n\nBoth are documented end to end: bill of materials, wiring, flashing, and a pinned, ready to flash sketch.\n\n## What is here today\n\nThe firmware, the Web Bluetooth control page, and a native SwiftUI iOS controller are all open source and working on real hardware. The build guides cover both hardware paths.\n\nPhotos and video of the trainer in action are coming soon. For now, the code and the full hardware spec are on GitHub.\n\n- [osstempo (firmware, web control, docs)](https://github.com/OSSGolf/osstempo)\n- [osstempo-ios (native iOS controller)](https://github.com/OSSGolf/osstempo-ios)",
+    "body": "OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving \"comet\" of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consistent stroke. No audio, no phone screen to stare at mid stroke. Just a light that moves the way a good stroke moves.\n\nIt is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. Control happens over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo, stroke length, and mode without reflashing anything.\n\nHere it is running a putting stroke:\n\n![OSSTempo running a putting stroke on a practice mat: the white comet sweeps the LED strip beside the ball while the green dot marks impact, powered by an ESP32 on a breadboard](/media/osstempo-putting.mp4 \"/images/osstempo-still.jpg\")\n\n## Two modes\n\n- **Putting (2:1).** The comet sweeps from center out to the top of the backswing, eases to a stop, then accelerates back through center at impact and out the far side on the follow through.\n- **Full swing.** The firmware models a full swing arc projected onto the one dimensional strip, so a one meter strip can represent a stroke that travels back and up behind you. Reference dots mark the ball, the top of the backswing, and an optional aim point.\n\n## Build it two ways\n\nSame firmware, same app, two hardware paths:\n\n- **Full DIY.** A bare ESP32 dev board, a strip, one resistor, and one capacitor on a breadboard. Lowest cost.\n- **QuinLED Dig2go.** A pre assembled controller. Screw in three wires, flash, done.\n\nBoth are documented end to end: bill of materials, wiring, flashing, and a pinned, ready to flash sketch.\n\n## What is here today\n\nThe firmware, the Web Bluetooth control page, and a native SwiftUI iOS controller are all open source and working on real hardware. The build guides cover both hardware paths.\n\nThe clip above shows a putting stroke on a practice mat. For the full hardware spec and code, see GitHub.\n\n- [osstempo (firmware, web control, docs)](https://github.com/OSSGolf/osstempo)\n- [osstempo-ios (native iOS controller)](https://github.com/OSSGolf/osstempo-ios)",
     "slug": "osstempo",
     "tags": [
       "osstempo",
@@ -27,7 +27,15 @@
     "createdAt": "2026-07-06T19:11:02.616Z",
     "updatedAt": "2026-07-06T19:11:02.616Z",
     "url": "https://ossgolf.com/posts/osstempo/index.html",
-    "publishedAt": "2026-07-06T19:11:02.745Z"
+    "publishedAt": "2026-07-06T19:11:02.745Z",
+    "images": [
+      {
+        "src": "/images/osstempo-still.jpg",
+        "alt": "OSSTempo on a putting mat: a putter and ball beside a WS2812B LED strip showing a green impact dot and a white comet, driven by an ESP32 on a breadboard",
+        "width": 1080,
+        "height": 1920
+      }
+    ]
   },
   {
     "type": "post",
@@ -42,6 +50,14 @@
     "createdAt": "2026-07-06T19:10:57.825Z",
     "updatedAt": "2026-07-06T19:10:57.825Z",
     "url": "https://ossgolf.com/posts/r10kit/index.html",
-    "publishedAt": "2026-07-06T19:10:57.974Z"
+    "publishedAt": "2026-07-06T19:10:57.974Z",
+    "images": [
+      {
+        "src": "/images/r10-shot-list.png",
+        "alt": "R10Kit demo app showing connection state, device info, and a list of recent shots by club speed",
+        "width": 1179,
+        "height": 2556
+      }
+    ]
   }
 ]

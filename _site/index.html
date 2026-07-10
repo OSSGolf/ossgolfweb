@@ -139,6 +139,21 @@ img {
   border-radius: var(--border-radius);
 }
 
+/* === Video / audio — responsive, no-nonsense === */
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0;
+  border-radius: var(--border-radius);
+  background: #000;
+}
+
+audio {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
 /* === Blockquotes — indented, distinct === */
 blockquote {
   border-left: 3px solid var(--color-border);
@@ -601,11 +616,13 @@ nav a, button, .tag {
       <time datetime="2026-07-08T03:21:30.679Z">July 7, 2026</time>
     </article>
     <article>
+      <a href="/posts/osstempo/index.html" class="post-thumb" aria-hidden="true" tabindex="-1"><img src="/images/osstempo-still.jpg" alt="OSSTempo on a putting mat: a putter and ball beside a WS2812B LED strip showing a green impact dot and a white comet, driven by an ESP32 on a breadboard" loading="lazy" width="1080" height="1920"></a>
       <h2><a href="/posts/osstempo/index.html">OSSTempo: a DIY LED tempo trainer for golf</a></h2>
       <p>OSSTempo is an open source golf tempo trainer.</p>
       <time datetime="2026-07-06T19:11:02.616Z">July 6, 2026</time>
     </article>
     <article>
+      <a href="/posts/r10kit/index.html" class="post-thumb" aria-hidden="true" tabindex="-1"><img src="/images/r10-shot-list.png" alt="R10Kit demo app showing connection state, device info, and a list of recent shots by club speed" loading="lazy" width="1179" height="2556"></a>
       <h2><a href="/posts/r10kit/index.html">R10Kit: an unofficial Swift SDK for the Garmin R10</a></h2>
       <p>R10Kit is a native Swift SDK that connects directly to the Garmin Approach R10 launch monitor over Bluetooth Low Energy.</p>
       <time datetime="2026-07-06T19:10:57.825Z">July 6, 2026</time>

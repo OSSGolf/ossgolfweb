@@ -1,6 +1,7 @@
 # ossgolfweb
 
-The OSSGolf website. A static blog for the open source golf projects, built with
+The OSSGolf website, live at [ossgolf.com](https://ossgolf.com). A static blog
+for the open source golf projects, built with
 [RSS Lobster](https://github.com/HectorZarate/rsslobster). Zero JavaScript output
 except a tiny inline search, no trackers, no external requests.
 

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo/ossgolf-wordmark.svg" alt="oss/golf" width="440">
+</p>
+
 # ossgolfweb
 
 The OSSGolf website, live at [ossgolf.com](https://ossgolf.com). A static blog
@@ -18,6 +22,16 @@ Live projects it points to:
 - `_site/` is the built output. Cloudflare serves this directory (build root `/_site`).
 - Post images live in `_site/images/` and are referenced as `/images/<name>.png`.
 
+## Logo and graphics
+
+- `custom.css` holds the site's style overrides, including the `> oss/golf` header.
+- `logo/` holds the wordmark and the square avatar, as SVG and PNG. `python3 graphics/logo.py`
+  regenerates them, plus the social preview image at `_site/og-image.png`.
+- `python3 graphics/build.py` regenerates the Open Source Golf Landscape map from
+  `graphics/landscape.json`.
+
+Both scripts need macOS with Chrome; the logo script also needs `fonttools` and `brotli`.
+
 ## Local preview
 
 ```
@@ -28,8 +42,12 @@ rsslobster dev
 
 ```
 rsslobster publish "$(cat body.md)" --type post --title "Title" --slug my-slug --tags "a,b,c"
-rsslobster regenerate .
+./build.sh
 ```
+
+`./build.sh` runs `rsslobster regenerate .` and then `python3 graphics/logo.py`. RSS Lobster
+rewrites `_site/og-image.png` with its default on every regenerate, so the logo script has to
+run after it to put the oss/golf preview image back.
 
 Commit the updated `posts.json` and `_site/`, then push. If the git-connected
 Cloudflare build does not pick it up, deploy the built assets directly:

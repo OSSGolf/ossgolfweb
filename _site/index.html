@@ -566,6 +566,50 @@ body:has(#search-form) #search-form {
   border-bottom: 1px solid var(--color-border);
 }
 
+/* Site name as a console prompt: "> oss/golf" with a golf-flag block cursor, set in VT323 (SIL
+   Open Font License, served from /fonts with its license). The markup still says "OSSGolf", which
+   is what assistive tech and copy-paste get: its own text is collapsed to zero size and the
+   styled version is drawn by the two pseudo-elements, which carry empty alt text. */
+@font-face {
+  font-family: "VT323";
+  src: url("/fonts/vt323-latin.woff2") format("woff2");
+  font-display: swap;
+}
+
+body > header .header-top h1,
+body > header .header-top nav a {
+  font-family: "VT323", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-weight: 400;
+  font-size: 0;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
+  --name-size: 2.7rem;
+}
+
+/* font-size: 0 also zeroes the em-based heading margin, so set the gap to the tagline in rem. */
+body > header .header-top h1 { margin-bottom: 0.6rem; }
+body > header .header-top nav a { --name-size: 2rem; }
+
+body > header .header-top h1::before,
+body > header .header-top nav a::before {
+  content: ">";
+  content: ">" / "";
+  font-size: var(--name-size);
+  color: #1d7a3e;
+  margin-right: 0.4em;
+}
+
+body > header .header-top h1::after,
+body > header .header-top nav a::after {
+  content: "oss/golf";
+  content: "oss/golf" / "";
+  font-size: var(--name-size);
+  /* The cursor: a block with a pixel golf flag, sitting just after the last letter. */
+  padding-right: 0.66em;
+  background: url("/images/cursor-flag.svg") right 0 top 46% / 0.54em 0.78em no-repeat;
+}
+
 /* === Search === */
 #search-form {
   display: flex;

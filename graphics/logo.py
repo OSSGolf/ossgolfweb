@@ -4,9 +4,10 @@
     python3 graphics/logo.py
 
 The wordmark is the site header drawn as vector outlines: a green prompt, "oss/golf" in VT323,
-and a block cursor holding a pixel golf flag. Outputs:
+and a block cursor holding a pixel golf flag, with the tagline "for the hackers" spaced to the
+same width underneath. Outputs:
 
-    logo/ossgolf-wordmark.svg   the wordmark on the site's cream background (used in the README)
+    logo/ossgolf-wordmark.svg   wordmark and tagline on the site's cream background (in the README)
     logo/ossgolf-wordmark.png   the same, as a PNG
     logo/ossgolf-avatar.svg     square mark (prompt + flag cursor) for profile pictures
     logo/ossgolf-avatar.png     the same, 1024x1024
@@ -22,6 +23,7 @@ import subprocess
 from pathlib import Path
 from urllib.parse import quote
 
+from fontTools.pens.boundsPen import BoundsPen
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
@@ -65,6 +67,9 @@ PROMPT_GAP = 400      # margin-right: 0.4em after ">"
 CURSOR_GAP = 120      # space between the last letter and the cursor
 CELL = 60             # one cursor pixel; the block is 9 x 13 cells = 0.54em x 0.78em
 CURSOR_TOP = 100      # the block runs from just under the ascender line to just below the baseline
+TAGLINE = "for the hackers"
+TAGLINE_SCALE = 0.64  # tagline letter size relative to the name
+TAGLINE_BASELINE = 1684
 CURSOR = """
 #########
 #########
@@ -88,16 +93,25 @@ class Glyphs:
         self.set = self.font.getGlyphSet()
         self.cmap = self.font.getBestCmap()
 
-    def text(self, s: str, x: float, fill: str):
-        """Return (svg path element, x after the text) for `s` starting at x on the baseline."""
+    def text(self, s: str, x: float, fill: str, scale: float = 1, spacing: float = 0, baseline: float = ASCENT):
+        """Return (svg path element, x after the text) for `s` starting at x on `baseline`.
+
+        `scale` sizes the text relative to the wordmark; `spacing` is extra space after each letter.
+        """
         d = []
         for ch in s:
             name = self.cmap[ord(ch)]
             pen = SVGPathPen(self.set)
-            self.set[name].draw(TransformPen(pen, (1, 0, 0, -1, x, ASCENT)))  # flip y, move to x
+            self.set[name].draw(TransformPen(pen, (scale, 0, 0, -scale, x, baseline)))  # flip y
             d.append(pen.getCommands())
-            x += self.font["hmtx"][name][0]
+            x += self.font["hmtx"][name][0] * scale + spacing
         return f'<path fill="{fill}" d="{" ".join(d)}"/>', x
+
+    def ink(self, ch: str):
+        """Left and right edges of a glyph's outline, in font units."""
+        pen = BoundsPen(self.set)
+        self.set[self.cmap[ord(ch)]].draw(pen)
+        return pen.bounds[0], pen.bounds[2]
 
 
 def cursor(x: float) -> str:
@@ -113,11 +127,24 @@ def cursor(x: float) -> str:
 
 
 def wordmark(g: Glyphs):
-    """Return (svg content, width, height) of the full wordmark with no background or padding."""
+    """Return (svg content, width, height) of the wordmark and its tagline, with no background."""
     prompt, x = g.text(">", 0, GREEN)
     name, x = g.text("oss/golf", x + PROMPT_GAP, INK)
     x += CURSOR_GAP
-    return prompt + name + cursor(x), x + len(CURSOR[0]) * CELL, 1000
+    width = x + len(CURSOR[0]) * CELL
+    return prompt + name + cursor(x) + tagline(g, width), width, TAGLINE_BASELINE + 100
+
+
+def tagline(g: Glyphs, width: float) -> str:
+    """The tagline, letter-spaced so its ink runs exactly from the prompt's left edge to the
+    cursor's right edge."""
+    left = g.ink(">")[0]
+    first, last = g.ink(TAGLINE[0])[0], g.ink(TAGLINE[-1])[1]
+    advance = g.font["hmtx"][g.cmap[ord(TAGLINE[0])]][0] * TAGLINE_SCALE  # VT323 is monospaced
+    gaps = len(TAGLINE) - 1
+    spacing = (width - left - (last - first) * TAGLINE_SCALE - gaps * advance) / gaps
+    path, _ = g.text(TAGLINE, left - first * TAGLINE_SCALE, INK, TAGLINE_SCALE, spacing, TAGLINE_BASELINE)
+    return path
 
 
 def avatar_mark(g: Glyphs):
@@ -195,12 +222,11 @@ if __name__ == "__main__":
 
     content, w, h = wordmark(g)
     bare = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w:g} {h:g}" shape-rendering="crispEdges" '
-            f'style="width:860px;display:block">{content}</svg>')
+            f'style="width:820px;display:block">{content}</svg>')
     og = (f'<div style="width:1200px;height:630px;background:{PAPER};display:flex;flex-direction:column;'
-          f'align-items:center;justify-content:center;gap:34px">{bare}'
+          f'align-items:center;justify-content:center;gap:30px">{bare}'
           f'<p style="font-family:Charter,Georgia,serif;font-size:38px;line-height:1.3;color:#555;'
-          f'text-align:center;max-width:900px">Open source golf hardware and software<br>'
-          f'you can build and own.</p>'
+          f'text-align:center;max-width:900px">Open source golf hardware and software.</p>'
           f'<p style="font-family:Charter,Georgia,serif;font-weight:700;font-size:30px;color:{INK}">'
           f'ossgolf.com</p></div>')
     rasterize("", OG, 1200, 630, body=og)

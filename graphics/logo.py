@@ -70,6 +70,7 @@ CELL = 60             # one cursor pixel; the block is 9 x 13 cells = 0.54em x 0
 CURSOR_TOP = 100      # the block runs from just under the ascender line to just below the baseline
 TAGLINE_SCALE = 0.64  # tagline letter size relative to the name
 TAGLINE_BASELINE = 1684
+NAME_STROKE = 20       # 0.02em outline on the prompt and the name, as in the header CSS
 CURSOR = """
 #########
 #########
@@ -93,10 +94,12 @@ class Glyphs:
         self.set = self.font.getGlyphSet()
         self.cmap = self.font.getBestCmap()
 
-    def text(self, s: str, x: float, fill: str, scale: float = 1, spacing: float = 0, baseline: float = ASCENT):
+    def text(self, s: str, x: float, fill: str, scale: float = 1, spacing: float = 0,
+             baseline: float = ASCENT, stroke: float = 0):
         """Return (svg path element, x after the text) for `s` starting at x on `baseline`.
 
-        `scale` sizes the text relative to the wordmark; `spacing` is extra space after each letter.
+        `scale` sizes the text relative to the wordmark; `spacing` is extra space after each letter;
+        `stroke` outlines the letters to make them heavier.
         """
         d = []
         for ch in s:
@@ -105,7 +108,8 @@ class Glyphs:
             self.set[name].draw(TransformPen(pen, (scale, 0, 0, -scale, x, baseline)))  # flip y
             d.append(pen.getCommands())
             x += self.font["hmtx"][name][0] * scale + spacing
-        return f'<path fill="{fill}" d="{" ".join(d)}"/>', x
+        outline = f' stroke="{fill}" stroke-width="{stroke:g}"' if stroke else ""
+        return f'<path fill="{fill}"{outline} d="{" ".join(d)}"/>', x
 
     def ink(self, ch: str):
         """Left and right edges of a glyph's outline, in font units."""
@@ -128,8 +132,8 @@ def cursor(x: float) -> str:
 
 def wordmark(g: Glyphs):
     """Return (svg content, width, height) of the wordmark and its tagline, with no background."""
-    prompt, x = g.text(">", 0, GREEN)
-    name, x = g.text("oss/golf", x + PROMPT_GAP, INK)
+    prompt, x = g.text(">", 0, GREEN, stroke=NAME_STROKE)
+    name, x = g.text("oss/golf", x + PROMPT_GAP, INK, stroke=NAME_STROKE)
     x += CURSOR_GAP
     width = x + len(CURSOR[0]) * CELL
     return prompt + name + cursor(x) + tagline(g, width), width, TAGLINE_BASELINE + 100
@@ -149,7 +153,7 @@ def tagline(g: Glyphs, width: float) -> str:
 
 def avatar_mark(g: Glyphs):
     """The prompt and the flag cursor on their own: what still reads in a small circle."""
-    prompt, x = g.text(">", 0, GREEN)
+    prompt, x = g.text(">", 0, GREEN, stroke=NAME_STROKE)
     x += 300
     return prompt + cursor(x), x + len(CURSOR[0]) * CELL, 1000
 

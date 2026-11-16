@@ -541,7 +541,11 @@ def map_html(d: dict) -> str:
 def chrome(profile: Path, *args: str) -> str:
     cmd = [CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--no-first-run",
            f"--user-data-dir={profile}", "--virtual-time-budget=2000", *args]
-    return subprocess.run(cmd, capture_output=True, text=True, timeout=120, check=True).stdout
+    for attempt in (1, 2):  # headless Chrome occasionally exits early on a cold start; once more is enough
+        run = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        if run.returncode == 0:
+            return run.stdout
+    run.check_returncode()
 
 
 def render(src: Path, out: Path, width: int, fixed_height=None) -> int:

@@ -45,9 +45,17 @@ body:has(#search-form) #search-form {
   font-display: swap;
 }
 
+/* Until VT323 arrives, show a local monospace scaled to VT323's narrower letters (0.4em wide
+   against the usual 0.6em), so the header does not change width when the font swaps in. */
+@font-face {
+  font-family: "VT323 Fallback";
+  src: local("Menlo"), local("Consolas"), local("DejaVu Sans Mono"), local("Courier New");
+  size-adjust: 66.5%;
+}
+
 body > header .header-top h1,
 body > header .header-top nav a {
-  font-family: "VT323", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-family: "VT323", "VT323 Fallback", ui-monospace, monospace;
   font-weight: 400;
   font-size: 0;
   letter-spacing: 0;
@@ -69,6 +77,7 @@ body > header .header-top nav a::before {
   font-size: var(--name-size);
   color: #1d7a3e;
   margin-right: 0.4em;
+  -webkit-text-stroke: 0.02em currentColor; /* a touch heavier than VT323's single weight */
 }
 
 body > header .header-top h1::after,
@@ -76,6 +85,7 @@ body > header .header-top nav a::after {
   content: "oss/golf";
   content: "oss/golf" / "";
   font-size: var(--name-size);
+  -webkit-text-stroke: 0.02em currentColor;
   /* The cursor: a block with a pixel golf flag, sitting just after the last letter. It is drawn
      with gradients on a 0.06em grid (9 x 13 cells) rather than loaded as an image, so nothing
      can block or replace it. Layers, top first: flagstick, the two parts of the flag, block. */
@@ -109,7 +119,7 @@ body > header .header-top nav a::after {
    spacing and indent are the same ratios graphics/logo.py uses, so the text spans exactly the
    width of "> oss/golf" plus its cursor: 0.64 of the name's size, with the gaps filling the rest. */
 body > header .site-tagline {
-  font-family: "VT323", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-family: "VT323", "VT323 Fallback", ui-monospace, monospace;
   font-size: calc(2.7rem * 0.64);
   letter-spacing: 0.0919em;
   line-height: 1;

@@ -25,6 +25,7 @@
   <meta name="theme-color" content="#FFFFF0">
   <link rel="alternate" type="application/rss+xml" title="OSSGolf" href="/feed.xml">
   <link rel="alternate" type="application/feed+json" title="OSSGolf" href="/feed.json">
+  <link rel="preload" href="/fonts/vt323-latin.woff2" as="font" type="font/woff2" crossorigin>
   <style>:root {
   --font-body: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
   --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -577,9 +578,17 @@ body:has(#search-form) #search-form {
   font-display: swap;
 }
 
+/* Until VT323 arrives, show a local monospace scaled to VT323's narrower letters (0.4em wide
+   against the usual 0.6em), so the header does not change width when the font swaps in. */
+@font-face {
+  font-family: "VT323 Fallback";
+  src: local("Menlo"), local("Consolas"), local("DejaVu Sans Mono"), local("Courier New");
+  size-adjust: 66.5%;
+}
+
 body > header .header-top h1,
 body > header .header-top nav a {
-  font-family: "VT323", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-family: "VT323", "VT323 Fallback", ui-monospace, monospace;
   font-weight: 400;
   font-size: 0;
   letter-spacing: 0;
@@ -601,6 +610,7 @@ body > header .header-top nav a::before {
   font-size: var(--name-size);
   color: #1d7a3e;
   margin-right: 0.4em;
+  -webkit-text-stroke: 0.02em currentColor; /* a touch heavier than VT323's single weight */
 }
 
 body > header .header-top h1::after,
@@ -608,6 +618,7 @@ body > header .header-top nav a::after {
   content: "oss/golf";
   content: "oss/golf" / "";
   font-size: var(--name-size);
+  -webkit-text-stroke: 0.02em currentColor;
   /* The cursor: a block with a pixel golf flag, sitting just after the last letter. It is drawn
      with gradients on a 0.06em grid (9 x 13 cells) rather than loaded as an image, so nothing
      can block or replace it. Layers, top first: flagstick, the two parts of the flag, block. */
@@ -641,7 +652,7 @@ body > header .header-top nav a::after {
    spacing and indent are the same ratios graphics/logo.py uses, so the text spans exactly the
    width of "> oss/golf" plus its cursor: 0.64 of the name's size, with the gaps filling the rest. */
 body > header .site-tagline {
-  font-family: "VT323", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-family: "VT323", "VT323 Fallback", ui-monospace, monospace;
   font-size: calc(2.7rem * 0.64);
   letter-spacing: 0.0919em;
   line-height: 1;
@@ -673,9 +684,9 @@ body > header .site-tagline {
 <p>Ball metrics (ball speed, launch angle and direction, spin rate, spin axis) populate only when the radar sees a ball leave. Everything else populates on every swing.</p>
 <h3>Screenshots</h3>
 <p>The repo ships a runnable demo app. It shows connection state, device info, and a live list of recent shots. Tap a shot to see every field the SDK exposes.</p>
-<p><img src="/images/r10-shot-list.png" alt="R10Kit demo showing connection state, device model and firmware, battery level, and a list of recent shots labeled by club speed"></p>
-<p><img src="/images/r10-shot-detail.png" alt="Shot detail showing identity fields and club metrics: club speed, club path, and attack angle"></p>
-<p><img src="/images/r10-tempo.png" alt="Shot detail scrolled to swing timing and the derived metrics: backswing, downswing, follow through, total duration, and tempo ratio"></p>
+<p><img src="/images/r10-shot-list.png" alt="R10Kit demo showing connection state, device model and firmware, battery level, and a list of recent shots labeled by club speed" width="1179" height="2556"></p>
+<p><img src="/images/r10-shot-detail.png" alt="Shot detail showing identity fields and club metrics: club speed, club path, and attack angle" width="1179" height="2556"></p>
+<p><img src="/images/r10-tempo.png" alt="Shot detail scrolled to swing timing and the derived metrics: backswing, downswing, follow through, total duration, and tempo ratio" width="1179" height="2556"></p>
 <h3>What it parses</h3>
 <p>R10Kit does full proto parsing for every shot the device emits: club speed, ball speed, launch angle and direction, spin rate with axis and provenance, attack angle, club face and path, swing timing in milliseconds, shot type, and tilt at impact. The API is AsyncStream first, modern Swift Concurrency, no delegates.</p>
 <ul>

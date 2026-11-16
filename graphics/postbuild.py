@@ -6,11 +6,17 @@
 RSS Lobster gives the homepage a title, tagline and RSS link, and post pages only a small site
 link and RSS. This makes them the same everywhere: it adds a GitHub icon link beside RSS on every
 page, puts the "for the hackers" tagline under the site name, and gives post pages the
-description line the homepage has. Safe to run twice.
+description line the homepage has.
+
+It also removes the causes of layout shift: every image and video gets explicit width and height
+(so the browser reserves its space before it loads), and the header font is preloaded.
+Safe to run twice.
 """
 import html
 import json
 import re
+import subprocess
+from functools import lru_cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -52,12 +58,46 @@ def patch(page: str) -> str:
     return page[:m.start(2)] + inner + page[m.end(2):]
 
 
+FONT_PRELOAD = '<link rel="preload" href="/fonts/vt323-latin.woff2" as="font" type="font/woff2" crossorigin>'
+MEDIA_TAG = re.compile(r"<(img|video)\b([^>]*)>")
+
+
+@lru_cache(maxsize=None)
+def pixel_size(src: str):
+    """Width and height of a local image, or None if it is not a file in the site."""
+    path = SITE / src.lstrip("/")
+    if not src.startswith("/") or not path.is_file():
+        return None
+    out = subprocess.run(["sips", "-g", "pixelWidth", "-g", "pixelHeight", str(path)],
+                         capture_output=True, text=True).stdout
+    w, h = re.search(r"pixelWidth: (\d+)", out), re.search(r"pixelHeight: (\d+)", out)
+    return (int(w.group(1)), int(h.group(1))) if w and h else None
+
+
+def size_media(page: str) -> str:
+    """Give images and videos width/height attributes so their space is reserved before load."""
+    def fix(m: re.Match) -> str:
+        tag, attrs = m.group(1), m.group(2)
+        if re.search(r'\bwidth="', attrs):
+            return m.group(0)
+        src = re.search(r'\b(?:poster|src)="([^"]+)"' if tag == "video" else r'\bsrc="([^"]+)"', attrs)
+        size = pixel_size(src.group(1)) if src else None
+        return f'<{tag}{attrs} width="{size[0]}" height="{size[1]}">' if size else m.group(0)
+    return MEDIA_TAG.sub(fix, page)
+
+
+def preload_font(page: str) -> str:
+    if FONT_PRELOAD in page:
+        return page
+    return page.replace("<style>", FONT_PRELOAD + "\n  <style>", 1)
+
+
 if __name__ == "__main__":
     changed = 0
     for path in sorted(SITE.rglob("*.html")):
         before = path.read_text()
-        after = patch(before)
+        after = preload_font(size_media(patch(before)))
         if after != before:
             path.write_text(after)
             changed += 1
-    print(f"applied the site header to {changed} pages")
+    print(f"applied the site header and layout-shift fixes to {changed} pages")

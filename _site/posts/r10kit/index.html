@@ -529,6 +529,22 @@ nav a, button, .tag {
   article { border-bottom: none; page-break-inside: avoid; }
 }
 
+
+/* Tables: never break a word mid-cell. If the table is wider than the
+   column (phones), it scrolls sideways instead of squeezing. */
+table {
+  display: block;
+  overflow-x: auto;
+}
+
+th, td {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+th, td:first-child {
+  white-space: nowrap;
+}
 </style>
 </head>
 <body>

@@ -526,6 +526,22 @@ nav a, button, .tag {
   article { border-bottom: none; page-break-inside: avoid; }
 }
 
+
+/* Tables: never break a word mid-cell. If the table is wider than the
+   column (phones), it scrolls sideways instead of squeezing. */
+table {
+  display: block;
+  overflow-x: auto;
+}
+
+th, td {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+th, td:first-child {
+  white-space: nowrap;
+}
 </style>
 </head>
 <body>
@@ -554,6 +570,7 @@ nav a, button, .tag {
       </footer>
     </article>
     <nav class="post-nav" aria-label="Post navigation">
+      <a href="https://ossgolf.com/posts/open-source-golf-is-exploding/index.html" class="post-nav-prev">&larr; Open source golf is exploding</a>
       <a href="https://ossgolf.com/posts/osstempo/index.html" class="post-nav-next">OSSTempo: a DIY LED tempo trainer for golf &rarr;</a>
     </nav>
   </main>

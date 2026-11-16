@@ -3,11 +3,11 @@
   <channel>
     <title>OSSGolf</title>
     <link>https://ossgolf.com</link>
-    <description>Open source golf hardware and software. DIY training aids and launch monitor SDKs you can build and own. OSSGolf on GitHub.</description>
+    <description>Open source golf hardware and software. DIY training aids and launch monitor SDKs you can build and own. Plus news from the golf open source world. OSSGolf on GitHub.</description>
     <language>en</language>
     <atom:link href="https://ossgolf.com/feed.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="https://pubsubhubbub.appspot.com" rel="hub"/>
-    <lastBuildDate>Fri, 10 Jul 2026 18:44:06 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 18:31:56 GMT</lastBuildDate>
     <image>
       <url>https://ossgolf.com/icon.png</url>
       <title>OSSGolf</title>
@@ -15,6 +15,108 @@
       <width>144</width>
       <height>144</height>
     </image>
+    <item>
+      <title>Open source golf is exploding</title>
+      <link>https://ossgolf.com/posts/open-source-golf-is-exploding/index.html</link>
+      <description>&lt;p&gt;People are building launch monitors, shot trackers, course databases, and simulator engines in the open, and the list keeps getting longer.&lt;/p&gt;
+&lt;p&gt;Here are the projects we are watching right now.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Project&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;What it does&lt;/th&gt;
+&lt;th&gt;License&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/open-flight/openflight&quot;&gt;OpenFlight&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Hardware&lt;/td&gt;
+&lt;td&gt;DIY radar launch monitor&lt;/td&gt;
+&lt;td&gt;AGPL-3.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/PiTracLM/PiTrac&quot;&gt;PiTrac&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Hardware&lt;/td&gt;
+&lt;td&gt;DIY camera based launch monitor&lt;/td&gt;
+&lt;td&gt;GPL-2.0 (ML models licensed separately)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/open-flight/open-gps&quot;&gt;open-gps&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Hardware&lt;/td&gt;
+&lt;td&gt;Handheld GPS shot tracker&lt;/td&gt;
+&lt;td&gt;AGPL-3.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/opengolfapi&quot;&gt;OpenGolfAPI&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Software&lt;/td&gt;
+&lt;td&gt;Open golf course database and API&lt;/td&gt;
+&lt;td&gt;MIT (code), ODbL (data), CC0 (schema)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/opengolfsim/fuse&quot;&gt;FUSE&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Software&lt;/td&gt;
+&lt;td&gt;Browser based 3D golf simulator engine&lt;/td&gt;
+&lt;td&gt;PolyForm Noncommercial 1.0.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;We will keep adding to this list as more projects show up.&lt;/p&gt;
+</description>
+      <content:encoded><![CDATA[<p>People are building launch monitors, shot trackers, course databases, and simulator engines in the open, and the list keeps getting longer.</p>
+<p>Here are the projects we are watching right now.</p>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Type</th>
+<th>What it does</th>
+<th>License</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/open-flight/openflight">OpenFlight</a></td>
+<td>Hardware</td>
+<td>DIY radar launch monitor</td>
+<td>AGPL-3.0</td>
+</tr>
+<tr>
+<td><a href="https://github.com/PiTracLM/PiTrac">PiTrac</a></td>
+<td>Hardware</td>
+<td>DIY camera based launch monitor</td>
+<td>GPL-2.0 (ML models licensed separately)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/open-flight/open-gps">open-gps</a></td>
+<td>Hardware</td>
+<td>Handheld GPS shot tracker</td>
+<td>AGPL-3.0</td>
+</tr>
+<tr>
+<td><a href="https://github.com/opengolfapi">OpenGolfAPI</a></td>
+<td>Software</td>
+<td>Open golf course database and API</td>
+<td>MIT (code), ODbL (data), CC0 (schema)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/opengolfsim/fuse">FUSE</a></td>
+<td>Software</td>
+<td>Browser based 3D golf simulator engine</td>
+<td>PolyForm Noncommercial 1.0.0</td>
+</tr>
+</tbody>
+</table>
+<p>We will keep adding to this list as more projects show up.</p>
+]]></content:encoded>
+      <pubDate>Mon, 16 Nov 2026 18:28:43 GMT</pubDate>
+      <guid isPermaLink="true">https://ossgolf.com/posts/open-source-golf-is-exploding/index.html</guid>
+      <author>OSSGolf</author>
+      <category>open-source</category>
+      <category>launch-monitor</category>
+      <category>community</category>
+    </item>
     <item>
       <title>Introducing OSSGolf</title>
       <link>https://ossgolf.com/posts/introducing-ossgolf/index.html</link>

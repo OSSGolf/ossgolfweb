@@ -58,7 +58,9 @@ body > header .header-top nav a {
 
 /* font-size: 0 also zeroes the em-based heading margin, so set the gap to the tagline in rem. */
 body > header .header-top h1 { margin-bottom: 0.6rem; }
-body > header .header-top nav a { --name-size: 2rem; }
+/* Post pages use the same header as the homepage: same size, same gap to the tagline. */
+body > header .header-top nav { margin-bottom: 0.6rem; line-height: 1; }
+body > header .header-top nav a { min-height: 0; display: inline; }
 
 body > header .header-top h1::before,
 body > header .header-top nav a::before {
@@ -78,3 +80,18 @@ body > header .header-top nav a::after {
   padding-right: 0.66em;
   background: url("/images/cursor-flag.svg") right 0 top 46% / 0.54em 0.78em no-repeat;
 }
+
+/* GitHub and RSS links at the right of the header (the GitHub link is added by graphics/postbuild.py). */
+.header-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-gh {
+  display: inline-flex;
+  color: var(--color-muted);
+}
+
+.header-gh:hover { color: var(--color-link); }
+.header-gh:visited { color: var(--color-muted); }

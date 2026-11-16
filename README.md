@@ -45,9 +45,10 @@ rsslobster publish "$(cat body.md)" --type post --title "Title" --slug my-slug -
 ./build.sh
 ```
 
-`./build.sh` runs `rsslobster regenerate .` and then `python3 graphics/logo.py`. RSS Lobster
-rewrites `_site/og-image.png` with its default on every regenerate, so the logo script has to
-run after it to put the oss/golf preview image back.
+`./build.sh` runs `rsslobster regenerate .`, then `python3 graphics/postbuild.py` and
+`python3 graphics/logo.py`. RSS Lobster regenerates every page, the preview image and the
+favicons with its defaults, so the first script re-applies the shared header (GitHub link, and
+the tagline on post pages) and the second puts the oss/golf images back.
 
 Commit the updated `posts.json` and `_site/`, then push. If the git-connected
 Cloudflare build does not pick it up, deploy the built assets directly:

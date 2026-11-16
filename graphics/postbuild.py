@@ -5,8 +5,8 @@
 
 RSS Lobster gives the homepage a title, tagline and RSS link, and post pages only a small site
 link and RSS. This makes them the same everywhere: it adds a GitHub icon link beside RSS on every
-page, puts the "for the hackers" tagline under the site name, and gives post pages the
-description line the homepage has.
+page, puts the "for the hackers" tagline under the site name, makes the name and tagline one
+link to the homepage, and gives post pages the description line the homepage has.
 
 It also removes the causes of layout shift: every image and video gets explicit width and height
 (so the browser reserves its space before it loads), and the header font is preloaded.
@@ -51,10 +51,19 @@ def patch(page: str) -> str:
         raise SystemExit("could not find the RSS link in a page header; has RSS Lobster's markup changed?")
     if "<p>" not in inner:  # post pages have no description line of their own
         inner = inner.rstrip() + f'\n    <p>{html.escape(CONFIG["description"])}</p>\n  '
-    # The tagline goes straight after the row holding the site name.
-    inner, n = re.subn(r"(</div>)", rf'\1\n    <p class="site-tagline">{html.escape(TAGLINE)}</p>', inner, count=1)
-    if n != 1:
-        raise SystemExit("could not find the header row to put the tagline under")
+    # Wrap the site name and the tagline in one link to the homepage. The homepage has the name
+    # as an <h1>, post pages as a small link inside <nav>.
+    tagline = f'<span class="site-tagline">{html.escape(TAGLINE)}</span>'
+    label = f'aria-label="{html.escape(CONFIG["title"])}, {html.escape(TAGLINE)}: home"'
+    inner, home = re.subn(
+        r"<h1>(.*?)</h1>",
+        rf'<a class="site-mark" href="/" {label}><h1 class="site-name">\1</h1>{tagline}</a>', inner, count=1)
+    inner, post = re.subn(
+        r'<nav><a href="/">(.*?)</a></nav>',
+        rf'<nav><a class="site-mark" href="/" {label}><span class="site-name">\1</span>{tagline}</a></nav>',
+        inner, count=1)
+    if home + post != 1:
+        raise SystemExit("could not find the site name in a page header; has RSS Lobster's markup changed?")
     return page[:m.start(2)] + inner + page[m.end(2):]
 
 

@@ -53,8 +53,24 @@ body:has(#search-form) #search-form {
   size-adjust: 66.5%;
 }
 
-body > header .header-top h1,
-body > header .header-top nav a {
+/* The whole wordmark (name, cursor and tagline) is one link to the homepage on every page.
+   graphics/postbuild.py wraps it: a.site-mark > .site-name + .site-tagline. */
+body > header .site-mark {
+  display: inline-block;
+  min-height: 0;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+body > header .site-mark:visited { color: var(--color-text); }
+body > header .site-mark:hover { text-decoration: none; }
+body > header .site-mark:focus-visible { outline: 2px solid var(--color-link); outline-offset: 6px; }
+body > header .header-top { margin-bottom: 0.75rem; }
+body > header .header-top nav { line-height: 1; }
+
+body > header .site-name {
+  display: block;
+  margin: 0 0 0.3rem; /* rem, because font-size: 0 would zero an em-based margin */
   font-family: "VT323", "VT323 Fallback", ui-monospace, monospace;
   font-weight: 400;
   font-size: 0;
@@ -64,14 +80,7 @@ body > header .header-top nav a {
   --name-size: 2.7rem;
 }
 
-/* font-size: 0 also zeroes the em-based heading margin, so set the gap to the tagline in rem. */
-body > header .header-top h1 { margin-bottom: 0.3rem; }
-/* Post pages use the same header as the homepage: same size, same gap to the tagline. */
-body > header .header-top nav { margin-bottom: 0.3rem; line-height: 1; }
-body > header .header-top nav a { min-height: 0; display: inline; }
-
-body > header .header-top h1::before,
-body > header .header-top nav a::before {
+body > header .site-name::before {
   content: ">";
   content: ">" / "";
   font-size: var(--name-size);
@@ -80,8 +89,7 @@ body > header .header-top nav a::before {
   -webkit-text-stroke: 0.02em currentColor; /* a touch heavier than VT323's single weight */
 }
 
-body > header .header-top h1::after,
-body > header .header-top nav a::after {
+body > header .site-name::after {
   content: "oss/golf";
   content: "oss/golf" / "";
   font-size: var(--name-size);
@@ -100,6 +108,19 @@ body > header .header-top nav a::after {
     linear-gradient(var(--ink), var(--ink)) right 0 top 0.1em / 0.54em 0.78em no-repeat;
 }
 
+/* The tagline. Its size, letter spacing and indent are the same ratios graphics/logo.py uses, so
+   the text spans exactly the width of "> oss/golf" plus its cursor: 0.64 of the name's size,
+   with the gaps filling the rest. */
+body > header .site-tagline {
+  display: block;
+  font-family: "VT323", "VT323 Fallback", ui-monospace, monospace;
+  font-size: calc(2.7rem * 0.64);
+  letter-spacing: 0.0919em;
+  line-height: 1;
+  margin: 0 0 0 0.0506em;
+  white-space: nowrap;
+}
+
 /* GitHub and RSS links at the right of the header (the GitHub link is added by graphics/postbuild.py). */
 .header-links {
   display: inline-flex;
@@ -114,16 +135,3 @@ body > header .header-top nav a::after {
 
 .header-gh:hover { color: var(--color-link); }
 .header-gh:visited { color: var(--color-muted); }
-
-/* The wordmark's tagline, under the site name (added by graphics/postbuild.py). Its size, letter
-   spacing and indent are the same ratios graphics/logo.py uses, so the text spans exactly the
-   width of "> oss/golf" plus its cursor: 0.64 of the name's size, with the gaps filling the rest. */
-body > header .site-tagline {
-  font-family: "VT323", "VT323 Fallback", ui-monospace, monospace;
-  font-size: calc(2.7rem * 0.64);
-  letter-spacing: 0.0919em;
-  line-height: 1;
-  margin: 0 0 0.75rem 0.0506em;
-  color: var(--color-text);
-  white-space: nowrap;
-}

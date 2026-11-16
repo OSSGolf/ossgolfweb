@@ -607,9 +607,18 @@ body > header .header-top nav a::after {
   content: "oss/golf";
   content: "oss/golf" / "";
   font-size: var(--name-size);
-  /* The cursor: a block with a pixel golf flag, sitting just after the last letter. */
+  /* The cursor: a block with a pixel golf flag, sitting just after the last letter. It is drawn
+     with gradients on a 0.06em grid (9 x 13 cells) rather than loaded as an image, so nothing
+     can block or replace it. Layers, top first: flagstick, the two parts of the flag, block. */
   padding-right: 0.66em;
-  background: url("/images/cursor-flag.svg") right 0 top 46% / 0.54em 0.78em no-repeat;
+  --ink: #222222;
+  --pin: #ffffff;
+  --flag: #e0281e;
+  background:
+    linear-gradient(var(--pin), var(--pin)) right 0.36em top 0.22em / 0.06em 0.54em no-repeat,
+    linear-gradient(var(--flag), var(--flag)) right 0.24em top 0.22em / 0.12em 0.24em no-repeat,
+    linear-gradient(var(--flag), var(--flag)) right 0.12em top 0.28em / 0.12em 0.12em no-repeat,
+    linear-gradient(var(--ink), var(--ink)) right 0 top 0.1em / 0.54em 0.78em no-repeat;
 }
 
 /* GitHub and RSS links at the right of the header (the GitHub link is added by graphics/postbuild.py). */

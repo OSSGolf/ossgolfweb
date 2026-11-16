@@ -39,14 +39,16 @@ body:has(#search-form) #search-form {
    Open Font License, served from /fonts with its license). The markup still says "OSSGolf", which
    is what assistive tech and copy-paste get: its own text is collapsed to zero size and the
    styled version is drawn by the two pseudo-elements, which carry empty alt text. */
+/* graphics/postbuild.py replaces this URL with the font itself (a data: URI holding only the
+   wordmark's letters), so the header never waits on a font request. */
 @font-face {
   font-family: "VT323";
   src: url("/fonts/vt323-latin.woff2") format("woff2");
-  font-display: swap;
+  font-display: block;
 }
 
-/* Until VT323 arrives, show a local monospace scaled to VT323's narrower letters (0.4em wide
-   against the usual 0.6em), so the header does not change width when the font swaps in. */
+/* If VT323 cannot be used at all, fall back to a local monospace scaled to VT323's narrower
+   letters (0.4em wide against the usual 0.6em), so the header keeps the same width. */
 @font-face {
   font-family: "VT323 Fallback";
   src: local("Menlo"), local("Consolas"), local("DejaVu Sans Mono"), local("Courier New");

@@ -9,10 +9,13 @@ page, puts the "for the hackers" tagline under the site name, makes the name and
 link to the homepage, and gives post pages the description line the homepage has.
 
 It also removes the causes of layout shift: every image and video gets explicit width and height
-(so the browser reserves its space before it loads), and the header font is preloaded.
-Safe to run twice.
+(so the browser reserves its space before it loads), and the header font is embedded in the page
+itself, cut down to the dozen letters the wordmark uses, so the header never renders in a
+stand-in font first. Safe to run twice. Needs fontTools with brotli.
 """
+import base64
 import html
+import io
 import json
 import re
 import subprocess
@@ -67,7 +70,9 @@ def patch(page: str) -> str:
     return page[:m.start(2)] + inner + page[m.end(2):]
 
 
-FONT_PRELOAD = '<link rel="preload" href="/fonts/vt323-latin.woff2" as="font" type="font/woff2" crossorigin>'
+FONT_FILE = SITE / "fonts" / "vt323-latin.woff2"
+FONT_URL = 'url("/fonts/vt323-latin.woff2")'  # as written in custom.css
+WORDMARK_TEXT = "> oss/golf " + TAGLINE       # every character the header sets in VT323
 MEDIA_TAG = re.compile(r"<(img|video)\b([^>]*)>")
 
 
@@ -95,17 +100,33 @@ def size_media(page: str) -> str:
     return MEDIA_TAG.sub(fix, page)
 
 
-def preload_font(page: str) -> str:
-    if FONT_PRELOAD in page:
-        return page
-    return page.replace("<style>", FONT_PRELOAD + "\n  <style>", 1)
+@lru_cache(maxsize=None)
+def font_data_uri() -> str:
+    """VT323 reduced to the wordmark's characters, as a data: URI (about 3 KB)."""
+    from fontTools import subset
+    from fontTools.ttLib import TTFont
+
+    font = TTFont(FONT_FILE)
+    options = subset.Options(flavor="woff2", layout_features=[])
+    subsetter = subset.Subsetter(options)
+    subsetter.populate(text=WORDMARK_TEXT)
+    subsetter.subset(font)
+    out = io.BytesIO()
+    font.flavor = "woff2"
+    font.save(out)
+    return "data:font/woff2;base64," + base64.b64encode(out.getvalue()).decode()
+
+
+def inline_font(page: str) -> str:
+    """Swap the font file reference for the embedded font, so there is no request to wait on."""
+    return page.replace(FONT_URL, f'url("{font_data_uri()}")')
 
 
 if __name__ == "__main__":
     changed = 0
     for path in sorted(SITE.rglob("*.html")):
         before = path.read_text()
-        after = preload_font(size_media(patch(before)))
+        after = inline_font(size_media(patch(before)))
         if after != before:
             path.write_text(after)
             changed += 1

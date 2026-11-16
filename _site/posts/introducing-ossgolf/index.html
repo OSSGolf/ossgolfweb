@@ -542,6 +542,13 @@ th, td {
 th, td:first-child {
   white-space: nowrap;
 }
+
+/* Homepage thumbnails are cropped to 280px tall, which suits portrait photos but cuts the
+   title off the wide landscape map. Show that one whole. */
+.post-thumb img[src*="open-source-golf-landscape-map"] {
+  max-height: none;
+  height: auto;
+}
 </style>
 </head>
 <body>

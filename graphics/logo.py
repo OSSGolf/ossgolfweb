@@ -11,12 +11,16 @@ and a block cursor holding a pixel golf flag. Outputs:
     logo/ossgolf-avatar.svg     square mark (prompt + flag cursor) for profile pictures
     logo/ossgolf-avatar.png     the same, 1024x1024
     _site/og-image.png          1200x630 social preview for the site
+    logo/ossgolf-favicon.svg    16x16 pixel favicon: green prompt and flag on black
+    _site/favicon.svg, favicon.ico, icon.png, and the inline icon in every page
 
-`rsslobster regenerate` rewrites _site/og-image.png with its own default, so run this after it
-(./build.sh does both). Needs fontTools (with brotli) and, for the PNGs, Chrome on macOS.
+`rsslobster regenerate` rewrites the preview image and the favicons with its own defaults, so run
+this after it (./build.sh does both). Needs fontTools (with brotli) and, for the PNGs, Chrome on macOS.
 """
+import re
 import subprocess
 from pathlib import Path
+from urllib.parse import quote
 
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
@@ -31,6 +35,29 @@ LOGO = ROOT / "logo"
 OG = ROOT / "_site" / "og-image.png"
 
 PAPER, INK, GREEN, RED, WHITE = "#FFFFF0", "#222222", "#1d7a3e", "#e0281e", "#FFFFFF"
+BRIGHT_GREEN = "#35c46a"  # the prompt on black, where the header green is too dark to read
+
+# The favicon, drawn on a 16x16 grid so it stays crisp in a browser tab.
+# K block, g prompt, w flagstick, r flag, . transparent corner
+FAVICON = """
+.KKKKKKKKKKKKKK.
+KKKKKKKKKKKKKKKK
+KKKKKKKKKKKKKKKK
+KKKKKKKKKKKKKKKK
+KKggKKKKKKwrrKKK
+KKKggKKKKKwrrrrK
+KKKKggKKKKwrrrrK
+KKKKKggKKKwrrKKK
+KKKKKggKKKwKKKKK
+KKKKggKKKKwKKKKK
+KKKggKKKKKwKKKKK
+KKggKKKKKKwKKKKK
+KKKKKKKKKKKKKKKK
+KKKKKKKKKKKKKKKK
+KKKKKKKKKKKKKKKK
+.KKKKKKKKKKKKKK.
+""".split()
+FAVICON_COLORS = {"K": INK, "g": BRIGHT_GREEN, "w": WHITE, "r": RED}
 
 # Everything below is in font units (1000 per em), matching the header CSS in custom.css.
 ASCENT = 800          # baseline sits this far below the top of the line
@@ -108,6 +135,33 @@ def svg(content: str, w: float, h: float, pad_x: float, pad_y: float, radius: fl
             f'<g transform="translate({pad_x:g} {pad_y:g})">{content}</g></svg>\n')
 
 
+def favicon_svg(square: bool = False) -> str:
+    """The favicon as SVG. `square` fills the clipped corners, for icons the OS masks itself."""
+    rects = "".join(
+        f'<rect x="{x}" y="{y}" width="1.02" height="1.02" fill="{FAVICON_COLORS.get(ch, INK)}"/>'
+        for y, line in enumerate(FAVICON) for x, ch in enumerate(line) if ch != "." or square
+    )
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" '
+            f'shape-rendering="crispEdges">{rects}</svg>')
+
+
+def install_favicon() -> None:
+    icon = favicon_svg()
+    (LOGO / "ossgolf-favicon.svg").write_text(icon + "\n")
+    site = ROOT / "_site"
+    (site / "favicon.svg").write_text(icon + "\n")
+    print("wrote logo/ossgolf-favicon.svg and _site/favicon.svg")
+    rasterize(favicon_svg(square=True), site / "icon.png", 512, 512)
+    rasterize(icon, site / "favicon.ico", 32, 32)  # RSS Lobster also serves a PNG under this name
+    # Every page also carries the icon inline as a data URI; swap RSS Lobster's default for ours.
+    inline = re.compile(r'<link rel="icon" type="image/svg\+xml" href="data:image/svg\+xml,[^"]*">')
+    tag = f'<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,{quote(icon)}">'
+    pages = [p for p in site.rglob("*.html") if inline.search(p.read_text())]
+    for p in pages:
+        p.write_text(inline.sub(tag, p.read_text()))
+    print(f"updated the inline icon in {len(pages)} pages")
+
+
 def rasterize(svg_text: str, out: Path, width: int, height: int, body: str = "") -> None:
     """Render an SVG (or an HTML body containing it) to a PNG of exactly width x height."""
     src = HERE / f"_{out.stem}.html"
@@ -150,3 +204,5 @@ if __name__ == "__main__":
           f'<p style="font-family:Charter,Georgia,serif;font-weight:700;font-size:30px;color:{INK}">'
           f'ossgolf.com</p></div>')
     rasterize("", OG, 1200, 630, body=og)
+
+    install_favicon()

@@ -23,7 +23,7 @@
       "id": "https://ossgolf.com/posts/open-source-golf-is-exploding/index.html",
       "url": "https://ossgolf.com/posts/open-source-golf-is-exploding/index.html",
       "title": "Open source golf is exploding",
-      "content_html": "<p>People are building launch monitors, shot trackers, course databases, and simulator engines in the open, and the list keeps getting longer.</p>\n<p>Here are the projects we are watching right now.</p>\n<table>\n<thead>\n<tr>\n<th>Project</th>\n<th>Type</th>\n<th>What it does</th>\n<th>License</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><a href=\"https://github.com/open-flight/openflight\">OpenFlight</a></td>\n<td>Hardware</td>\n<td>DIY radar launch monitor</td>\n<td>AGPL-3.0</td>\n</tr>\n<tr>\n<td><a href=\"https://github.com/PiTracLM/PiTrac\">PiTrac</a></td>\n<td>Hardware</td>\n<td>DIY camera based launch monitor</td>\n<td>GPL-2.0 (ML models licensed separately)</td>\n</tr>\n<tr>\n<td><a href=\"https://github.com/open-flight/open-gps\">open-gps</a></td>\n<td>Hardware</td>\n<td>Handheld GPS shot tracker</td>\n<td>AGPL-3.0</td>\n</tr>\n<tr>\n<td><a href=\"https://github.com/opengolfapi\">OpenGolfAPI</a></td>\n<td>Software</td>\n<td>Open golf course database and API</td>\n<td>MIT (code), ODbL (data), CC0 (schema)</td>\n</tr>\n<tr>\n<td><a href=\"https://github.com/opengolfsim/fuse\">FUSE</a></td>\n<td>Software</td>\n<td>Browser based 3D golf simulator engine</td>\n<td>PolyForm Noncommercial 1.0.0</td>\n</tr>\n</tbody>\n</table>\n<p>We will keep adding to this list as more projects show up.</p>\n",
+      "content_html": "<p>People are building launch monitors, shot trackers, course databases, and simulator engines in the open, and the list keeps getting longer.</p>\n<p>Here are the projects we are watching right now.</p>\n<p><a href=\"/images/open-source-golf-landscape-map.png\"><img src=\"/images/open-source-golf-landscape-map-1920.png\" alt=\"Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking.\"></a></p>\n<p>Tap the map to open it full size.</p>\n<p>We will keep adding to this list as more projects show up.</p>\n",
       "date_published": "2026-11-16T18:28:43.000Z",
       "tags": [
         "open-source",
@@ -33,6 +33,12 @@
       "authors": [
         {
           "name": "OSSGolf"
+        }
+      ],
+      "attachments": [
+        {
+          "url": "https://ossgolf.com/images/open-source-golf-landscape-map-1920.png",
+          "mime_type": "image/png"
         }
       ]
     },

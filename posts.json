@@ -2,7 +2,7 @@
   {
     "type": "post",
     "title": "Open source golf is exploding",
-    "body": "People are building launch monitors, shot trackers, course databases, and simulator engines in the open, and the list keeps getting longer.\n\nHere are the projects we are watching right now.\n\n| Project | Type | What it does | License |\n| --- | --- | --- | --- |\n| [OpenFlight](https://github.com/open-flight/openflight) | Hardware | DIY radar launch monitor | AGPL-3.0 |\n| [PiTrac](https://github.com/PiTracLM/PiTrac) | Hardware | DIY camera based launch monitor | GPL-2.0 (ML models licensed separately) |\n| [open-gps](https://github.com/open-flight/open-gps) | Hardware | Handheld GPS shot tracker | AGPL-3.0 |\n| [OpenGolfAPI](https://github.com/opengolfapi) | Software | Open golf course database and API | MIT (code), ODbL (data), CC0 (schema) |\n| [FUSE](https://github.com/opengolfsim/fuse) | Software | Browser based 3D golf simulator engine | PolyForm Noncommercial 1.0.0 |\n\nWe will keep adding to this list as more projects show up.",
+    "body": "People are building launch monitors, shot trackers, course databases, and simulator engines in the open, and the list keeps getting longer.\n\nHere are the projects we are watching right now.\n\n[![Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking.](/images/open-source-golf-landscape-map-1920.png)](/images/open-source-golf-landscape-map.png)\n\nTap the map to open it full size.\n\nWe will keep adding to this list as more projects show up.",
     "slug": "open-source-golf-is-exploding",
     "tags": [
       "open-source",
@@ -12,7 +12,15 @@
     "createdAt": "2026-11-16T18:28:43.740Z",
     "updatedAt": "2026-11-16T18:28:43.740Z",
     "url": "https://ossgolf.com/posts/open-source-golf-is-exploding/index.html",
-    "publishedAt": "2026-11-16T18:28:43.871Z"
+    "publishedAt": "2026-11-16T18:28:43.871Z",
+    "images": [
+      {
+        "src": "/images/open-source-golf-landscape-map-1920.png",
+        "alt": "Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking.",
+        "width": 1920,
+        "height": 1011
+      }
+    ]
   },
   {
     "type": "post",

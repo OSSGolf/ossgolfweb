@@ -1,0 +1,697 @@
+{
+  "asOf": "16 Nov 2026",
+  "sides": [
+    {
+      "name": "Hardware",
+      "blurb": "Things you solder, print and bolt together.",
+      "segments": [
+        {
+          "name": "Launch monitors",
+          "groups": [
+            {
+              "name": "Radar based",
+              "items": [
+                {
+                  "name": "OpenFlight",
+                  "note": "Radar + Raspberry Pi",
+                  "license": "AGPL-3.0",
+                  "stars": 1207,
+                  "url": "https://github.com/open-flight/openflight",
+                  "with": [
+                    {
+                      "name": "openflight-enclosure",
+                      "note": "3D printed case",
+                      "license": "GPL-3.0"
+                    },
+                    {
+                      "name": "openflight-mobile-kmp",
+                      "note": "Android + iOS app",
+                      "license": "AGPL-3.0"
+                    },
+                    {
+                      "name": "openflight-mobile",
+                      "note": "React Native app",
+                      "license": "GPL-3.0"
+                    }
+                  ],
+                  "logo": "openflight.png",
+                  "logoSource": "repo"
+                }
+              ]
+            },
+            {
+              "name": "Camera based",
+              "items": [
+                {
+                  "name": "PiTrac",
+                  "note": "Raspberry Pi + cameras",
+                  "license": "GPL-2.0",
+                  "stars": 442,
+                  "url": "https://github.com/PiTracLM/PiTrac",
+                  "logo": "pitrac.png",
+                  "logoSource": "repo"
+                },
+                {
+                  "name": "LaunchTrac",
+                  "note": "PiTrac derivative in Rust",
+                  "license": "GPL-2.0",
+                  "stars": 2,
+                  "url": "https://github.com/r87-e/LaunchTrac",
+                  "logo": "launchtrac.png",
+                  "logoSource": "avatar"
+                }
+              ]
+            },
+            {
+              "name": "Hybrid",
+              "items": [
+                {
+                  "name": "launch-monitor",
+                  "note": "Camera + radar + IR",
+                  "license": "MIT",
+                  "stars": 10,
+                  "url": "https://github.com/thomasjhook/launch-monitor",
+                  "owner": "thomasjhook",
+                  "logo": "launch-monitor.png",
+                  "logoSource": "avatar"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "On-course trackers",
+          "groups": [
+            {
+              "name": "GPS",
+              "items": [
+                {
+                  "name": "open-gps",
+                  "note": "Handheld shot tracker",
+                  "license": "AGPL-3.0",
+                  "stars": 14,
+                  "url": "https://github.com/open-flight/open-gps",
+                  "logo": "open-gps.png",
+                  "logoSource": "avatar"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Training aids",
+          "groups": [
+            {
+              "name": "Tempo",
+              "items": [
+                {
+                  "name": "OSSTempo",
+                  "note": "ESP32 + LED strip",
+                  "license": "MIT",
+                  "stars": 2,
+                  "url": "https://github.com/OSSGolf/osstempo",
+                  "with": [
+                    {
+                      "name": "osstempo-ios",
+                      "note": "iPhone controller",
+                      "license": "MIT"
+                    }
+                  ],
+                  "logo": "osstempo.png",
+                  "logoSource": "avatar"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Biomechanics",
+          "groups": [
+            {
+              "name": "Force plates",
+              "items": [
+                {
+                  "name": "open-fp",
+                  "note": "Ground forces",
+                  "license": "AGPL-3.0",
+                  "stars": 10,
+                  "url": "https://github.com/open-flight/open-fp",
+                  "logo": "open-fp.png",
+                  "logoSource": "avatar"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "3D printable",
+          "groups": [
+            {
+              "name": "Swing trainers",
+              "items": [
+                {
+                  "name": "Golf Zwing Trainer V4",
+                  "note": "Printables",
+                  "license": "Public domain",
+                  "stars": null,
+                  "url": "https://www.printables.com/model/1163073-golf-zwing-trainer-v4",
+                  "logo": "golf-zwing-trainer-v4.png",
+                  "logoSource": "page",
+                  "by": "WeighingMyOptions",
+                  "host": {
+                    "name": "Printables",
+                    "icon": "site-printables.png"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Range accessories",
+              "items": [
+                {
+                  "name": "Golf Ball Dispenser Pro",
+                  "note": "MakerWorld",
+                  "license": "Unclear",
+                  "stars": null,
+                  "url": "https://makerworld.com/en/models/1295289-golf-ball-dispenser-pro",
+                  "logo": "golf-ball-dispenser-pro.jpg",
+                  "logoSource": "page",
+                  "by": "christofer.jh",
+                  "host": {
+                    "name": "MakerWorld",
+                    "icon": "site-makerworld.png"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Software",
+      "blurb": "Things you clone, build and run.",
+      "segments": [
+        {
+          "name": "Simulators",
+          "groups": [
+            {
+              "name": "Engines",
+              "items": [
+                {
+                  "name": "OpenShotGolf",
+                  "note": "Godot",
+                  "license": "GPL-2.0",
+                  "stars": 70,
+                  "url": "https://github.com/jhauck2/OpenShotGolf",
+                  "logo": "openshotgolf.png",
+                  "logoSource": "repo"
+                },
+                {
+                  "name": "Seneca-Golf",
+                  "note": "Urho3D",
+                  "license": "GPL-3.0",
+                  "stars": 24,
+                  "url": "https://github.com/csites/Seneca-Golf",
+                  "logo": "seneca-golf.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "GolfForge",
+                  "note": "Unreal Engine 5",
+                  "license": "AGPL-3.0",
+                  "stars": 16,
+                  "url": "https://github.com/GolfForge/golfforge",
+                  "logo": "golfforge.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "FUSE",
+                  "note": "Browser, non-commercial",
+                  "license": "PolyForm NC",
+                  "stars": 11,
+                  "url": "https://github.com/opengolfsim/fuse",
+                  "logo": "fuse.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "cyberflight",
+                  "note": "Driving range only",
+                  "license": "Apache-2.0",
+                  "stars": 5,
+                  "url": "https://github.com/divotmaker/cyberflight",
+                  "logo": "cyberflight.png",
+                  "logoSource": "repo"
+                },
+                {
+                  "name": "Open-Birdie",
+                  "note": "OpenStreetMap courses",
+                  "license": "MIT",
+                  "stars": 4,
+                  "url": "https://github.com/rroojrooj/Open-Birdie",
+                  "logo": "open-birdie.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "uopengolf",
+                  "note": "Unreal Engine",
+                  "license": "MIT",
+                  "stars": 2,
+                  "url": "https://github.com/digitalhand/uopengolf",
+                  "logo": "uopengolf.png",
+                  "logoSource": "avatar"
+                }
+              ]
+            },
+            {
+              "name": "Ball flight physics",
+              "items": [
+                {
+                  "name": "Simple-Golf-Simulator",
+                  "note": "Python",
+                  "license": "ISC",
+                  "stars": 42,
+                  "url": "https://github.com/markccchiang/Simple-Golf-Simulator",
+                  "logo": "simple-golf-simulator.png",
+                  "logoSource": "repo"
+                },
+                {
+                  "name": "openfairway",
+                  "note": "C#",
+                  "license": "MIT",
+                  "stars": 23,
+                  "url": "https://github.com/digitalhand/openfairway",
+                  "logo": "openfairway.png",
+                  "logoSource": "repo"
+                },
+                {
+                  "name": "libgolf",
+                  "note": "C++",
+                  "license": "GPL-3.0",
+                  "stars": 12,
+                  "url": "https://github.com/gdifiore/libgolf",
+                  "logo": "libgolf.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "dimple",
+                  "note": "Rust",
+                  "license": "Apache-2.0",
+                  "stars": 2,
+                  "url": "https://github.com/divotmaker/dimple",
+                  "logo": "dimple.png",
+                  "logoSource": "avatar"
+                }
+              ]
+            },
+            {
+              "name": "Course building",
+              "items": [
+                {
+                  "name": "TGC-Designer-Tools",
+                  "note": "Lidar to terrain",
+                  "license": "Apache-2.0",
+                  "stars": 60,
+                  "url": "https://github.com/chadrockey/TGC-Designer-Tools",
+                  "logo": "tgc-designer-tools.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "course-terrain-tool",
+                  "note": "Finds terrain data",
+                  "license": "GPL-3.0",
+                  "stars": 16,
+                  "url": "https://github.com/OpenGolfSim/course-terrain-tool",
+                  "logo": "course-terrain-tool.png",
+                  "logoSource": "repo"
+                },
+                {
+                  "name": "course-meshery-tool",
+                  "note": "SVG to course mesh",
+                  "license": "GPL-3.0",
+                  "stars": 10,
+                  "url": "https://github.com/OpenGolfSim/course-meshery-tool",
+                  "logo": "course-meshery-tool.png",
+                  "logoSource": "avatar"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Launch monitor connectivity",
+          "groups": [
+            {
+              "name": "Protocol libraries",
+              "items": [
+                {
+                  "name": "gsp-r10-adapter",
+                  "note": "Garmin R10",
+                  "license": "MIT",
+                  "stars": 94,
+                  "url": "https://github.com/mholow/gsp-r10-adapter",
+                  "logo": "gsp-r10-adapter.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "10over",
+                  "note": "Garmin R10, Rust",
+                  "license": "Apache-2.0",
+                  "stars": 11,
+                  "url": "https://github.com/divotmaker/10over",
+                  "logo": "10over.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "ironsight",
+                  "note": "FlightScope Mevo",
+                  "license": "Apache-2.0",
+                  "stars": 8,
+                  "url": "https://github.com/divotmaker/ironsight",
+                  "logo": "ironsight.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "allsquare",
+                  "note": "Square Omni",
+                  "license": "Apache-2.0",
+                  "stars": 6,
+                  "url": "https://github.com/divotmaker/allsquare",
+                  "logo": "allsquare.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "R10Kit",
+                  "note": "Garmin R10, Swift",
+                  "license": "MIT",
+                  "stars": 4,
+                  "url": "https://github.com/OSSGolf/unofficial-r10-ios-sdk",
+                  "logo": "r10kit.png",
+                  "logoSource": "repo"
+                },
+                {
+                  "name": "Flight Relay Protocol",
+                  "note": "Open shot data standard",
+                  "license": "CC0-1.0",
+                  "stars": 4,
+                  "url": "https://github.com/flightrelay/spec",
+                  "logo": "flight-relay-protocol.png",
+                  "logoSource": "avatar"
+                }
+              ]
+            },
+            {
+              "name": "Bridges to simulators",
+              "items": [
+                {
+                  "name": "MLM2PRO-GSPro-Connector",
+                  "note": "Rapsodo to GSPro",
+                  "license": "GPL-3.0",
+                  "stars": 99,
+                  "url": "https://github.com/springbok/MLM2PRO-GSPro-Connector",
+                  "logo": "mlm2pro-gspro-connector.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "MLM2PRO-BT-APP",
+                  "note": "Rapsodo over Bluetooth",
+                  "license": "MIT",
+                  "stars": 29,
+                  "url": "https://github.com/Duwaynef/MLM2PRO-BT-APP",
+                  "logo": "mlm2pro-bt-app.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "GSPro-MLM2PRO-OCR",
+                  "note": "Rapsodo via OCR",
+                  "license": "MIT",
+                  "stars": 23,
+                  "url": "https://github.com/rowengb/GSPro-MLM2PRO-OCR-Connector",
+                  "logo": "gspro-mlm2pro-ocr.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "flighthook",
+                  "note": "Multi-monitor bridge",
+                  "license": "Apache-2.0",
+                  "stars": 19,
+                  "url": "https://github.com/divotmaker/flighthook",
+                  "logo": "flighthook.png",
+                  "logoSource": "repo"
+                },
+                {
+                  "name": "gspro-bridge",
+                  "note": "Windows, GSPro",
+                  "license": "MIT",
+                  "stars": 6,
+                  "url": "https://github.com/brettveenstra/gspro-bridge",
+                  "logo": "gspro-bridge.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "fairway-bridge",
+                  "note": "Monitors, sims, cameras",
+                  "license": "Apache-2.0",
+                  "stars": 5,
+                  "url": "https://github.com/401Unauthorized/fairway-bridge",
+                  "logo": "fairway-bridge.png",
+                  "logoSource": "repo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Swing analysis",
+          "groups": [
+            {
+              "name": "Video and pose",
+              "items": [
+                {
+                  "name": "GolfPosePro",
+                  "note": "MediaPipe",
+                  "license": "MIT",
+                  "stars": 32,
+                  "url": "https://github.com/ryanboscobanze/GolfPosePro",
+                  "logo": "golfposepro.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "GolfSwingAnalyzer",
+                  "note": "3D joints from video",
+                  "license": "MIT",
+                  "stars": 23,
+                  "url": "https://github.com/ktakenos/GolfSwingAnalyzer",
+                  "logo": "golfswinganalyzer.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "Pose2Par",
+                  "note": "Motion capture",
+                  "license": "MIT",
+                  "stars": 20,
+                  "url": "https://github.com/cavanaulton/Pose2Par",
+                  "logo": "pose2par.png",
+                  "logoSource": "repo"
+                },
+                {
+                  "name": "golf-swing-analysis",
+                  "note": "MediaPipe + OpenCV",
+                  "license": "MIT",
+                  "stars": 14,
+                  "url": "https://github.com/HeleenaRobert/golf-swing-analysis",
+                  "logo": "golf-swing-analysis.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "PinPoint Studio",
+                  "note": "Cameras + wrist sensors",
+                  "license": "GPL-2.0",
+                  "stars": 7,
+                  "url": "https://github.com/PinPoint-Golf/PinPointStudio",
+                  "with": [
+                    {
+                      "name": "PinPointCapture",
+                      "note": "iPhone as a camera",
+                      "license": "MIT"
+                    }
+                  ],
+                  "logo": "pinpoint-studio.png",
+                  "logoSource": "avatar"
+                }
+              ]
+            },
+            {
+              "name": "Wearable",
+              "items": [
+                {
+                  "name": "iSwing",
+                  "note": "Apple Watch",
+                  "license": "MIT",
+                  "stars": 11,
+                  "url": "https://github.com/ChillVeen/iSwing",
+                  "logo": "iswing.png",
+                  "logoSource": "repo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Camera ball tracking",
+          "groups": [
+            {
+              "name": "Putting",
+              "items": [
+                {
+                  "name": "cam-putting-py",
+                  "note": "Webcam putting for sims",
+                  "license": "GPL-3.0",
+                  "stars": 52,
+                  "url": "https://github.com/alleexx/cam-putting-py",
+                  "logo": "cam-putting-py.png",
+                  "logoSource": "avatar"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Course data",
+          "groups": [
+            {
+              "name": "Databases and APIs",
+              "items": [
+                {
+                  "name": "golf-data-docs",
+                  "note": "UK courses",
+                  "license": "GPL-3.0",
+                  "stars": 14,
+                  "url": "https://github.com/Jacobbrewer1/golf-data-docs",
+                  "logo": "golf-data-docs.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "OpenGolfAPI",
+                  "note": "32,000+ courses",
+                  "license": "MIT + ODbL",
+                  "stars": 12,
+                  "url": "https://github.com/opengolfapi/api",
+                  "with": [
+                    {
+                      "name": "mcp-server",
+                      "note": "For AI assistants",
+                      "license": "MIT"
+                    }
+                  ],
+                  "logo": "opengolfapi.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "GeoJSON-GolfCourses",
+                  "note": "Course boundaries",
+                  "license": "CC0-1.0",
+                  "stars": 10,
+                  "url": "https://github.com/TheMapSmith/GeoJSON-GolfCourses",
+                  "logo": "geojson-golfcourses.png",
+                  "logoSource": "avatar"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Stats and scoring",
+          "groups": [
+            {
+              "name": "Launch monitor data",
+              "items": [
+                {
+                  "name": "TrackPull",
+                  "note": "TrackMan reports",
+                  "license": "MIT",
+                  "stars": 15,
+                  "url": "https://github.com/criticalberne/TrackPull",
+                  "logo": "trackpull.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "r10progress",
+                  "note": "Garmin R10 sessions",
+                  "license": "LGPL-3.0",
+                  "stars": 12,
+                  "url": "https://github.com/thraizz/r10progress",
+                  "logo": "r10progress.png",
+                  "logoSource": "repo"
+                }
+              ]
+            },
+            {
+              "name": "Rounds and handicap",
+              "items": [
+                {
+                  "name": "garmin_golf",
+                  "note": "Garmin round exports",
+                  "license": "Apache-2.0",
+                  "stars": 46,
+                  "url": "https://github.com/gsingers/garmin_golf",
+                  "logo": "garmin-golf.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "ghin",
+                  "note": "GHIN handicap lookups",
+                  "license": "MIT",
+                  "stars": 19,
+                  "url": "https://github.com/n8io/ghin",
+                  "owner": "n8io",
+                  "logo": "ghin.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "golf-app",
+                  "note": "Scorecards, tournaments",
+                  "license": "MIT",
+                  "stars": 6,
+                  "url": "https://github.com/gmalewicz/golf-app",
+                  "owner": "gmalewicz",
+                  "logo": "golf-app.png",
+                  "logoSource": "avatar"
+                },
+                {
+                  "name": "opengolfapp",
+                  "note": "Stat tracking",
+                  "license": "MIT",
+                  "stars": 5,
+                  "url": "https://github.com/cner-smith/opengolfapp",
+                  "logo": "opengolfapp.png",
+                  "logoSource": "repo"
+                }
+              ]
+            },
+            {
+              "name": "Tour data",
+              "items": [
+                {
+                  "name": "data-golf-api",
+                  "note": "DataGolf client",
+                  "license": "MIT",
+                  "stars": 12,
+                  "url": "https://github.com/coreyjs/data-golf-api",
+                  "logo": "data-golf-api.png",
+                  "logoSource": "avatar"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "openGround": [
+    "Rangefinders",
+    "Club-mounted swing sensors",
+    "GPS watch apps",
+    "Shot tracers"
+  ]
+}

@@ -29,6 +29,7 @@ from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
 
 from build import page, render  # shared headless-Chrome renderer
+from postbuild import TAGLINE  # the same tagline the site header shows
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -67,7 +68,6 @@ PROMPT_GAP = 400      # margin-right: 0.4em after ">"
 CURSOR_GAP = 120      # space between the last letter and the cursor
 CELL = 60             # one cursor pixel; the block is 9 x 13 cells = 0.54em x 0.78em
 CURSOR_TOP = 100      # the block runs from just under the ascender line to just below the baseline
-TAGLINE = "for the hackers"
 TAGLINE_SCALE = 0.64  # tagline letter size relative to the name
 TAGLINE_BASELINE = 1684
 CURSOR = """

@@ -5,7 +5,8 @@
 
 RSS Lobster gives the homepage a title, tagline and RSS link, and post pages only a small site
 link and RSS. This makes them the same everywhere: it adds a GitHub icon link beside RSS on every
-page and puts the tagline under the site name on post pages too. Safe to run twice.
+page, puts the "for the hackers" tagline under the site name, and gives post pages the
+description line the homepage has. Safe to run twice.
 """
 import html
 import json
@@ -15,6 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "_site"
 CONFIG = json.loads((ROOT / "rsslobster.json").read_text())
+TAGLINE = "for the hackers"  # the wordmark's tagline; graphics/logo.py draws the same text
 
 # GitHub's mark, from the MIT-licensed Octicons set.
 GITHUB_ICON = (
@@ -41,8 +43,12 @@ def patch(page: str) -> str:
     inner, n = RSS_LINK.subn(lambda r: f'<span class="header-links">{github}{r.group(0)}</span>', inner, count=1)
     if n != 1:
         raise SystemExit("could not find the RSS link in a page header; has RSS Lobster's markup changed?")
-    if "<p>" not in inner:  # post pages have no tagline of their own
+    if "<p>" not in inner:  # post pages have no description line of their own
         inner = inner.rstrip() + f'\n    <p>{html.escape(CONFIG["description"])}</p>\n  '
+    # The tagline goes straight after the row holding the site name.
+    inner, n = re.subn(r"(</div>)", rf'\1\n    <p class="site-tagline">{html.escape(TAGLINE)}</p>', inner, count=1)
+    if n != 1:
+        raise SystemExit("could not find the header row to put the tagline under")
     return page[:m.start(2)] + inner + page[m.end(2):]
 
 

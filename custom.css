@@ -57,9 +57,9 @@ body > header .header-top nav a {
 }
 
 /* font-size: 0 also zeroes the em-based heading margin, so set the gap to the tagline in rem. */
-body > header .header-top h1 { margin-bottom: 0.6rem; }
+body > header .header-top h1 { margin-bottom: 0.3rem; }
 /* Post pages use the same header as the homepage: same size, same gap to the tagline. */
-body > header .header-top nav { margin-bottom: 0.6rem; line-height: 1; }
+body > header .header-top nav { margin-bottom: 0.3rem; line-height: 1; }
 body > header .header-top nav a { min-height: 0; display: inline; }
 
 body > header .header-top h1::before,
@@ -104,3 +104,16 @@ body > header .header-top nav a::after {
 
 .header-gh:hover { color: var(--color-link); }
 .header-gh:visited { color: var(--color-muted); }
+
+/* The wordmark's tagline, under the site name (added by graphics/postbuild.py). Its size, letter
+   spacing and indent are the same ratios graphics/logo.py uses, so the text spans exactly the
+   width of "> oss/golf" plus its cursor: 0.64 of the name's size, with the gaps filling the rest. */
+body > header .site-tagline {
+  font-family: "VT323", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: calc(2.7rem * 0.64);
+  letter-spacing: 0.0919em;
+  line-height: 1;
+  margin: 0 0 0.75rem 0.0506em;
+  color: var(--color-text);
+  white-space: nowrap;
+}

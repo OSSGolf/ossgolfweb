@@ -89,14 +89,27 @@ def pixel_size(src: str):
 
 
 def size_media(page: str) -> str:
-    """Give images and videos width/height attributes so their space is reserved before load."""
+    """Give images and videos their width, height and aspect ratio, so their space is reserved
+    before load and keeps its shape whatever arrives.
+
+    The width/height attributes alone only hold until the file loads. The CSS aspect-ratio also
+    holds afterwards, which matters when something between the site and the reader swaps the file
+    for a placeholder of another shape (some content filters send a 1x2 blank).
+    """
     def fix(m: re.Match) -> str:
         tag, attrs = m.group(1), m.group(2)
-        if re.search(r'\bwidth="', attrs):
-            return m.group(0)
-        src = re.search(r'\b(?:poster|src)="([^"]+)"' if tag == "video" else r'\bsrc="([^"]+)"', attrs)
-        size = pixel_size(src.group(1)) if src else None
-        return f'<{tag}{attrs} width="{size[0]}" height="{size[1]}">' if size else m.group(0)
+        w, h = re.search(r'\bwidth="(\d+)"', attrs), re.search(r'\bheight="(\d+)"', attrs)
+        if w and h:
+            size = (int(w.group(1)), int(h.group(1)))
+        else:
+            src = re.search(r'\b(?:poster|src)="([^"]+)"' if tag == "video" else r'\bsrc="([^"]+)"', attrs)
+            size = pixel_size(src.group(1)) if src else None
+            if not size:
+                return m.group(0)
+            attrs += f' width="{size[0]}" height="{size[1]}"'
+        if "aspect-ratio" not in attrs:
+            attrs += f' style="aspect-ratio: {size[0]} / {size[1]}"'
+        return f"<{tag}{attrs}>"
     return MEDIA_TAG.sub(fix, page)
 
 

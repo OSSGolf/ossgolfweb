@@ -2,7 +2,7 @@
   {
     "type": "post",
     "title": "Open source golf is exploding",
-    "body": "People are building launch monitors, shot trackers, course databases, and simulator engines in the open, and the list keeps getting longer.\n\nHere are the projects we are watching right now.\n\n[![Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking.](/images/open-source-golf-landscape-map-1920.png)](/images/open-source-golf-landscape-map.png)\n\nTap the map to open it full size.\n\nWe will keep adding to this list as more projects show up.",
+    "body": "People are building launch monitors, shot trackers, course databases, and simulator engines in the open, and the list keeps getting longer.\n\nHere are the projects we are watching right now.\n\n[![Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking.](/images/open-source-golf-landscape-map-v2-1920.png)](/images/open-source-golf-landscape-map-v2.png)\n\nTap the map to open it full size.\n\nWe will keep adding to this list as more projects show up.",
     "slug": "open-source-golf-is-exploding",
     "tags": [
       "open-source",
@@ -15,7 +15,7 @@
     "publishedAt": "2026-11-16T18:28:43.871Z",
     "images": [
       {
-        "src": "/images/open-source-golf-landscape-map-1920.png",
+        "src": "/images/open-source-golf-landscape-map-v2-1920.png",
         "alt": "Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking.",
         "width": 1920,
         "height": 1037

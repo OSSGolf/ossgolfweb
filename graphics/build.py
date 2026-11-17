@@ -7,8 +7,8 @@ Reads graphics/landscape.json and renders, with headless Chrome at 2x:
 
     _site/images/open-source-golf-landscape.png        the full reference table
     _site/images/open-source-golf-landscape-card.png   1200x675 share card
-    _site/images/open-source-golf-landscape-map.png    market-map style overview
-    _site/images/open-source-golf-landscape-map-1920.png   lighter copy of the map for posts
+    _site/images/open-source-golf-landscape-map-v2.png    market-map style overview
+    _site/images/open-source-golf-landscape-map-v2-1920.png   lighter copy of the map for posts
 
 The intermediate HTML is written next to this script. Standard library only.
 Fonts are macOS system fonts; the outputs are images, so readers do not need them.
@@ -615,7 +615,9 @@ if __name__ == "__main__":
     jobs = [
         ("landscape.html", full_html, "open-source-golf-landscape.png", 1080, None),
         ("landscape-card.html", card_html, "open-source-golf-landscape-card.png", 1200, 675),
-        ("landscape-map.html", map_html, "open-source-golf-landscape-map.png", MAP_WIDTH, None),
+        # /images is cached by browsers for a year as immutable (_site/_headers), so a redrawn map
+        # must ship under a new name: bump the -vN here and in posts.json whenever its look changes.
+        ("landscape-map.html", map_html, "open-source-golf-landscape-map-v2.png", MAP_WIDTH, None),
     ]
     for page_name, build, image_name, width, fixed in jobs:
         src = HERE / page_name
@@ -623,7 +625,7 @@ if __name__ == "__main__":
         h = render(src, IMAGES / image_name, width, fixed)
         print(f"wrote {(IMAGES / image_name).relative_to(ROOT)} ({width}x{h} @2x)")
     # A lighter copy of the map for embedding in posts; it links through to the full-size one.
-    preview = IMAGES / "open-source-golf-landscape-map-1920.png"
-    subprocess.run(["sips", "-Z", "1920", str(IMAGES / "open-source-golf-landscape-map.png"), "--out", str(preview)],
+    preview = IMAGES / "open-source-golf-landscape-map-v2-1920.png"
+    subprocess.run(["sips", "-Z", "1920", str(IMAGES / "open-source-golf-landscape-map-v2.png"), "--out", str(preview)],
                    capture_output=True, check=True)
     print(f"wrote {preview.relative_to(ROOT)}")

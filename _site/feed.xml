@@ -7,7 +7,7 @@
     <language>en</language>
     <atom:link href="https://ossgolf.com/feed.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="https://pubsubhubbub.appspot.com" rel="hub"/>
-    <lastBuildDate>Tue, 17 Nov 2026 07:35:14 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 07:38:43 GMT</lastBuildDate>
     <image>
       <url>https://ossgolf.com/icon.png</url>
       <title>OSSGolf</title>
@@ -20,13 +20,13 @@
       <link>https://ossgolf.com/posts/open-source-golf-is-exploding/index.html</link>
       <description>&lt;p&gt;People are building launch monitors, shot trackers, course databases, and simulator engines in the open, and the list keeps getting longer.&lt;/p&gt;
 &lt;p&gt;Here are the projects we are watching right now.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;/images/open-source-golf-landscape-map-v2.png&quot;&gt;&lt;img src=&quot;/images/open-source-golf-landscape-map-v2-1920.png&quot; alt=&quot;Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking.&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/open-source-golf-landscape-map-v3.png&quot;&gt;&lt;img src=&quot;/images/open-source-golf-landscape-map-v3-1920.png&quot; alt=&quot;Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking.&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Tap the map to open it full size.&lt;/p&gt;
 &lt;p&gt;We will keep adding to this list as more projects show up.&lt;/p&gt;
 </description>
       <content:encoded><![CDATA[<p>People are building launch monitors, shot trackers, course databases, and simulator engines in the open, and the list keeps getting longer.</p>
 <p>Here are the projects we are watching right now.</p>
-<p><a href="/images/open-source-golf-landscape-map-v2.png"><img src="/images/open-source-golf-landscape-map-v2-1920.png" alt="Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking."></a></p>
+<p><a href="/images/open-source-golf-landscape-map-v3.png"><img src="/images/open-source-golf-landscape-map-v3-1920.png" alt="Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking."></a></p>
 <p>Tap the map to open it full size.</p>
 <p>We will keep adding to this list as more projects show up.</p>
 ]]></content:encoded>
@@ -36,7 +36,7 @@
       <category>open-source</category>
       <category>launch-monitor</category>
       <category>community</category>
-      <enclosure url="https://ossgolf.com/images/open-source-golf-landscape-map-v2-1920.png" type="image/png"/>
+      <enclosure url="https://ossgolf.com/images/open-source-golf-landscape-map-v3-1920.png" type="image/png"/>
     </item>
     <item>
       <title>Introducing OSSGolf</title>

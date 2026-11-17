@@ -24,6 +24,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 from fontTools.pens.boundsPen import BoundsPen
+from fontTools.pens.recordingPen import RecordingPen
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
@@ -72,6 +73,7 @@ CELL = 60             # one cursor pixel; the block is 9 x 13 cells = 0.54em x 0
 CURSOR_TOP = 100      # the block runs from just under the ascender line to just below the baseline
 TAGLINE_SCALE = 0.64  # tagline letter size relative to the name
 TAGLINE_BASELINE = 1684
+PIXEL = (48, 88)      # one pixel of VT323's grid (40 x 80) with a little slack
 NAME_STROKE = 20       # 0.02em outline on the prompt and the name, as in the header CSS
 CURSOR = """
 #########
@@ -109,9 +111,40 @@ class Glyphs:
             pen = SVGPathPen(self.set)
             self.set[name].draw(TransformPen(pen, (scale, 0, 0, -scale, x, baseline)))  # flip y
             d.append(pen.getCommands())
+            for x0, y0, x1, y1 in self.pockets(name):
+                d.append(f"M{x + x0 * scale:g} {baseline - y1 * scale:g}H{x + x1 * scale:g}"
+                         f"V{baseline - y0 * scale:g}H{x + x0 * scale:g}Z")
             x += self.font["hmtx"][name][0] * scale + spacing
         outline = f' stroke="{fill}" stroke-width="{stroke:g}"' if stroke else ""
         return f'<path fill="{fill}"{outline} d="{" ".join(d)}"/>', x
+
+    def pockets(self, name: str):
+        """Boxes (in font units) of stray one-pixel holes in a glyph, to be filled in.
+
+        VT323 draws each letter as one outline that touches itself, and in "g" that leaves a
+        single empty pixel between the bowl and the stem: invisible at text sizes, a dark slit at
+        logo sizes. A pocket is a loop between two visits to the same point that, once any loops
+        nested inside it are set aside, is no bigger than one pixel of the font's grid.
+        """
+        rec = RecordingPen()
+        self.set[name].draw(rec)
+        found, pts = [], []
+        for op, args in rec.value:
+            if op == "moveTo":
+                pts = [args[0]]
+            elif op in ("lineTo", "qCurveTo", "curveTo"):
+                pts.append(args[-1])
+            elif pts:
+                n = len(pts)
+                loops = [(i, j) for i in range(n) for j in range(i + 1, n) if pts[i] == pts[j]]
+                for i, j in loops:
+                    nested = [(k, l) for k, l in loops if i < k and l < j]
+                    poly = [pts[t] for t in range(i, j + 1) if not any(k < t <= l for k, l in nested)]
+                    xs, ys = [q[0] for q in poly], [q[1] for q in poly]
+                    if 20 <= max(xs) - min(xs) <= PIXEL[0] and 20 <= max(ys) - min(ys) <= PIXEL[1]:
+                        found.append((min(xs), min(ys), max(xs), max(ys)))
+                pts = []
+        return found
 
     def ink(self, ch: str):
         """Left and right edges of a glyph's outline, in font units."""

@@ -7,13 +7,12 @@ Reads graphics/landscape.json and renders, with headless Chrome at 2x:
 
     _site/images/open-source-golf-landscape.png        the full reference table
     _site/images/open-source-golf-landscape-card.png   1200x675 share card
-    _site/images/open-source-golf-landscape-map-v2.png    market-map style overview
-    _site/images/open-source-golf-landscape-map-v2-1920.png   lighter copy of the map for posts
+    _site/images/open-source-golf-landscape-map-v3.png    market-map style overview
+    _site/images/open-source-golf-landscape-map-v3-1920.png   lighter copy of the map for posts
 
 The intermediate HTML is written next to this script. Standard library only.
 Fonts are macOS system fonts; the outputs are images, so readers do not need them.
 """
-import base64
 import html
 import json
 import re
@@ -334,7 +333,8 @@ html:has(body.map), body.map { --paper: #0e1712; --ink: #e6ead9; --rough: #a3b3a
 body.map .map-head { align-items: center; padding-bottom: 20px; }
 body.map .map-head .mark { height: 112px; flex: none; margin-right: 12px; }
 body.map .map-head h1 { padding-left: 40px; border-left: 3px solid var(--hair); line-height: 112px;
-  font-family: "VT323", monospace; font-weight: 400; font-size: 96px; letter-spacing: 0; }
+  font-size: 0; }
+body.map .map-head h1 svg { height: 96px; display: block; margin: 8px 0; }
 body.map .map-head .sub-line { white-space: nowrap; }
 body.map .zone.hardware { background: #2b1f14; }
 body.map .zone.software { background: #13232f; }
@@ -359,15 +359,9 @@ body.card { width: 1200px; height: 675px; padding: 40px 48px 0; overflow: hidden
 """
 
 
-def font_face() -> str:
-    """VT323, the wordmark's font, embedded so the page needs no access to other folders."""
-    data = base64.b64encode((ROOT / "_site" / "fonts" / "vt323-latin.woff2").read_bytes()).decode()
-    return f'@font-face {{ font-family: "VT323"; src: url("data:font/woff2;base64,{data}") format("woff2"); }}'
-
-
 def page(body_class: str, body: str) -> str:
     return (f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
-            f"<title>The open source golf landscape</title><style>{font_face()}{CSS}</style></head>"
+            f"<title>The open source golf landscape</title><style>{CSS}</style></head>"
             f'<body class="{body_class}">{body}'
             "<script>const r = document.documentElement;"
             "r.dataset.h = Math.ceil(document.body.getBoundingClientRect().height);"
@@ -561,12 +555,18 @@ def map_html(d: dict) -> str:
         )
     # The site's wordmark leads the title. Imported here because logo.py itself imports this module.
     from logo import FONT, Glyphs, wordmark
-    mark, mw, mh = wordmark(Glyphs(FONT))
+    glyphs = Glyphs(FONT)
+    mark, mw, mh = wordmark(glyphs)
     logo = (f'<svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {mw:g} {mh:g}" '
             f'shape-rendering="crispEdges" role="img" aria-label="oss/golf, for the hackers" '
             f'style="width: {112 * mw / mh:.0f}px">{mark}</svg>')
+    # The title is drawn as outlines too, in the wordmark's font, so it gets the same repairs.
+    name = "Open Source Golf Landscape"
+    title, tw = glyphs.text(name, 0, "currentColor")
+    title = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {tw:g} 1000" role="img" '
+             f'aria-label="{name}" style="width: {96 * tw / 1000:.0f}px">{title}</svg>')
     head = (
-        f'<header class="map-head">{logo}<h1>Open Source Golf Landscape</h1>'
+        f'<header class="map-head">{logo}<h1>{title}</h1>'
         f'<p class="sub-line">{total} projects you can build and fork</p>'
         f'<p class="keys"><span>{STAR_ICON} GitHub stars</span><span>{LICENSE_ICON} License</span></p>'
         f'<p class="site"><b>ossgolf.com</b>Snapshot {e(d["asOf"])}</p></header>'
@@ -617,7 +617,7 @@ if __name__ == "__main__":
         ("landscape-card.html", card_html, "open-source-golf-landscape-card.png", 1200, 675),
         # /images is cached by browsers for a year as immutable (_site/_headers), so a redrawn map
         # must ship under a new name: bump the -vN here and in posts.json whenever its look changes.
-        ("landscape-map.html", map_html, "open-source-golf-landscape-map-v2.png", MAP_WIDTH, None),
+        ("landscape-map.html", map_html, "open-source-golf-landscape-map-v3.png", MAP_WIDTH, None),
     ]
     for page_name, build, image_name, width, fixed in jobs:
         src = HERE / page_name
@@ -625,7 +625,7 @@ if __name__ == "__main__":
         h = render(src, IMAGES / image_name, width, fixed)
         print(f"wrote {(IMAGES / image_name).relative_to(ROOT)} ({width}x{h} @2x)")
     # A lighter copy of the map for embedding in posts; it links through to the full-size one.
-    preview = IMAGES / "open-source-golf-landscape-map-v2-1920.png"
-    subprocess.run(["sips", "-Z", "1920", str(IMAGES / "open-source-golf-landscape-map-v2.png"), "--out", str(preview)],
+    preview = IMAGES / "open-source-golf-landscape-map-v3-1920.png"
+    subprocess.run(["sips", "-Z", "1920", str(IMAGES / "open-source-golf-landscape-map-v3.png"), "--out", str(preview)],
                    capture_output=True, check=True)
     print(f"wrote {preview.relative_to(ROOT)}")

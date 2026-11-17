@@ -23,7 +23,7 @@
       "id": "https://ossgolf.com/posts/open-source-golf-is-exploding/index.html",
       "url": "https://ossgolf.com/posts/open-source-golf-is-exploding/index.html",
       "title": "Open source golf is exploding",
-      "content_html": "<p>People are building launch monitors, shot trackers, course databases, and simulator engines in the open, and the list keeps getting longer.</p>\n<p>Here are the projects we are watching right now.</p>\n<p><a href=\"/images/open-source-golf-landscape-map-v2.png\"><img src=\"/images/open-source-golf-landscape-map-v2-1920.png\" alt=\"Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking.\"></a></p>\n<p>Tap the map to open it full size.</p>\n<p>We will keep adding to this list as more projects show up.</p>\n",
+      "content_html": "<p>People are building launch monitors, shot trackers, course databases, and simulator engines in the open, and the list keeps getting longer.</p>\n<p>Here are the projects we are watching right now.</p>\n<p><a href=\"/images/open-source-golf-landscape-map-v3.png\"><img src=\"/images/open-source-golf-landscape-map-v3-1920.png\" alt=\"Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking.\"></a></p>\n<p>Tap the map to open it full size.</p>\n<p>We will keep adding to this list as more projects show up.</p>\n",
       "date_published": "2026-11-16T18:28:43.000Z",
       "tags": [
         "open-source",
@@ -37,7 +37,7 @@
       ],
       "attachments": [
         {
-          "url": "https://ossgolf.com/images/open-source-golf-landscape-map-v2-1920.png",
+          "url": "https://ossgolf.com/images/open-source-golf-landscape-map-v3-1920.png",
           "mime_type": "image/png"
         }
       ]

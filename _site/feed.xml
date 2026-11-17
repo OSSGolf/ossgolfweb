@@ -7,7 +7,7 @@
     <language>en</language>
     <atom:link href="https://ossgolf.com/feed.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="https://pubsubhubbub.appspot.com" rel="hub"/>
-    <lastBuildDate>Tue, 17 Nov 2026 02:30:39 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 07:35:14 GMT</lastBuildDate>
     <image>
       <url>https://ossgolf.com/icon.png</url>
       <title>OSSGolf</title>
@@ -69,8 +69,8 @@
     <item>
       <title>OSSTempo: a DIY LED tempo trainer for golf</title>
       <link>https://ossgolf.com/posts/osstempo/index.html</link>
-      <description>&lt;p&gt;OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving “comet” of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consistent stroke. No audio, no phone screen to stare at mid stroke. Just a light that moves the way a good stroke moves.&lt;/p&gt;
-&lt;p&gt;It is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. Control happens over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo, stroke length, and mode without reflashing anything.&lt;/p&gt;
+      <description>&lt;p&gt;OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving “comet” of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consistent stroke.&lt;/p&gt;
+&lt;p&gt;It is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. Control happens over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo and stroke length.&lt;/p&gt;
 &lt;p&gt;Here it is running a putting stroke:&lt;/p&gt;
 &lt;p&gt;&lt;video controls preload=&quot;metadata&quot; playsinline poster=&quot;/images/osstempo-still.jpg&quot; aria-label=&quot;OSSTempo running a putting stroke on a practice mat: the white comet sweeps the LED strip beside the ball while the green dot marks impact, powered by an ESP32 on a breadboard&quot;&gt;&lt;source src=&quot;/media/osstempo-putting.mp4&quot; type=&quot;video/mp4&quot;&gt;OSSTempo running a putting stroke on a practice mat: the white comet sweeps the LED strip beside the ball while the green dot marks impact, powered by an ESP32 on a breadboard&lt;/video&gt;&lt;/p&gt;
 &lt;h2&gt;Two modes&lt;/h2&gt;
@@ -82,7 +82,7 @@
 &lt;p&gt;Same firmware, same app, two hardware paths:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Full DIY.&lt;/strong&gt; A bare ESP32 dev board, a strip, one resistor, and one capacitor on a breadboard. Lowest cost.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;QuinLED Dig2go.&lt;/strong&gt; A pre assembled controller. Screw in three wires, flash, done.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;QuinLED Dig2go.&lt;/strong&gt; A pre assembled controller.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Both are documented end to end: bill of materials, wiring, flashing, and a pinned, ready to flash sketch.&lt;/p&gt;
 &lt;h2&gt;What is here today&lt;/h2&gt;
@@ -93,8 +93,8 @@
 &lt;li&gt;&lt;a href=&quot;https://github.com/OSSGolf/osstempo-ios&quot;&gt;osstempo-ios (native iOS controller)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-      <content:encoded><![CDATA[<p>OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving “comet” of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consistent stroke. No audio, no phone screen to stare at mid stroke. Just a light that moves the way a good stroke moves.</p>
-<p>It is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. Control happens over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo, stroke length, and mode without reflashing anything.</p>
+      <content:encoded><![CDATA[<p>OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving “comet” of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consistent stroke.</p>
+<p>It is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. Control happens over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo and stroke length.</p>
 <p>Here it is running a putting stroke:</p>
 <p><video controls preload="metadata" playsinline poster="/images/osstempo-still.jpg" aria-label="OSSTempo running a putting stroke on a practice mat: the white comet sweeps the LED strip beside the ball while the green dot marks impact, powered by an ESP32 on a breadboard"><source src="/media/osstempo-putting.mp4" type="video/mp4">OSSTempo running a putting stroke on a practice mat: the white comet sweeps the LED strip beside the ball while the green dot marks impact, powered by an ESP32 on a breadboard</video></p>
 <h2>Two modes</h2>
@@ -106,7 +106,7 @@
 <p>Same firmware, same app, two hardware paths:</p>
 <ul>
 <li><strong>Full DIY.</strong> A bare ESP32 dev board, a strip, one resistor, and one capacitor on a breadboard. Lowest cost.</li>
-<li><strong>QuinLED Dig2go.</strong> A pre assembled controller. Screw in three wires, flash, done.</li>
+<li><strong>QuinLED Dig2go.</strong> A pre assembled controller.</li>
 </ul>
 <p>Both are documented end to end: bill of materials, wiring, flashing, and a pinned, ready to flash sketch.</p>
 <h2>What is here today</h2>

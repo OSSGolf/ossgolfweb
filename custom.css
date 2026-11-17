@@ -89,7 +89,9 @@ body > header .site-mark:visited { color: var(--color-text); }
 body > header .site-mark:hover { text-decoration: none; }
 body > header .site-mark:focus-visible { outline: 2px solid var(--color-link); outline-offset: 6px; }
 body > header .header-top { margin-bottom: 0.75rem; }
-body > header .header-top nav { line-height: 1; }
+/* Article pages wrap the wordmark in a <nav>; the homepage does not. Making that nav a flex box
+   gives both the same layout: the links on the right line up with the name, not the tagline. */
+body > header .header-top nav { display: flex; line-height: 1; }
 
 body > header .site-name {
   display: block;
@@ -136,6 +138,7 @@ body > header .site-name::after {
    with the gaps filling the rest. */
 body > header .site-tagline {
   display: block;
+  font-weight: 400; /* article pages make nav links bold, which would thicken the tagline */
   font-family: "VT323", "VT323 Fallback", ui-monospace, monospace;
   font-size: calc(2.7rem * 0.64);
   letter-spacing: 0.0919em;

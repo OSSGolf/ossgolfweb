@@ -1,3 +1,24 @@
+/* The site is dark for everyone ("Night fairway"). The page colours themselves are set in
+   rsslobster.json (style.overrides); this covers what the preset does not expose: native form
+   controls and scrollbars, and code colours that were picked for a light page. */
+:root {
+  color-scheme: dark;
+  --shiki-foreground: #e6ead9;
+  --shiki-background: color-mix(in srgb, #e6ead9 6%, transparent);
+  --shiki-token-constant: #e9b44c;
+  --shiki-token-string: #8fd46b;
+  --shiki-token-comment: #8fa094;
+  --shiki-token-keyword: #e58fd0;
+  --shiki-token-parameter: #e6ead9;
+  --shiki-token-function: #7cc4f5;
+  --shiki-token-string-expression: #8fd46b;
+  --shiki-token-punctuation: #b9c2b0;
+  --shiki-token-link: #8fd46b;
+}
+
+/* Images made for a light page get a hairline so their edge reads against the dark. */
+.post-thumb img, article img { outline: 1px solid var(--color-border); }
+
 /* Tables: never break a word mid-cell. If the table is wider than the
    column (phones), it scrolls sideways instead of squeezing. */
 table {
@@ -86,7 +107,7 @@ body > header .site-name::before {
   content: ">";
   content: ">" / "";
   font-size: var(--name-size);
-  color: #1d7a3e;
+  color: #39ff14; /* neon prompt */
   margin-right: 0.4em;
   -webkit-text-stroke: 0.02em currentColor; /* a touch heavier than VT323's single weight */
 }
@@ -100,8 +121,8 @@ body > header .site-name::after {
      with gradients on a 0.06em grid (9 x 13 cells) rather than loaded as an image, so nothing
      can block or replace it. Layers, top first: flagstick, the two parts of the flag, block. */
   padding-right: 0.66em;
-  --ink: #222222;
-  --pin: #ffffff;
+  --ink: var(--color-text); /* a light block on the dark page, so the pin is dark */
+  --pin: var(--color-bg);
   --flag: #e0281e;
   background:
     linear-gradient(var(--pin), var(--pin)) right 0.36em top 0.22em / 0.06em 0.54em no-repeat,

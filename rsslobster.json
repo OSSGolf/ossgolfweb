@@ -7,7 +7,16 @@
   "language": "en",
   "style": {
     "preset": "minimal",
-    "cssFile": "custom.css"
+    "cssFile": "custom.css",
+    "overrides": {
+      "colorBackground": "#0e1712",
+      "colorText": "#e6ead9",
+      "colorMuted": "#8fa094",
+      "colorBorder": "#27382e",
+      "colorLink": "#8fd46b",
+      "colorAccent": "#8fd46b",
+      "colorVisited": "#b4cf9f"
+    }
   },
   "repo": "",
   "permalink": "/posts/:slug/index.html"

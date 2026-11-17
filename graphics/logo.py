@@ -4,10 +4,10 @@
     python3 graphics/logo.py
 
 The wordmark is the site header drawn as vector outlines: a green prompt, "oss/golf" in VT323,
-and a block cursor holding a pixel golf flag, with the tagline "for the hackers" spaced to the
+and a light block cursor holding a pixel golf flag, with the tagline "for the hackers" spaced to the
 same width underneath. Outputs:
 
-    logo/ossgolf-wordmark.svg   wordmark and tagline on the site's cream background (in the README)
+    logo/ossgolf-wordmark.svg   wordmark and tagline on the site's dark background (in the README)
     logo/ossgolf-wordmark.png   the same, as a PNG
     logo/ossgolf-avatar.svg     square mark (prompt + flag cursor) for profile pictures
     logo/ossgolf-avatar.png     the same, 1024x1024
@@ -37,7 +37,9 @@ FONT = ROOT / "_site" / "fonts" / "vt323-latin.woff2"
 LOGO = ROOT / "logo"
 OG = ROOT / "_site" / "og-image.png"
 
-PAPER, INK, GREEN, RED, WHITE = "#FFFFF0", "#222222", "#1d7a3e", "#e0281e", "#FFFFFF"
+# The site's dark palette ("Night fairway"): page, text, neon prompt, flag, muted text.
+PAPER, INK, GREEN, RED, MUTED = "#0e1712", "#e6ead9", "#39ff14", "#e0281e", "#8fa094"
+BLACK, WHITE = "#222222", "#FFFFFF"  # the favicon keeps its own black block and white flagstick
 BRIGHT_GREEN = "#35c46a"  # the prompt on black, where the header green is too dark to read
 
 # The favicon, drawn on a 16x16 grid so it stays crisp in a browser tab.
@@ -60,7 +62,7 @@ KKKKKKKKKKKKKKKK
 KKKKKKKKKKKKKKKK
 .KKKKKKKKKKKKKK.
 """.split()
-FAVICON_COLORS = {"K": INK, "g": BRIGHT_GREEN, "w": WHITE, "r": RED}
+FAVICON_COLORS = {"K": BLACK, "g": BRIGHT_GREEN, "w": WHITE, "r": RED}
 
 # Everything below is in font units (1000 per em), matching the header CSS in custom.css.
 ASCENT = 800          # baseline sits this far below the top of the line
@@ -127,7 +129,7 @@ def cursor(x: float) -> str:
                 cells[ch].append(f'<rect x="{x + col * CELL}" y="{CURSOR_TOP + row * CELL}" '
                                  f'width="{CELL}" height="{CELL}"/>')
     return (f'<rect x="{x}" y="{CURSOR_TOP}" width="{w}" height="{h}" fill="{INK}"/>'
-            f'<g fill="{WHITE}">{"".join(cells["."])}</g><g fill="{RED}">{"".join(cells["r"])}</g>')
+            f'<g fill="{PAPER}">{"".join(cells["."])}</g><g fill="{RED}">{"".join(cells["r"])}</g>')
 
 
 def wordmark(g: Glyphs):
@@ -169,7 +171,7 @@ def svg(content: str, w: float, h: float, pad_x: float, pad_y: float, radius: fl
 def favicon_svg(square: bool = False) -> str:
     """The favicon as SVG. `square` fills the clipped corners, for icons the OS masks itself."""
     rects = "".join(
-        f'<rect x="{x}" y="{y}" width="1.02" height="1.02" fill="{FAVICON_COLORS.get(ch, INK)}"/>'
+        f'<rect x="{x}" y="{y}" width="1.02" height="1.02" fill="{FAVICON_COLORS.get(ch, BLACK)}"/>'
         for y, line in enumerate(FAVICON) for x, ch in enumerate(line) if ch != "." or square
     )
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" '
@@ -229,7 +231,7 @@ if __name__ == "__main__":
             f'style="width:820px;display:block">{content}</svg>')
     og = (f'<div style="width:1200px;height:630px;background:{PAPER};display:flex;flex-direction:column;'
           f'align-items:center;justify-content:center;gap:30px">{bare}'
-          f'<p style="font-family:Charter,Georgia,serif;font-size:38px;line-height:1.3;color:#555;'
+          f'<p style="font-family:Charter,Georgia,serif;font-size:38px;line-height:1.3;color:{MUTED};'
           f'text-align:center;max-width:900px">Open source golf hardware and software.</p>'
           f'<p style="font-family:Charter,Georgia,serif;font-weight:700;font-size:30px;color:{INK}">'
           f'ossgolf.com</p></div>')

@@ -13,6 +13,7 @@ Reads graphics/landscape.json and renders, with headless Chrome at 2x:
 The intermediate HTML is written next to this script. Standard library only.
 Fonts are macOS system fonts; the outputs are images, so readers do not need them.
 """
+import base64
 import html
 import json
 import re
@@ -325,6 +326,29 @@ body.map { width: 2560px; padding: 30px 30px 34px; }
   white-space: nowrap; display: inline-block;
   margin-left: 7px; letter-spacing: 0; }
 
+/* The map is dark, to sit on the dark site ("Night fairway"). Segment hues stay as they are (they
+   carry the white tab text); headings and borders use lightened mixes of them, and logos sit on
+   a light plate because many are dark marks on a transparent background. */
+html:has(body.map), body.map { --paper: #0e1712; --ink: #e6ead9; --rough: #a3b3a7; --hair: #33443a;
+  --rule: #060a08; }
+body.map .map-head { align-items: center; padding-bottom: 20px; }
+body.map .map-head .mark { height: 112px; flex: none; margin-right: 12px; }
+body.map .map-head h1 { padding-left: 40px; border-left: 3px solid var(--hair); line-height: 112px;
+  font-family: "VT323", monospace; font-weight: 400; font-size: 96px; letter-spacing: 0; }
+body.map .map-head .sub-line { white-space: nowrap; }
+body.map .zone.hardware { background: #2b1f14; }
+body.map .zone.software { background: #13232f; }
+body.map .zone.hardware .zone-head h2 { color: #f2b98c; }
+body.map .zone.software .zone-head h2 { color: #9fcff2; }
+body.map .box { background: #0f1814; border-color: color-mix(in srgb, var(--hue) 78%, #fff); }
+body.map .box-head h3 { color: color-mix(in srgb, var(--hue) 48%, #fff); }
+body.map .sub { background: color-mix(in srgb, var(--hue) 20%, #0f1814);
+  border-color: color-mix(in srgb, var(--hue) 60%, #0f1814); }
+body.map .chip { background: #1c2822; }
+body.map .chip .logo { background: #f4f5ea; }
+body.map .ico { fill: #f0b429; }
+body.map .ico.line { fill: none; }
+
 /* ---------- share card ---------- */
 body.card { width: 1200px; height: 675px; padding: 40px 48px 0; overflow: hidden; }
 .card h1 { font-size: 62px; }
@@ -335,9 +359,15 @@ body.card { width: 1200px; height: 675px; padding: 40px 48px 0; overflow: hidden
 """
 
 
+def font_face() -> str:
+    """VT323, the wordmark's font, embedded so the page needs no access to other folders."""
+    data = base64.b64encode((ROOT / "_site" / "fonts" / "vt323-latin.woff2").read_bytes()).decode()
+    return f'@font-face {{ font-family: "VT323"; src: url("data:font/woff2;base64,{data}") format("woff2"); }}'
+
+
 def page(body_class: str, body: str) -> str:
     return (f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
-            f"<title>The open source golf landscape</title><style>{CSS}</style></head>"
+            f"<title>The open source golf landscape</title><style>{font_face()}{CSS}</style></head>"
             f'<body class="{body_class}">{body}'
             "<script>const r = document.documentElement;"
             "r.dataset.h = Math.ceil(document.body.getBoundingClientRect().height);"
@@ -529,8 +559,14 @@ def map_html(d: dict) -> str:
             f'<span class="zone-n">{plural(n, "project")}</span></header>'
             f'{"".join(rows)}</section>'
         )
+    # The site's wordmark leads the title. Imported here because logo.py itself imports this module.
+    from logo import FONT, Glyphs, wordmark
+    mark, mw, mh = wordmark(Glyphs(FONT))
+    logo = (f'<svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {mw:g} {mh:g}" '
+            f'shape-rendering="crispEdges" role="img" aria-label="oss/golf, for the hackers" '
+            f'style="width: {112 * mw / mh:.0f}px">{mark}</svg>')
     head = (
-        '<header class="map-head"><h1>Open Source Golf Landscape</h1>'
+        f'<header class="map-head">{logo}<h1>Open Source Golf Landscape</h1>'
         f'<p class="sub-line">{total} projects you can build and fork</p>'
         f'<p class="keys"><span>{STAR_ICON} GitHub stars</span><span>{LICENSE_ICON} License</span></p>'
         f'<p class="site"><b>ossgolf.com</b>Snapshot {e(d["asOf"])}</p></header>'

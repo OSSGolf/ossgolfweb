@@ -25,7 +25,7 @@ Live projects it points to:
 ## Logo and graphics
 
 - `custom.css` holds the site's style overrides, including the `> oss/golf` header.
-- `logo/` holds the wordmark and the square avatar, as SVG and PNG. `python3 graphics/logo.py`
+- `logo/` holds the wordmark and the round avatar, as SVG and PNG. `python3 graphics/logo.py`
   regenerates them, plus the social preview image at `_site/og-image.png`.
 - `python3 graphics/build.py` regenerates the Open Source Golf Landscape map from
   `graphics/landscape.json`.

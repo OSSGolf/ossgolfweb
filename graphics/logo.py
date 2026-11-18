@@ -9,8 +9,8 @@ same width underneath. Outputs:
 
     logo/ossgolf-wordmark.svg   wordmark and tagline on the site's dark background (in the README)
     logo/ossgolf-wordmark.png   the same, as a PNG
-    logo/ossgolf-avatar.svg     square mark (prompt + flag cursor) for profile pictures
-    logo/ossgolf-avatar.png     the same, 1024x1024
+    logo/ossgolf-avatar.svg     round profile picture: the favicon's prompt and flag on a black disc
+    logo/ossgolf-avatar.png     the same, 1024x1024 with transparent corners
     _site/og-image.png          1200x630 social preview for the site
     logo/ossgolf-favicon.svg    16x16 pixel favicon: green prompt and flag on black
     _site/favicon.svg, favicon.ico, icon.png, and the inline icon in every page
@@ -186,11 +186,38 @@ def tagline(g: Glyphs, width: float) -> str:
     return path
 
 
-def avatar_mark(g: Glyphs):
-    """The prompt and the flag cursor on their own: what still reads in a small circle."""
-    prompt, x = g.text(">", 0, GREEN, stroke=NAME_STROKE)
-    x += 300
-    return prompt + cursor(x), x + len(CURSOR[0]) * CELL, 1000
+def avatar_svg(unit: int = 48, side: int = 1024) -> str:
+    """The profile picture: the favicon's prompt and flag, centred on a black disc. The corners
+    are transparent, so it is round wherever it is shown. One favicon pixel is `unit` wide."""
+    marks = [(x, y, ch) for y, line in enumerate(FAVICON) for x, ch in enumerate(line) if ch in "gwr"]
+    xs, ys = [x for x, _, _ in marks], [y for _, y, _ in marks]
+    dx = (side - (max(xs) + 1 + min(xs)) * unit) / 2  # centre the drawing, not the 16x16 grid
+    dy = (side - (max(ys) + 1 + min(ys)) * unit) / 2
+    rects = "".join(
+        f'<rect x="{x * unit + dx:g}" y="{y * unit + dy:g}" width="{unit}" height="{unit}" '
+        f'fill="{FAVICON_COLORS[ch]}"/>' for x, y, ch in marks
+    )
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {side} {side}" role="img" '
+            f'aria-label="oss/golf"><title>oss/golf</title>'
+            f'<circle cx="{side / 2:g}" cy="{side / 2:g}" r="{side / 2:g}" fill="{BLACK}"/>'
+            f'<g shape-rendering="crispEdges">{rects}</g></svg>\n')
+
+
+def avatar_png(out: Path, unit: int = 48, side: int = 1024) -> None:
+    """The same picture as a PNG. Drawn with Pillow, because a Chrome screenshot has no
+    transparency; the disc is drawn at 4x and scaled down for a smooth edge."""
+    from PIL import Image, ImageDraw
+    big = Image.new("L", (side * 4, side * 4), 0)
+    ImageDraw.Draw(big).ellipse((0, 0, side * 4 - 1, side * 4 - 1), fill=255)
+    img = Image.new("RGBA", (side, side), BLACK)
+    draw = ImageDraw.Draw(img)
+    for x, y, w, h, fill in re.findall(r'<rect x="([\d.]+)" y="([\d.]+)" width="(\d+)" height="(\d+)" fill="(#\w+)"',
+                                       avatar_svg(unit, side)):
+        x, y = float(x), float(y)
+        draw.rectangle((x, y, x + int(w) - 1, y + int(h) - 1), fill=fill)
+    img.putalpha(big.resize((side, side), Image.LANCZOS))
+    img.save(out)
+    print(f"wrote {out.relative_to(ROOT)} ({side}x{side}, round)")
 
 
 def svg(content: str, w: float, h: float, pad_x: float, pad_y: float, radius: float, title: str) -> str:
@@ -252,12 +279,9 @@ if __name__ == "__main__":
     W, H = w + 1040, h + 760
     rasterize(mark, LOGO / "ossgolf-wordmark.png", 1200, round(1200 * H / W))
 
-    content, w, h = avatar_mark(g)
-    side = 2200
-    square = svg(content, w, h, pad_x=(side - w) / 2, pad_y=(side - h) / 2 + 10, radius=0, title="oss/golf")
-    (LOGO / "ossgolf-avatar.svg").write_text(square)
+    (LOGO / "ossgolf-avatar.svg").write_text(avatar_svg())
     print("wrote logo/ossgolf-avatar.svg")
-    rasterize(square, LOGO / "ossgolf-avatar.png", 1024, 1024)
+    avatar_png(LOGO / "ossgolf-avatar.png")
 
     content, w, h = wordmark(g)
     bare = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w:g} {h:g}" shape-rendering="crispEdges" '

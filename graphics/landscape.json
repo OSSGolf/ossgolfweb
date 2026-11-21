@@ -21,21 +21,28 @@
                     {
                       "name": "openflight-enclosure",
                       "note": "3D printed case",
-                      "license": "GPL-3.0"
+                      "license": "GPL-3.0",
+                      "url": "https://github.com/open-flight/openflight-enclosure",
+                      "description": "3D-printable enclosure for an OpenFlight monitor, with separate STL parts for the shell, radar and camera fronts, screen bezel and feet, plus CAD source. Minimum print bed is 220 by 190 mm."
                     },
                     {
                       "name": "openflight-mobile-kmp",
                       "note": "Android + iOS app",
-                      "license": "AGPL-3.0"
+                      "license": "AGPL-3.0",
+                      "url": "https://github.com/open-flight/openflight-mobile-kmp",
+                      "description": "A companion app for the OpenFlight launch monitor on Android and iOS, built with Kotlin Multiplatform and native UIs. It shows live shots, sessions and club stats over Wi-Fi or Bluetooth LE."
                     },
                     {
                       "name": "openflight-mobile",
                       "note": "React Native app",
-                      "license": "GPL-3.0"
+                      "license": "GPL-3.0",
+                      "url": "https://github.com/open-flight/openflight-mobile",
+                      "description": "An Expo (React Native) companion app for OpenFlight that connects to the server over a socket connection and mirrors the live shot data from the web UI."
                     }
                   ],
                   "logo": "openflight.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A DIY golf launch monitor built around the OPS243-A Doppler radar on a Raspberry Pi, reporting ball speed, club speed, smash factor and estimated carry, with an optional TI IWR6843 radar for launch angle."
                 }
               ]
             },
@@ -49,7 +56,8 @@
                   "stars": 442,
                   "url": "https://github.com/PiTracLM/PiTrac",
                   "logo": "pitrac.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A launch monitor that uses low-cost Raspberry Pi computers and cameras to measure ball launch speed, angles and spin in three dimensions. It feeds GSPro and E6/TruGolf simulators and a standalone web app."
                 },
                 {
                   "name": "LaunchTrac",
@@ -58,7 +66,8 @@
                   "stars": 2,
                   "url": "https://github.com/r87-e/LaunchTrac",
                   "logo": "launchtrac.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A DIY golf launch monitor in Rust for a Raspberry Pi 5, using two global shutter cameras and IR strobes to measure ball speed, launch angles and spin."
                 }
               ]
             },
@@ -73,7 +82,8 @@
                   "url": "https://github.com/thomasjhook/launch-monitor",
                   "owner": "thomasjhook",
                   "logo": "launch-monitor.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A DIY golf launch monitor on a Raspberry Pi 5 that combines a camera for launch angle and spin, a 10.5 GHz Doppler radar with FFT for ball speed, and an IR trigger for timing."
                 }
               ]
             }
@@ -92,7 +102,8 @@
                   "stars": 14,
                   "url": "https://github.com/open-flight/open-gps",
                   "logo": "open-gps.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A handheld golf shot tracker on an ESP32-S3 with a u-blox GPS module. It saves each shot's start and landing coordinates and distance in yards, exportable over USB as GeoJSON or CSV."
                 }
               ]
             }
@@ -114,11 +125,14 @@
                     {
                       "name": "osstempo-ios",
                       "note": "iPhone controller",
-                      "license": "MIT"
+                      "license": "MIT",
+                      "url": "https://github.com/OSSGolf/osstempo-ios",
+                      "description": "A native SwiftUI and CoreBluetooth iPhone app that connects to the OSSTempo ESP32 trainer over Bluetooth LE, selects modes, triggers strokes and tunes settings with a live preview."
                     }
                   ],
                   "logo": "osstempo.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A golf tempo trainer built from an ESP32 and a WS2812B LED strip, where a light comet sweeps the strip to pace the stroke. A Web Bluetooth page controls it."
                 }
               ]
             }
@@ -137,7 +151,8 @@
                   "stars": 10,
                   "url": "https://github.com/open-flight/open-fp",
                   "logo": "open-fp.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "Open source golf force plates, one per foot, each with four 50 kg load cells read by an Arduino UNO Q. It reports vertical force, center of pressure and weight shift on a web dashboard. Still in hardware bring-up."
                 }
               ]
             }
@@ -161,7 +176,8 @@
                   "host": {
                     "name": "Printables",
                     "icon": "site-printables.png"
-                  }
+                  },
+                  "description": "A 3D printable swing plane trainer for left and right handers. It holds printed alignment sticks at set angles to guide a shallower downswing, and the base can be weighted with lead or BBs."
                 }
               ]
             },
@@ -180,7 +196,8 @@
                   "host": {
                     "name": "MakerWorld",
                     "icon": "site-makerworld.png"
-                  }
+                  },
+                  "description": "A fully 3D printed golf ball dispenser with no extra hardware. Its magazine holds 25 balls and a foot pedal places one ball on the tee per press. Sized to print on an A1 mini."
                 }
               ]
             }
@@ -205,7 +222,8 @@
                   "stars": 70,
                   "url": "https://github.com/jhauck2/OpenShotGolf",
                   "logo": "openshotgolf.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A Godot-based golf simulator that takes shot data from the PiTrac launch monitor or GSPro-style interfaces and models ball flight with drag and Magnus lift."
                 },
                 {
                   "name": "Seneca-Golf",
@@ -214,7 +232,8 @@
                   "stars": 24,
                   "url": "https://github.com/csites/Seneca-Golf",
                   "logo": "seneca-golf.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "An open source golf simulator built on the Urho3D game engine, intended as a base for DIY launch monitor, course building and game design work."
                 },
                 {
                   "name": "GolfForge",
@@ -223,16 +242,18 @@
                   "stars": 16,
                   "url": "https://github.com/GolfForge/golfforge",
                   "logo": "golfforge.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "An open source golf simulator built in Unreal Engine 5 that builds courses from LIDAR and OpenStreetMap data and accepts launch monitor input through GSPro Open Connect connectors."
                 },
                 {
                   "name": "FUSE",
                   "note": "Browser, non-commercial",
                   "license": "PolyForm NC",
                   "stars": 11,
-                  "url": "https://github.com/opengolfsim/fuse",
+                  "url": "https://github.com/OpenGolfSim/fuse",
                   "logo": "fuse.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A lightweight 3D golf physics and simulation engine from OpenGolfSim for WebGL-capable browsers, built on Three.js and WebGPU. It is licensed under PolyForm Noncommercial 1.0.0."
                 },
                 {
                   "name": "cyberflight",
@@ -241,7 +262,8 @@
                   "stars": 5,
                   "url": "https://github.com/divotmaker/cyberflight",
                   "logo": "cyberflight.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A Rust 3D driving range that displays shots received from flighthook, an open source golf automation bus, over a local WebSocket."
                 },
                 {
                   "name": "Open-Birdie",
@@ -250,7 +272,8 @@
                   "stars": 4,
                   "url": "https://github.com/rroojrooj/Open-Birdie",
                   "logo": "open-birdie.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "An Electron desktop golf simulator that plays OpenStreetMap courses with AWS terrain elevation data and accepts shots from GSPro Open Connect launch monitors such as the Uneekor EYEMINI LITE."
                 },
                 {
                   "name": "uopengolf",
@@ -259,7 +282,8 @@
                   "stars": 2,
                   "url": "https://github.com/digitalhand/uopengolf",
                   "logo": "uopengolf.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "An open source golf game for Windows and Linux built in Unreal Engine 5 with C++, with a savanna driving range, a 400-yard par 4, and Square Home or Open Connect launch monitor support."
                 }
               ]
             },
@@ -273,7 +297,8 @@
                   "stars": 42,
                   "url": "https://github.com/markccchiang/Simple-Golf-Simulator",
                   "logo": "simple-golf-simulator.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A Python and Tkinter program that simulates a golf swing from a two-degree-of-freedom model, then computes launch speed and the ball's flight with drag, lift, spin and wind."
                 },
                 {
                   "name": "openfairway",
@@ -282,7 +307,8 @@
                   "stars": 23,
                   "url": "https://github.com/digitalhand/openfairway",
                   "logo": "openfairway.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A Godot 4 physics addon, usable from C# and GDScript, that computes ball flight, bounce and surface interaction from aerodynamic drag and Magnus lift fits."
                 },
                 {
                   "name": "libgolf",
@@ -291,7 +317,8 @@
                   "stars": 12,
                   "url": "https://github.com/gdifiore/libgolf",
                   "logo": "libgolf.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A C++20 library that simulates a golf ball's full flight from launch conditions: aerial arc, bounce, and roll. Aerodynamics, bounce, and roll models are pluggable, and it builds to WebAssembly."
                 },
                 {
                   "name": "dimple",
@@ -300,7 +327,8 @@
                   "stars": 2,
                   "url": "https://github.com/divotmaker/dimple",
                   "logo": "dimple.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A pure Rust crate, with no dependencies, that turns launch-monitor numbers into a full golf shot: flight, bounce, and roll on turf. Air density and wind are configurable."
                 }
               ]
             },
@@ -314,7 +342,8 @@
                   "stars": 60,
                   "url": "https://github.com/chadrockey/TGC-Designer-Tools",
                   "logo": "tgc-designer-tools.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "Python tools for course creation and lidar terrain generation in The Golf Club 2019. The main entry points are a GUI, a lidar map API, and an image-based terrain tool."
                 },
                 {
                   "name": "course-terrain-tool",
@@ -323,7 +352,8 @@
                   "stars": 16,
                   "url": "https://github.com/OpenGolfSim/course-terrain-tool",
                   "logo": "course-terrain-tool.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A desktop app that searches free lidar sources, merges and crops LAZ or DEM files, and outputs raw Unity height maps and satellite overlay images for golf simulator courses."
                 },
                 {
                   "name": "course-meshery-tool",
@@ -332,7 +362,8 @@
                   "stars": 10,
                   "url": "https://github.com/OpenGolfSim/course-meshery-tool",
                   "logo": "course-meshery-tool.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A JavaScript course-building tool from OpenGolfSim that generates base course meshes from an SVG file and a raw height map."
                 }
               ]
             }
@@ -351,7 +382,8 @@
                   "stars": 94,
                   "url": "https://github.com/mholow/gsp-r10-adapter",
                   "logo": "gsp-r10-adapter.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A C# utility that bridges a Garmin Approach R10 launch monitor to GSPro, with direct Bluetooth, an E6 Connect compatible server, and webcam putting options."
                 },
                 {
                   "name": "10over",
@@ -360,7 +392,8 @@
                   "stars": 11,
                   "url": "https://github.com/divotmaker/10over",
                   "logo": "10over.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A Rust client library for the Garmin R10 Bluetooth protocol that decodes BLE, GFDI, and protobuf messages into shot data through a poll-based API."
                 },
                 {
                   "name": "ironsight",
@@ -369,7 +402,8 @@
                   "stars": 8,
                   "url": "https://github.com/divotmaker/ironsight",
                   "logo": "ironsight.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A Rust client library for the FlightScope Mevo+, Mevo Gen2, and Xi radar launch monitors, speaking their binary protocol over TCP with a poll-based API."
                 },
                 {
                   "name": "allsquare",
@@ -378,7 +412,8 @@
                   "stars": 6,
                   "url": "https://github.com/divotmaker/allsquare",
                   "logo": "allsquare.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A Rust client library for the Square Golf Omni launch monitor's BLE protocol, reporting ball and club metrics through a poll-based API, plus a Flight Relay launch monitor binary."
                 },
                 {
                   "name": "R10Kit",
@@ -387,7 +422,8 @@
                   "stars": 4,
                   "url": "https://github.com/OSSGolf/unofficial-r10-ios-sdk",
                   "logo": "r10kit.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A pure Swift package that connects to a Garmin R10 launch monitor over Bluetooth Low Energy and exposes shot metrics, including practice swings without a ball, for iOS, watchOS and macOS apps."
                 },
                 {
                   "name": "Flight Relay Protocol",
@@ -396,7 +432,8 @@
                   "stars": 4,
                   "url": "https://github.com/flightrelay/spec",
                   "logo": "flight-relay-protocol.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "An open JSON message spec, released under CC0, for sending launch monitor shot data over a local WebSocket to simulators, stat trackers and other tools."
                 }
               ]
             },
@@ -410,7 +447,8 @@
                   "stars": 99,
                   "url": "https://github.com/springbok/MLM2PRO-GSPro-Connector",
                   "logo": "mlm2pro-gspro-connector.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A Windows GUI application written in Python that sends Rapsodo MLM2PRO and Mevo+ shots to GSPro, with optional webcam or ExPutt putting support."
                 },
                 {
                   "name": "MLM2PRO-BT-APP",
@@ -419,7 +457,8 @@
                   "stars": 29,
                   "url": "https://github.com/Duwaynef/MLM2PRO-BT-APP",
                   "logo": "mlm2pro-bt-app.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A beta Windows app in C# that connects a Rapsodo MLM2PRO to simulator software over direct Bluetooth through the Open API, with an optional API relay for other connectors."
                 },
                 {
                   "name": "GSPro-MLM2PRO-OCR",
@@ -428,7 +467,8 @@
                   "stars": 23,
                   "url": "https://github.com/rowengb/GSPro-MLM2PRO-OCR-Connector",
                   "logo": "gspro-mlm2pro-ocr.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A Python app that reads Rapsodo MLM2PRO metrics from a mirrored phone or tablet screen using OpenCV and Tesseract OCR, then sends them to GSPro."
                 },
                 {
                   "name": "flighthook",
@@ -437,7 +477,8 @@
                   "stars": 19,
                   "url": "https://github.com/divotmaker/flighthook",
                   "logo": "flighthook.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A Rust bridge that decodes shots from launch monitors such as FlightScope, Square Golf Omni and Garmin R10, and forwards them to simulators like GSPro."
                 },
                 {
                   "name": "gspro-bridge",
@@ -446,7 +487,8 @@
                   "stars": 6,
                   "url": "https://github.com/brettveenstra/gspro-bridge",
                   "logo": "gspro-bridge.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A C# Windows bridge, in early development, intended to send Garmin R10 and optional webcam putting shots to GSPro. The README says it is not yet ready for use."
                 },
                 {
                   "name": "fairway-bridge",
@@ -455,7 +497,8 @@
                   "stars": 5,
                   "url": "https://github.com/401Unauthorized/fairway-bridge",
                   "logo": "fairway-bridge.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A Go application that connects launch monitors, simulators and cameras over a network, with a web UI, shot data logging to CSV, and virtual shot emulation for testing."
                 }
               ]
             }
@@ -474,7 +517,8 @@
                   "stars": 32,
                   "url": "https://github.com/ryanboscobanze/GolfPosePro",
                   "logo": "golfposepro.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A Jupyter notebook for Google Colab that uses MediaPipe Pose to track wrist motion, split a swing into phases, and compare student and pro frames in annotated slow-motion videos."
                 },
                 {
                   "name": "GolfSwingAnalyzer",
@@ -483,7 +527,8 @@
                   "stars": 23,
                   "url": "https://github.com/ktakenos/GolfSwingAnalyzer",
                   "logo": "golfswinganalyzer.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A Python PyQt5 app that estimates body joints in 3D from two synchronized videos of a swing, plotting the skeleton with OpenGL and exporting joint coordinates to CSV."
                 },
                 {
                   "name": "Pose2Par",
@@ -492,7 +537,8 @@
                   "stars": 20,
                   "url": "https://github.com/cavanaulton/Pose2Par",
                   "logo": "pose2par.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A desktop UI and Docker pipeline that turns a standard swing video into biomechanical data using MMPose pose estimation, ML marker enhancement and OpenSim. It reports pelvis and torso rotation, X-factor and swing event timing."
                 },
                 {
                   "name": "golf-swing-analysis",
@@ -501,7 +547,8 @@
                   "stars": 14,
                   "url": "https://github.com/HeleenaRobert/golf-swing-analysis",
                   "logo": "golf-swing-analysis.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A Python script that tracks ear, hip and wrist landmarks with MediaPipe Pose on a down-the-line swing video, draws the swing angle and an X/Y axis overlay, and saves an annotated MP4."
                 },
                 {
                   "name": "PinPoint Studio",
@@ -513,11 +560,14 @@
                     {
                       "name": "PinPointCapture",
                       "note": "iPhone as a camera",
-                      "license": "MIT"
+                      "license": "MIT",
+                      "url": "https://github.com/PinPoint-Golf/PinPointCapture",
+                      "description": "The iPhone companion app for PinPoint Studio, which joins a session as a camera over WiFi or USB. This repository also holds its requirements, design mockups and protocol conformance records."
                     }
                   ],
                   "logo": "pinpoint-studio.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A beta, cross-platform desktop app in C++ and Qt for swing analysis. It combines multi-camera video, IMU wrist sensors and launch monitors, runs pose estimation locally, and reports metrics for each shot."
                 }
               ]
             },
@@ -531,7 +581,8 @@
                   "stars": 11,
                   "url": "https://github.com/ChillVeen/iSwing",
                   "logo": "iswing.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A watchOS and iOS app that records golf swings with Apple Watch motion sensors and reports swing speed, attack angle, tempo and a machine-learning quality rating."
                 }
               ]
             }
@@ -550,7 +601,8 @@
                   "stars": 52,
                   "url": "https://github.com/alleexx/cam-putting-py",
                   "logo": "cam-putting-py.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A webcam putting simulator for GSPro that tracks a colored ball to calculate putt speed in mph and horizontal launch angle. Shots go to a Garmin R10 or MLM2PRO connector, which passes them to GSPro."
                 }
               ]
             }
@@ -569,7 +621,8 @@
                   "stars": 14,
                   "url": "https://github.com/Jacobbrewer1/golf-data-docs",
                   "logo": "golf-data-docs.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "Generated documentation for the Golf Data API, covering clubs, courses, markers and holes. The API currently holds only UK course data."
                 },
                 {
                   "name": "OpenGolfAPI",
@@ -581,11 +634,14 @@
                     {
                       "name": "mcp-server",
                       "note": "For AI assistants",
-                      "license": "MIT"
+                      "license": "MIT",
+                      "url": "https://github.com/opengolfapi/mcp-server",
+                      "description": "An MCP server that lets AI assistants search golf courses, scorecards, tees and weather from OpenGolfAPI, with an optional free key for logging shots and running tournaments."
                     }
                   ],
                   "logo": "opengolfapi.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A community-maintained REST API for golf courses worldwide, with tee sets, hole-by-hole data, climate normals and nearby places. No key is needed for 1,000 requests a day per IP; a free key raises the limit."
                 },
                 {
                   "name": "GeoJSON-GolfCourses",
@@ -594,7 +650,8 @@
                   "stars": 10,
                   "url": "https://github.com/TheMapSmith/GeoJSON-GolfCourses",
                   "logo": "geojson-golfcourses.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A GeoJSON file of named golf course boundaries in North America, extracted from OpenStreetMap ways tagged leisure=golf_course. European courses are listed as coming soon."
                 }
               ]
             }
@@ -613,7 +670,8 @@
                   "stars": 15,
                   "url": "https://github.com/criticalberne/TrackPull",
                   "logo": "trackpull.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A Chrome extension that pulls shot data from Trackman reports and Trackman portal sessions, then exports it as CSV, copies it to Google Sheets, or builds a prompt for an AI chatbot."
                 },
                 {
                   "name": "r10progress",
@@ -622,7 +680,8 @@
                   "stars": 12,
                   "url": "https://github.com/thraizz/r10progress",
                   "logo": "r10progress.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A TypeScript web app that imports CSV shot exports from the Garmin Approach R10 radar, stores them in Firebase, and charts shot trends with Vega and a sortable ag-Grid table."
                 }
               ]
             },
@@ -636,7 +695,8 @@
                   "stars": 46,
                   "url": "https://github.com/gsingers/garmin_golf",
                   "logo": "garmin-golf.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "Browser scripts that export your own Garmin Connect golf scorecards and CT10 shot data as JSON, since Garmin has no public API. Includes jq and Google Sheets processing."
                 },
                 {
                   "name": "ghin",
@@ -646,7 +706,8 @@
                   "url": "https://github.com/n8io/ghin",
                   "owner": "n8io",
                   "logo": "ghin.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "An unofficial TypeScript library, installed from npm, that wraps the GHIN handicap API for handicap lookups, golfer and course search, scoring history and course handicap calculation."
                 },
                 {
                   "name": "golf-app",
@@ -656,7 +717,8 @@
                   "url": "https://github.com/gmalewicz/golf-app",
                   "owner": "gmalewicz",
                   "logo": "golf-app.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "A Java Spring Boot back-end for online scorecards, round results including Stableford and score differential, tournaments, and player result comparison."
                 },
                 {
                   "name": "opengolfapp",
@@ -665,7 +727,8 @@
                   "stars": 5,
                   "url": "https://github.com/cner-smith/opengolfapp",
                   "logo": "opengolfapp.png",
-                  "logoSource": "repo"
+                  "logoSource": "repo",
+                  "description": "A free, open source golf tracking app for web, iOS and Android, with a React web app and Expo mobile app that logs shots, computes strokes gained, shot dispersion and handicap index."
                 }
               ]
             },
@@ -679,7 +742,8 @@
                   "stars": 12,
                   "url": "https://github.com/coreyjs/data-golf-api",
                   "logo": "data-golf-api.png",
-                  "logoSource": "avatar"
+                  "logoSource": "avatar",
+                  "description": "An unofficial Python client for the DataGolf API, installed from PyPI as data_golf, covering general, prediction, betting and historical endpoints. Requires a paid DataGolf API key."
                 }
               ]
             }

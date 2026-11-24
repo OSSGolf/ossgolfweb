@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OSSTagLab: decoding the sound of golf club tags | OSSGolf</title>
+  <meta name="description" content="Shot tracking tags sit on each club and tell a phone which club is out and when it is hit. They do it with sound. Each tag sends short tones between 17 and 20 …">
+  <meta name="author" content="OSSGolf">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="OSSTagLab: decoding the sound of golf club tags">
+  <meta property="og:description" content="Shot tracking tags sit on each club and tell a phone which club is out and when it is hit. They do it with sound. Each tag sends short tones between 17 and 20 kHz, above what most adults can hear and…">
+  <meta property="og:url" content="https://ossgolf.com/posts/osstaglab/index.html">
+  <meta property="og:site_name" content="OSSGolf">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="OSSTagLab: decoding the sound of golf club tags">
+  <meta name="twitter:description" content="Shot tracking tags sit on each club and tell a phone which club is out and when it is hit. They do it with sound. Each tag sends short tones between 17 and 20 kHz, above what most adults can hear and…">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"OSSTagLab: decoding the sound of golf club tags","url":"https://ossgolf.com/posts/osstaglab/index.html","datePublished":"2026-11-24T07:11:10.793Z","dateModified":"2026-11-24T07:11:10.793Z","author":{"@type":"Person","name":"OSSGolf"},"publisher":{"@type":"Person","name":"OSSGolf"},"description":"Shot tracking tags sit on each club and tell a phone which club is out and when it is hit. They do it with sound. Each tag sends short tones between 17 and 20 kHz, above what most adults can hear and…","inLanguage":"en","keywords":"osstaglab, club-tags, audio"}</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%20shape-rendering%3D%22crispEdges%22%3E%3Crect%20x%3D%221%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%224%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%225%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%226%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2211%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2212%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2213%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%220%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%224%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%225%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%226%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2211%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2212%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2213%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2215%22%20y%3D%221%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%224%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%225%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%226%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2211%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2212%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2213%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2215%22%20y%3D%222%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%224%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%225%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%226%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2211%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2212%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2213%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2215%22%20y%3D%223%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%223%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%225%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%226%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23FFFFFF%22/%3E%3Crect%20x%3D%2211%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23e0281e%22/%3E%3Crect%20x%3D%2212%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23e0281e%22/%3E%3Crect%20x%3D%2213%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2215%22%20y%3D%224%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%224%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%225%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%226%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23FFFFFF%22/%3E%3Crect%20x%3D%2211%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23e0281e%22/%3E%3Crect%20x%3D%2212%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23e0281e%22/%3E%3Crect%20x%3D%2213%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23e0281e%22/%3E%3Crect%20x%3D%2214%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23e0281e%22/%3E%3Crect%20x%3D%2215%22%20y%3D%225%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%224%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%225%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%226%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23FFFFFF%22/%3E%3Crect%20x%3D%2211%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23e0281e%22/%3E%3Crect%20x%3D%2212%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23e0281e%22/%3E%3Crect%20x%3D%2213%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23e0281e%22/%3E%3Crect%20x%3D%2214%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23e0281e%22/%3E%3Crect%20x%3D%2215%22%20y%3D%226%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%224%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%225%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%226%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%227%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23FFFFFF%22/%3E%3Crect%20x%3D%2211%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23e0281e%22/%3E%3Crect%20x%3D%2212%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23e0281e%22/%3E%3Crect%20x%3D%2213%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2215%22%20y%3D%227%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%224%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%225%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%226%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%227%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23FFFFFF%22/%3E%3Crect%20x%3D%2211%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2212%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2213%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2215%22%20y%3D%228%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%224%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%225%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%226%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23FFFFFF%22/%3E%3Crect%20x%3D%2211%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2212%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2213%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2215%22%20y%3D%229%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%224%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%225%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%226%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23FFFFFF%22/%3E%3Crect%20x%3D%2211%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2213%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2210%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%223%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%2335c46a%22/%3E%3Crect%20x%3D%224%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%225%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%226%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23FFFFFF%22/%3E%3Crect%20x%3D%2211%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2213%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2211%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%224%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%225%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%226%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2211%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2213%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2212%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%224%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%225%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%226%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2211%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2213%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2213%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%220%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%224%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%225%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%226%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2211%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2213%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2214%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%221%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%222%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%223%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%224%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%225%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%226%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%227%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%228%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%229%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2211%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2213%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3Crect%20x%3D%2214%22%20y%3D%2215%22%20width%3D%221.02%22%20height%3D%221.02%22%20fill%3D%22%23222222%22/%3E%3C/svg%3E">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon.png">
+  <meta name="theme-color" content="#0e1712">
+  <link rel="alternate" type="application/rss+xml" title="OSSGolf" href="/feed.xml">
+  <link rel="alternate" type="application/feed+json" title="OSSGolf" href="/feed.json">
+  <style>:root {
+  --font-body: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-size: 18px;
+  --line-height: 1.6;
+  --max-width: 640px;
+  --color-text: #e6ead9;
+  --color-bg: #0e1712;
+  --color-accent: #8fd46b;
+  --color-link: #8fd46b;
+  --color-visited: #b4cf9f;
+  --color-muted: #8fa094;
+  --color-border: #27382e;
+  --border-radius: 0px;
+  --shiki-foreground: #383a42;
+  --shiki-background: color-mix(in srgb, #222222 5%, transparent);
+  --shiki-token-constant: #986801;
+  --shiki-token-string: #50a14f;
+  --shiki-token-comment: #a0a1a7;
+  --shiki-token-keyword: #a626a4;
+  --shiki-token-parameter: #383a42;
+  --shiki-token-function: #4078f2;
+  --shiki-token-string-expression: #50a14f;
+  --shiki-token-punctuation: #383a42;
+  --shiki-token-link: #0000EE;
+}
+
+/*
+ * rsslobster — retro web, modern rigor.
+ *
+ * This stylesheet is the product. Every rule earns its place.
+ * No framework. No utility classes. Just considered CSS for
+ * pages that are meant to be read.
+ */
+
+/* === Reset === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* === Document === */
+html {
+  font-size: var(--font-size);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  hanging-punctuation: first last;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background: var(--color-bg);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Typography === */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  text-wrap: balance;
+}
+
+h1 { font-size: 1.8rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.4rem; letter-spacing: -0.01em; }
+h3 { font-size: 1.15rem; }
+
+p {
+  margin-bottom: 1em;
+  text-wrap: pretty;
+}
+
+/* === Links — the soul of the web === */
+a {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+}
+
+a:visited {
+  color: var(--color-visited);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 2px;
+  border-radius: var(--border-radius);
+}
+
+/* === Horizontal rule — the great separator === */
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 2rem 0;
+}
+
+/* === Images — responsive, no-nonsense === */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--border-radius);
+}
+
+/* === Video / audio — responsive, no-nonsense === */
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0;
+  border-radius: var(--border-radius);
+  background: #000;
+}
+
+audio {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+/* === Blockquotes — indented, distinct === */
+blockquote {
+  border-left: 3px solid var(--color-border);
+  padding-left: 1em;
+  margin: 1em 0;
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* === Code — monospace stands out === */
+code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 0.9em;
+  background: var(--color-border);
+  background: color-mix(in srgb, var(--color-text) 8%, transparent);
+  padding: 0.1em 0.3em;
+  border-radius: var(--border-radius);
+}
+
+pre {
+  overflow-x: auto;
+  padding: 1em;
+  margin: 1em 0;
+  background: var(--color-border);
+  background: color-mix(in srgb, var(--color-text) 5%, transparent);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* === Tables === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+th {
+  font-weight: 600;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 480px) {
+  table { font-size: 0.8rem; }
+  th, td { padding: 0.4rem 0.5rem; }
+}
+
+/* === Shiki code blocks — override pre defaults with shiki vars === */
+pre.shiki {
+  background: var(--shiki-background) !important;
+  border: 1px solid var(--color-border);
+}
+
+/* === Math (MathML) === */
+math {
+  font-size: 1.1em;
+}
+
+math[display="block"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+/* === Lists — properly indented === */
+ul, ol {
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+li { margin-bottom: 0.25em; }
+
+li::marker {
+  color: var(--color-muted);
+}
+
+/* === Article — the atomic unit of a feed === */
+article {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+article:last-child {
+  border-bottom: none;
+}
+
+/* === Meta — timestamps, bylines === */
+time, .meta {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+}
+
+/* === Tags — small, quiet, clickable === */
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  color: var(--color-muted);
+  text-decoration: none;
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+/* === Carousel — horizontal scroll, snap === */
+.carousel {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.75rem;
+  margin: 1rem 0;
+}
+
+.carousel img {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 80vw;
+  max-width: 480px;
+}
+
+/* === Link card — the bookmark === */
+.link-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+  margin: 1rem 0;
+}
+
+.link-card:visited { color: inherit; }
+
+.link-card:hover, .link-card:focus-visible {
+  border-color: var(--color-link);
+}
+
+.link-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+  color: var(--color-link);
+  font-size: 1.1rem;
+}
+
+.link-card p {
+  color: var(--color-muted);
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+/* === Header / nav — minimal, functional === */
+header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+header h1 {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+header p {
+  color: var(--color-muted);
+  margin-bottom: 0;
+}
+
+nav a {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.15em;
+}
+
+nav a:visited { color: var(--color-text); }
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.header-rss {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.header-rss:hover {
+  color: var(--color-link);
+}
+
+.header-rss:visited {
+  color: var(--color-muted);
+}
+
+/* === Footer — site-level, quiet === */
+footer {
+  margin-top: 0.75rem;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.site-footer a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+.site-footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.site-footer-powered {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* === Post thumbnails on index === */
+.post-thumb {
+  display: block;
+  margin-bottom: 0.75rem;
+  line-height: 0;
+}
+
+.post-thumb img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+}
+
+/* === Post navigation === */
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.post-nav a {
+  color: var(--color-link);
+  text-decoration: none;
+  max-width: 45%;
+}
+
+.post-nav a:hover {
+  text-decoration: underline;
+}
+
+.post-nav-next {
+  text-align: right;
+  margin-left: auto;
+}
+
+/* === Selection — intentional === */
+::selection {
+  background: var(--color-link);
+  color: var(--color-bg);
+}
+
+/* === Accessibility: skip link === */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 0.5rem 1rem;
+  background: var(--color-link);
+  color: var(--color-bg);
+  z-index: 100;
+  text-decoration: none;
+  font-family: var(--font-heading);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* === Touch targets — minimum 44x44px (WCAG 2.5.8) === */
+nav a, button, .tag {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+  html { font-size: calc(var(--font-size) - 1px); }
+  body { padding: 1.5rem 0.75rem; }
+  h1 { font-size: 1.5rem; }
+}
+
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* === Print — because retro web people print things === */
+@media print {
+  body {
+    max-width: 100%;
+    padding: 0;
+    color: #000;
+    background: #fff;
+  }
+  a { color: #000; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+  .skip-link, nav { display: none; }
+  article { border-bottom: none; page-break-inside: avoid; }
+}
+
+
+/* The site is dark for everyone ("Night fairway"). The page colours themselves are set in
+   rsslobster.json (style.overrides); this covers what the preset does not expose: native form
+   controls and scrollbars, and code colours that were picked for a light page. */
+:root {
+  color-scheme: dark;
+  --shiki-foreground: #e6ead9;
+  --shiki-background: color-mix(in srgb, #e6ead9 6%, transparent);
+  --shiki-token-constant: #e9b44c;
+  --shiki-token-string: #8fd46b;
+  --shiki-token-comment: #8fa094;
+  --shiki-token-keyword: #e58fd0;
+  --shiki-token-parameter: #e6ead9;
+  --shiki-token-function: #7cc4f5;
+  --shiki-token-string-expression: #8fd46b;
+  --shiki-token-punctuation: #b9c2b0;
+  --shiki-token-link: #8fd46b;
+}
+
+/* Images made for a light page get a hairline so their edge reads against the dark. */
+.post-thumb img, article img { outline: 1px solid var(--color-border); }
+
+/* Tables: never break a word mid-cell. If the table is wider than the
+   column (phones), it scrolls sideways instead of squeezing. */
+table {
+  display: block;
+  overflow-x: auto;
+}
+
+th, td {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+th, td:first-child {
+  white-space: nowrap;
+}
+
+/* Homepage thumbnails are cropped to 280px tall, which suits portrait photos but cuts the
+   title off the wide landscape map. Show that one whole. */
+.post-thumb img[src*="open-source-golf-landscape-map"] {
+  max-height: none;
+  height: auto;
+}
+
+/* Homepage: the search box belongs with the header, so the divider goes under the search
+   box instead of under the tagline. Browsers without :has() keep the original layout. */
+body:has(#search-form) > header {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 1.25rem;
+}
+
+body:has(#search-form) #search-form {
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Site name as a console prompt: "> oss/golf" with a golf-flag block cursor, set in VT323 (SIL
+   Open Font License, served from /fonts with its license). The markup still says "OSSGolf", which
+   is what assistive tech and copy-paste get: its own text is collapsed to zero size and the
+   styled version is drawn by the two pseudo-elements, which carry empty alt text. */
+/* graphics/postbuild.py replaces this URL with the font itself (a data: URI holding only the
+   wordmark's letters), so the header never waits on a font request. */
+@font-face {
+  font-family: "VT323";
+  src: url("data:font/woff2;base64,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") format("woff2");
+  font-display: block;
+}
+
+/* If VT323 cannot be used at all, fall back to a local monospace scaled to VT323's narrower
+   letters (0.4em wide against the usual 0.6em), so the header keeps the same width. */
+@font-face {
+  font-family: "VT323 Fallback";
+  src: local("Menlo"), local("Consolas"), local("DejaVu Sans Mono"), local("Courier New");
+  size-adjust: 66.5%;
+}
+
+/* The whole wordmark (name, cursor and tagline) is one link to the homepage on every page.
+   graphics/postbuild.py wraps it: a.site-mark > .site-name + .site-tagline. */
+body > header .site-mark {
+  display: inline-block;
+  min-height: 0;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+body > header .site-mark:visited { color: var(--color-text); }
+body > header .site-mark:hover { text-decoration: none; }
+body > header .site-mark:focus-visible { outline: 2px solid var(--color-link); outline-offset: 6px; }
+body > header .header-top { margin-bottom: 0.75rem; }
+/* Article pages wrap the wordmark in a <nav>; the homepage does not. Making that nav a flex box
+   gives both the same layout: the links on the right line up with the name, not the tagline. */
+body > header .header-top nav { display: flex; line-height: 1; }
+
+body > header .site-name {
+  display: block;
+  margin: 0 0 0.3rem; /* rem, because font-size: 0 would zero an em-based margin */
+  font-family: "VT323", "VT323 Fallback", ui-monospace, monospace;
+  font-weight: 400;
+  font-size: 0;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
+  --name-size: 2.7rem;
+}
+
+body > header .site-name::before {
+  content: ">";
+  content: ">" / "";
+  font-size: var(--name-size);
+  color: #39ff14; /* neon prompt */
+  margin-right: 0.4em;
+  -webkit-text-stroke: 0.02em currentColor; /* a touch heavier than VT323's single weight */
+}
+
+body > header .site-name::after {
+  content: "oss/golf";
+  content: "oss/golf" / "";
+  font-size: var(--name-size);
+  -webkit-text-stroke: 0.02em currentColor;
+  /* The cursor: a block with a pixel golf flag, sitting just after the last letter. It is drawn
+     with gradients on a 0.06em grid (9 x 13 cells) rather than loaded as an image, so nothing
+     can block or replace it. Layers, top first: flagstick, the two parts of the flag, block. */
+  padding-right: 0.66em;
+  --ink: var(--color-text); /* a light block on the dark page, so the pin is dark */
+  --pin: var(--color-bg);
+  --flag: #e0281e;
+  background:
+    linear-gradient(var(--pin), var(--pin)) right 0.36em top 0.22em / 0.06em 0.54em no-repeat,
+    linear-gradient(var(--flag), var(--flag)) right 0.24em top 0.22em / 0.12em 0.24em no-repeat,
+    linear-gradient(var(--flag), var(--flag)) right 0.12em top 0.28em / 0.12em 0.12em no-repeat,
+    linear-gradient(var(--ink), var(--ink)) right 0 top 0.1em / 0.54em 0.78em no-repeat;
+}
+
+/* The tagline. Its size, letter spacing and indent are the same ratios graphics/logo.py uses, so
+   the text spans exactly the width of "> oss/golf" plus its cursor: 0.64 of the name's size,
+   with the gaps filling the rest. */
+body > header .site-tagline {
+  display: block;
+  font-weight: 400; /* article pages make nav links bold, which would thicken the tagline */
+  font-family: "VT323", "VT323 Fallback", ui-monospace, monospace;
+  font-size: calc(2.7rem * 0.64);
+  letter-spacing: 0.0919em;
+  line-height: 1;
+  margin: 0 0 0 0.0506em;
+  white-space: nowrap;
+}
+
+/* GitHub and RSS links at the right of the header (the GitHub link is added by graphics/postbuild.py). */
+.header-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-gh {
+  display: inline-flex;
+  color: var(--color-muted);
+}
+
+.header-gh:hover { color: var(--color-link); }
+.header-gh:visited { color: var(--color-muted); }
+
+/* The project directory in "Open source golf is exploding" has three heading levels in a row:
+   side, segment, group. RSS Lobster moves post headings down one level, so those are h3, h4 and
+   h5. The side is the loud one, the group label the quiet one. */
+article h3 { margin-top: 2.5rem; font-size: 1.5rem; }
+article h4 {
+  margin: 2rem 0 0.25rem;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+article h5 {
+  margin: 1.1rem 0 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+article h4 + h5 { margin-top: 0.5rem; }
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="header-top">
+      <nav><a class="site-mark" href="/" aria-label="OSSGolf, for the hackers: home"><span class="site-name">OSSGolf</span><span class="site-tagline">for the hackers</span></a></nav>
+      <span class="header-links"><a href="https://github.com/OSSGolf" class="header-gh" aria-label="OSSGolf on GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg></a><a href="/feed.xml" class="header-rss" aria-label="RSS Feed"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56z"/><path d="M4 10.1v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg> RSS</a></span>
+    </div>
+    <p>Open source golf hardware and software.</p>
+  </header>
+  <main id="main">
+    <article>
+      <h1>OSSTagLab: decoding the sound of golf club tags</h1>
+      <div><p>Shot tracking tags sit on each club and tell a phone which club is out and when it is hit. They do it with sound. Each tag sends short tones between 17 and 20 <a href="https://en.wikipedia.org/wiki/Hertz">kHz</a>, above what most adults can hear and inside what a laptop or phone microphone can record.</p>
+<p>We want club tagging to be open to anybody. So we recorded a set of 12 tags with a MacBook microphone, worked out what they send, and documented it here. OSSTagLab is the web app we built to do it. It shows the signal live, decodes it, and names the club. It is open source.</p>
+<h3>How we listened</h3>
+<p>We studied the tones as pictures.</p>
+<p><strong>Record.</strong> The browser records the microphone at 48 kHz, which is 48,000 <a href="https://en.wikipedia.org/wiki/Sampling_(signal_processing)">samples</a> per second. A recording holds frequencies up to half its sample rate, the <a href="https://en.wikipedia.org/wiki/Nyquist_frequency">Nyquist frequency</a>, so 48 kHz covers everything up to 24 kHz. The app asks the browser to switch off echo cancellation, noise suppression, automatic gain and voice isolation, so the microphone signal arrives as recorded.</p>
+<p><strong>Draw a spectrogram.</strong> A <a href="https://en.wikipedia.org/wiki/Spectrogram">spectrogram</a> is a picture of sound with time across, frequency up, and brightness for loudness. It is made with a <a href="https://en.wikipedia.org/wiki/Short-time_Fourier_transform">short-time Fourier transform</a>. The recording is cut into short overlapping slices, and a <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">fast Fourier transform</a> on each slice shows which frequencies are in it. Each slice is faded in and out with a <a href="https://en.wikipedia.org/wiki/Hann_function">Hann window</a>, which reduces <a href="https://en.wikipedia.org/wiki/Spectral_leakage">spectral leakage</a> and keeps each peak narrow.</p>
+<p><strong>Follow the tone.</strong> Each slice has one strong peak, the tone the tag is sending. The decoder uses slices 10 ms long, one every millisecond. It pads each slice with zeros to 2,048 points for a finer frequency grid, then fits a curve through the peak. That places the tone to within about 10 Hz. It keeps the strongest frequency between 16.5 and 21 kHz when that peak is 15 <a href="https://en.wikipedia.org/wiki/Decibel">dB</a> above the noise around it. The result is one frequency per millisecond.</p>
+<p><strong>Read the steps.</strong> Every signal a tag sends is a pattern of steps, small jumps in frequency, in that track. Sending data by switching between tones is called <a href="https://en.wikipedia.org/wiki/Frequency-shift_keying">frequency-shift keying</a>. With eight tones to choose from it is <a href="https://en.wikipedia.org/wiki/Multiple_frequency-shift_keying">multiple frequency-shift keying</a>.</p>
+<p>For close study the app also cuts a recording down to a band around the tag tones with a <a href="https://en.wikipedia.org/wiki/Band-pass_filter">band-pass filter</a> and plots its level and its <a href="https://en.wikipedia.org/wiki/Instantaneous_phase_and_frequency">instantaneous frequency</a> over time.</p>
+<h3>What we found</h3>
+<p>Each tag has a rest tone near 18 kHz, the tone it holds between signals. A signal is a pattern of short steps away from that tone and back. A tag makes one tone at a time.</p>
+<p>A tag has two triggers. Light wakes it, and a hit changes what it sends. That gives three signals:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>When</th>
+<th>What it is</th>
+<th>What it tells the phone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wake tone</td>
+<td>The tag wakes</td>
+<td>One steady tone for about 0.4 s</td>
+<td>A club is out</td>
+</tr>
+<tr>
+<td>Resting frame</td>
+<td>While the tag is awake</td>
+<td>Six 10 ms tones around the rest tone, repeated every 172 ms</td>
+<td>Which club</td>
+</tr>
+<tr>
+<td>After hit signal</td>
+<td>After a hit</td>
+<td>The rest tone moves up 1 kHz and hops at a fixed interval</td>
+<td>The club was hit</td>
+</tr>
+</tbody>
+</table>
+<p>A 9 iron sends all three in four seconds.</p>
+<p><img src="/images/osstaglab-9-iron-timeline-v1.png" alt="Spectrogram of a 9 iron tag from 16.8 to 20.2 kHz over four seconds. A steady wake tone at 18.80 kHz lasts about 0.4 seconds. Half a second later the resting frame starts around a rest tone of 17.91 kHz and repeats every 172 ms. At 3.6 seconds the club is hit and the signal moves up to a hop pattern at 18.91 kHz." width="1920" height="780" style="aspect-ratio: 1920 / 780"></p>
+<p>The sections below take each signal in turn, then the putter, which differs in two ways.</p>
+<h3>The wake tone</h3>
+<p>A tag wakes when light reaches it. We woke ours with a flashlight. On the course the same thing happens when the club comes out of the bag.</p>
+<p>The tag starts with one steady tone that lasts about 0.4 seconds. On our 11 clubs from driver to wedge the wake tone sits about 0.9 kHz above the rest tone, between 18.68 and 18.92 kHz.</p>
+<h3>The rest tone and the resting frame</h3>
+<p>About half a second after the wake tone ends, the tag settles on its rest tone. Our tags rest between 17.78 and 18.02 kHz.</p>
+<p>Every 172 ms the tag sends a frame. A frame is six symbols. Each symbol is a 10 ms tone, and a new symbol starts about every 20 ms. Between symbols the tag returns to its rest tone.</p>
+<p>A symbol is a step away from the rest tone. Steps are 100 Hz each, and a symbol moves 1 to 4 steps up or down. We saw eight values per symbol. That is up to 3 bits per symbol and 18 bits per frame.</p>
+<p>One frame from the 9 iron, up close:</p>
+<p><img src="/images/osstaglab-resting-frame-v1.png" alt="Close view of one 9 iron resting frame. The rest tone is a flat line at 17.91 kHz. Six short tones step away from it by plus 4, minus 1, minus 2, plus 1, minus 4 and minus 3 steps of 100 Hz. The next frame starts 172 ms after the first." width="1920" height="840" style="aspect-ratio: 1920 / 840"></p>
+<p>This frame reads +4 −1 −2 +1 −4 −3. Every club in the bag has a different frame, so the frame names the club.</p>
+<p>The tag repeats its resting frame while it stays in the light. Our recordings show it repeating for about 6 seconds in a row. A phone that starts listening late still hears the club within a fraction of a second. When the light goes away the tag goes quiet.</p>
+<h3>The after hit signal</h3>
+<p>When the club is hit, the tag answers within about 12 ms. It moves its rest tone up by 1 kHz and starts a hop pattern. A hop is one jump up that lasts about 21 ms, then a return to the raised tone. The hops repeat at a fixed interval for several seconds. In our recordings the pattern ran for about 6.5 seconds after the last hit, then the resting frame came back.</p>
+<p>Two numbers describe a hop pattern: the size of the jump and the time between jumps. Our tags jump 200, 300, 400 or 500 Hz, and they jump every 60, 80, 100 or 120 ms. Those intervals are 3, 4, 5 and 6 symbol slots of about 20 ms.</p>
+<p><img src="/images/osstaglab-hop-patterns-v1.png" alt="Two spectrograms of the half second after a hit. The 9 iron jumps up 409 Hz every 61 ms. The 56 degree wedge jumps up 302 Hz every 122 ms." width="1920" height="1080" style="aspect-ratio: 1920 / 1080"></p>
+<p>The figure shows measured values. The text rounds them.</p>
+<p>The hop pattern reports the hit. Two pairs of clubs share a pattern. The 7 iron and 9 iron both jump 400 Hz every 60 ms, and the 56° wedge and approach wedge both jump 300 Hz every 120 ms. The resting frame heard just before the hit says which club it was.</p>
+<h3>How the putter is different</h3>
+<p>The putter tag follows the same plan with two changes.</p>
+<p>Its wake tone is 19.81 kHz. That is 1.9 kHz above its rest tone and about 1 kHz above every other club’s wake tone.</p>
+<p>After a hit it stays on its rest tone and sends a second frame. Its resting frame is −4 −2 −1 −3 −1 +1. Its frame after a hit is +1 +3 +4 +2 +4 −1. All six symbols change. The second frame starts about 60 ms after the tap and repeats for about two seconds. Then the resting frame comes back.</p>
+<p>The app’s analysis view shows the full putter sequence, with each signal labeled.</p>
+<p><img src="/images/osstaglab-putter-labeled-v1.png" alt="Screenshot of the OSSTagLab analysis view for a putter, with each signal boxed and labeled. A wake tone at 19.8 kHz, then the resting frame near 18 kHz, then a tap that shows as a vertical line across the whole picture, then the frame after the hit, then the resting frame again." width="2052" height="1408" style="aspect-ratio: 2052 / 1408"></p>
+<p>The top panel is the spectrogram. The middle panel is the level in the tag band. The bottom panel is the frequency of the signal over time, where each symbol shows as a step.</p>
+<h3>All 12 clubs</h3>
+<p>Frequencies are in kHz. Each frame is six symbols in steps of 100 Hz from the rest tone.</p>
+<table>
+<thead>
+<tr>
+<th>Club</th>
+<th>Rest tone</th>
+<th>Resting frame</th>
+<th>Wake tone</th>
+<th>After a hit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Driver</td>
+<td>17.86</td>
+<td>−2 +3 −2 −3 −4 −3</td>
+<td>18.76</td>
+<td>+400 Hz every 100 ms</td>
+</tr>
+<tr>
+<td>9 Wood</td>
+<td>17.90</td>
+<td>−1 +2 +3 +2 +4 −3</td>
+<td>18.79</td>
+<td>+200 Hz every 60 ms</td>
+</tr>
+<tr>
+<td>4 Iron</td>
+<td>17.97</td>
+<td>+1 +2 +3 −4 −4 −3</td>
+<td>18.86</td>
+<td>+500 Hz every 120 ms</td>
+</tr>
+<tr>
+<td>6 Iron</td>
+<td>17.93</td>
+<td>−3 +2 +2 +2 +3 −3</td>
+<td>18.82</td>
+<td>+500 Hz every 80 ms</td>
+</tr>
+<tr>
+<td>7 Iron</td>
+<td>17.78</td>
+<td>−4 −2 +2 +3 −4 −3</td>
+<td>18.68</td>
+<td>+400 Hz every 60 ms</td>
+</tr>
+<tr>
+<td>8 Iron</td>
+<td>17.88</td>
+<td>+3 +4 −2 +3 +4 −3</td>
+<td>18.76</td>
+<td>+400 Hz every 120 ms</td>
+</tr>
+<tr>
+<td>9 Iron</td>
+<td>17.91</td>
+<td>+4 −1 −2 +1 −4 −3</td>
+<td>18.80</td>
+<td>+400 Hz every 60 ms</td>
+</tr>
+<tr>
+<td>Approach Wedge</td>
+<td>18.02</td>
+<td>−2 +2 −4 +3 +4 −3</td>
+<td>18.92</td>
+<td>+300 Hz every 120 ms</td>
+</tr>
+<tr>
+<td>52° Wedge</td>
+<td>17.94</td>
+<td>+4 −4 −3 −4 +4 −3</td>
+<td>18.83</td>
+<td>+200 Hz every 120 ms</td>
+</tr>
+<tr>
+<td>56° Wedge</td>
+<td>17.83</td>
+<td>+1 +3 +4 −3 +4 −3</td>
+<td>18.72</td>
+<td>+300 Hz every 120 ms</td>
+</tr>
+<tr>
+<td>60° Wedge</td>
+<td>17.92</td>
+<td>+3 −1 +3 −2 +3 −3</td>
+<td>18.82</td>
+<td>+500 Hz every 60 ms</td>
+</tr>
+<tr>
+<td>Putter</td>
+<td>17.92</td>
+<td>−4 −2 −1 −3 −1 +1</td>
+<td>19.81</td>
+<td>Frame +1 +3 +4 +2 +4 −1</td>
+</tr>
+</tbody>
+</table>
+<p>Every resting frame from driver to wedge ends in −3. The putter’s ends in +1.</p>
+<p>The hop values are rounded to the nearest 100 Hz and 20 ms. The measured values are in the repo.</p>
+<h3>Hearing the hit</h3>
+<p>The strike itself is also in the recording. It is a short click that covers every frequency, which is why it shows as a vertical line in the putter picture above. The decoder listens for it from 2 to 8 kHz, well below the tag band. In our test recordings the click is 28 to 36 dB louder than the room and lasts about 10 to 120 ms.</p>
+<p>OSSTagLab counts a hit each time the tag answers. The click gives the time of the hit. A soft hit with a faint click still counts, because the tag’s answer is enough.</p>
+<h3>OSSTagLab</h3>
+<p>OSSTagLab runs on your own computer and listens through the browser.</p>
+<p><img src="/images/osstaglab-app-v1.png" alt="Screenshot of the OSSTagLab web app. A row of club chips across the top, the spectrogram panel from 0 to 24 kHz, a hits panel on the right, and a saved clubs table listing each club's resting frame, rest tone, wake tone and hop pattern." width="2800" height="3000" style="aspect-ratio: 2800 / 3000"></p>
+<p>What it does:</p>
+<ul>
+<li><strong>Live spectrogram.</strong> See the tag band as you shine a light on a tag.</li>
+<li><strong>Decoder.</strong> Reads the wake tone, the resting frame and the after hit signal from the microphone.</li>
+<li><strong>Club mapping.</strong> Pick a club, light its tag, tap the club, and the app saves what it sends.</li>
+<li><strong>Identify.</strong> Light any mapped tag and the app names the club and counts each hit.</li>
+<li><strong>Captures.</strong> Save a few seconds of audio and study it in the analysis view.</li>
+</ul>
+<p>It runs on Python 3.9 or newer and a browser. The server uses the Python standard library.</p>
+<pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0"><code class="language-text"><span class="line"><span>git clone https://github.com/OSSGolf/osstaglab</span></span>
+<span class="line"><span>cd osstaglab</span></span>
+<span class="line"><span>python3 server.py</span></span></code></pre>
+<p>Then open <a href="http://127.0.0.1:8765">http://127.0.0.1:8765</a> and press <strong>Start listening</strong>.</p>
+<p>OSSTagLab is an independent project, built by listening to our own set of tags. The decoder is plain JavaScript with tests and a set of short recordings, so anybody can port it to a phone or a microcontroller.</p>
+<ul>
+<li><a href="https://github.com/OSSGolf/osstaglab">osstaglab (web app, decoder, recordings)</a></li>
+</ul>
+</div>
+      <footer class="meta">
+        <time datetime="2026-11-24T07:11:10.793Z">November 24, 2026</time>
+        <span class="tag">osstaglab</span> <span class="tag">club-tags</span> <span class="tag">audio</span>
+      </footer>
+    </article>
+    <nav class="post-nav" aria-label="Post navigation">
+      <a href="https://ossgolf.com/posts/open-source-golf-is-exploding/index.html" class="post-nav-next">Open source golf is exploding &rarr;</a>
+    </nav>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-top">
+      <span>© 2026 ossgolf.com</span>
+      <a href="/feed.xml" aria-label="RSS Feed"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56z"/><path d="M4 10.1v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg> RSS</a>
+    </div>
+    <div class="site-footer-powered">
+      Powered by <a href="https://github.com/HectorZarate/rsslobster">RSS Lobster</a> 🦞
+    </div>
+  </footer>
+
+</body>
+</html>

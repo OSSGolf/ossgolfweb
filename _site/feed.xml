@@ -7,7 +7,7 @@
     <language>en</language>
     <atom:link href="https://ossgolf.com/feed.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="https://pubsubhubbub.appspot.com" rel="hub"/>
-    <lastBuildDate>Tue, 24 Nov 2026 16:08:01 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 16:38:16 GMT</lastBuildDate>
     <image>
       <url>https://ossgolf.com/icon.png</url>
       <title>OSSGolf</title>
@@ -23,7 +23,7 @@
 &lt;p&gt;Overall, the software experience was smooth. However, when I wanted to play one of my favorite short par 3 courses, the 4 hole Joe Balander course in Austin, Texas, I ran into one of its shortcomings. The app reported 6 holes instead of the actual 4.&lt;/p&gt;
 &lt;p&gt;I emailed Arccos support and they told me the software simply didn’t support 4 hole courses. They only supported 6, 9, 12, and 18 hole courses. This limitation seemed like a hard coded, arbitrary rule. Now I had motivation to go along with my curiosity. And so began the journey of &lt;a href=&quot;https://github.com/OSSGolf/osstaglab&quot;&gt;OSSTagLab&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;A shot tracking tag has one job: tell a phone which club left the bag and when it struck the ball. It does that with sound, in short tones between 17 and 20 &lt;a href=&quot;https://en.wikipedia.org/wiki/Hertz&quot;&gt;kHz&lt;/a&gt;, just above what most adults hear and well inside what a laptop microphone records.&lt;/p&gt;
-&lt;p&gt;A set of 12 Arccos Gen 4 tags, a MacBook microphone and a flashlight were enough to work out what the tags say. OSSTagLab is the open source web app that came out of it, built to open club tagging to anybody.&lt;/p&gt;
+&lt;p&gt;A set of Arccos Gen 4 tags, a MacBook microphone and a flashlight were enough to work out what the tags say. OSSTagLab is the open source web app that came out of it, built to open club tagging to anybody.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/osstaglab-9-iron-timeline-v1.png&quot; alt=&quot;Spectrogram of a 9 iron tag over four seconds. A wake tone at 18.80 kHz, then the resting frame repeating around a rest tone of 17.91 kHz, then a hit and a hop pattern at 18.91 kHz.&quot;&gt;&lt;/p&gt;
 &lt;h2&gt;Listening at 18 kHz&lt;/h2&gt;
 &lt;p&gt;A browser records the microphone at 48 kHz, which captures everything up to 24 kHz, the &lt;a href=&quot;https://en.wikipedia.org/wiki/Nyquist_frequency&quot;&gt;Nyquist frequency&lt;/a&gt;. A &lt;a href=&quot;https://en.wikipedia.org/wiki/Spectrogram&quot;&gt;spectrogram&lt;/a&gt; makes the result visible: time runs across, frequency runs up, brightness shows loudness. Under the hood it is a &lt;a href=&quot;https://en.wikipedia.org/wiki/Short-time_Fourier_transform&quot;&gt;short-time Fourier transform&lt;/a&gt;: short slices of the recording, each shaped by a &lt;a href=&quot;https://en.wikipedia.org/wiki/Hann_function&quot;&gt;Hann window&lt;/a&gt; and passed through a &lt;a href=&quot;https://en.wikipedia.org/wiki/Fast_Fourier_transform&quot;&gt;fast Fourier transform&lt;/a&gt;.&lt;/p&gt;
@@ -32,11 +32,11 @@
 &lt;h2&gt;Three signals&lt;/h2&gt;
 &lt;p&gt;A tag sends one tone at a time and rests near 18 kHz. Light wakes it and a hit changes its tune, which gives three signals to learn: a wake tone, a resting frame and an after hit signal.&lt;/p&gt;
 &lt;h2&gt;The wake tone&lt;/h2&gt;
-&lt;p&gt;A tag wakes when light reaches it, as it does when a club leaves the bag. It announces itself with one steady tone for about 0.4 seconds, about 0.9 kHz above its rest tone. From driver to wedge, 11 clubs land between 18.68 and 18.92 kHz.&lt;/p&gt;
+&lt;p&gt;A tag wakes when light reaches it, as it does when a club leaves the bag. It announces itself with one steady tone for about 0.4 seconds, about 0.9 kHz above its rest tone. From driver to wedge, the clubs land between 18.68 and 18.92 kHz.&lt;/p&gt;
 &lt;h2&gt;The resting frame&lt;/h2&gt;
 &lt;p&gt;Half a second later the tag settles onto its rest tone, between 17.78 and 18.02 kHz on this set. Every 172 ms it sends a frame of six symbols, each a 10 ms tone 1 to 4 steps of 100 Hz above or below the rest tone.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/osstaglab-resting-frame-v1.png&quot; alt=&quot;Close view of one 9 iron resting frame. Six short tones step away from the 17.91 kHz rest tone by plus 4, minus 1, minus 2, plus 1, minus 4 and minus 3 steps of 100 Hz. The next frame starts 172 ms later.&quot;&gt;&lt;/p&gt;
-&lt;p&gt;This 9 iron reads +4 −1 −2 +1 −4 −3. Each of the 12 clubs has a frame of its own, so one frame names the club.&lt;/p&gt;
+&lt;p&gt;This 9 iron reads +4 −1 −2 +1 −4 −3. Each club has a frame of its own, so one frame names the club.&lt;/p&gt;
 &lt;h2&gt;The after hit signal&lt;/h2&gt;
 &lt;p&gt;A hit gets an answer within about 12 ms. The rest tone moves up 1 kHz and the tag begins to hop: up for about 21 ms, back down, and again at a fixed interval for several seconds, until the resting frame returns.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/osstaglab-live-hit-v1.png&quot; alt=&quot;The live spectrogram during a hit. The resting frame runs near 18 kHz, the tone moves up 1 kHz for the hop pattern, and the resting frame returns.&quot;&gt;&lt;/p&gt;
@@ -57,7 +57,8 @@
 &lt;span class=&quot;line&quot;&gt;&lt;span&gt;cd osstaglab&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span&gt;python3 server.py&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Open &lt;a href=&quot;http://127.0.0.1:8765&quot;&gt;http://127.0.0.1:8765&lt;/a&gt; and press &lt;strong&gt;Start listening&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;The project is independent, built by listening to one set of tags. The codes for all 12 clubs, the decoder, its tests and short recordings are in the repo, ready to be carried to a phone or a microcontroller.&lt;/p&gt;
+&lt;p&gt;The project is independent, built by listening to one set of tags. The decoder, its tests and short recordings are in the repo, ready to be carried to a phone or a microcontroller.&lt;/p&gt;
+&lt;p&gt;The data from my club tags is in the repo, but yours will most likely be different. A frame holds six symbols with 8 possible values each, so there can be up to 262,144 unique club tag sounds.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/OSSGolf/osstaglab&quot;&gt;osstaglab (web app, decoder, recordings)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -67,7 +68,7 @@
 <p>Overall, the software experience was smooth. However, when I wanted to play one of my favorite short par 3 courses, the 4 hole Joe Balander course in Austin, Texas, I ran into one of its shortcomings. The app reported 6 holes instead of the actual 4.</p>
 <p>I emailed Arccos support and they told me the software simply didn’t support 4 hole courses. They only supported 6, 9, 12, and 18 hole courses. This limitation seemed like a hard coded, arbitrary rule. Now I had motivation to go along with my curiosity. And so began the journey of <a href="https://github.com/OSSGolf/osstaglab">OSSTagLab</a>.</p>
 <p>A shot tracking tag has one job: tell a phone which club left the bag and when it struck the ball. It does that with sound, in short tones between 17 and 20 <a href="https://en.wikipedia.org/wiki/Hertz">kHz</a>, just above what most adults hear and well inside what a laptop microphone records.</p>
-<p>A set of 12 Arccos Gen 4 tags, a MacBook microphone and a flashlight were enough to work out what the tags say. OSSTagLab is the open source web app that came out of it, built to open club tagging to anybody.</p>
+<p>A set of Arccos Gen 4 tags, a MacBook microphone and a flashlight were enough to work out what the tags say. OSSTagLab is the open source web app that came out of it, built to open club tagging to anybody.</p>
 <p><img src="/images/osstaglab-9-iron-timeline-v1.png" alt="Spectrogram of a 9 iron tag over four seconds. A wake tone at 18.80 kHz, then the resting frame repeating around a rest tone of 17.91 kHz, then a hit and a hop pattern at 18.91 kHz."></p>
 <h2>Listening at 18 kHz</h2>
 <p>A browser records the microphone at 48 kHz, which captures everything up to 24 kHz, the <a href="https://en.wikipedia.org/wiki/Nyquist_frequency">Nyquist frequency</a>. A <a href="https://en.wikipedia.org/wiki/Spectrogram">spectrogram</a> makes the result visible: time runs across, frequency runs up, brightness shows loudness. Under the hood it is a <a href="https://en.wikipedia.org/wiki/Short-time_Fourier_transform">short-time Fourier transform</a>: short slices of the recording, each shaped by a <a href="https://en.wikipedia.org/wiki/Hann_function">Hann window</a> and passed through a <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">fast Fourier transform</a>.</p>
@@ -76,11 +77,11 @@
 <h2>Three signals</h2>
 <p>A tag sends one tone at a time and rests near 18 kHz. Light wakes it and a hit changes its tune, which gives three signals to learn: a wake tone, a resting frame and an after hit signal.</p>
 <h2>The wake tone</h2>
-<p>A tag wakes when light reaches it, as it does when a club leaves the bag. It announces itself with one steady tone for about 0.4 seconds, about 0.9 kHz above its rest tone. From driver to wedge, 11 clubs land between 18.68 and 18.92 kHz.</p>
+<p>A tag wakes when light reaches it, as it does when a club leaves the bag. It announces itself with one steady tone for about 0.4 seconds, about 0.9 kHz above its rest tone. From driver to wedge, the clubs land between 18.68 and 18.92 kHz.</p>
 <h2>The resting frame</h2>
 <p>Half a second later the tag settles onto its rest tone, between 17.78 and 18.02 kHz on this set. Every 172 ms it sends a frame of six symbols, each a 10 ms tone 1 to 4 steps of 100 Hz above or below the rest tone.</p>
 <p><img src="/images/osstaglab-resting-frame-v1.png" alt="Close view of one 9 iron resting frame. Six short tones step away from the 17.91 kHz rest tone by plus 4, minus 1, minus 2, plus 1, minus 4 and minus 3 steps of 100 Hz. The next frame starts 172 ms later."></p>
-<p>This 9 iron reads +4 −1 −2 +1 −4 −3. Each of the 12 clubs has a frame of its own, so one frame names the club.</p>
+<p>This 9 iron reads +4 −1 −2 +1 −4 −3. Each club has a frame of its own, so one frame names the club.</p>
 <h2>The after hit signal</h2>
 <p>A hit gets an answer within about 12 ms. The rest tone moves up 1 kHz and the tag begins to hop: up for about 21 ms, back down, and again at a fixed interval for several seconds, until the resting frame returns.</p>
 <p><img src="/images/osstaglab-live-hit-v1.png" alt="The live spectrogram during a hit. The resting frame runs near 18 kHz, the tone moves up 1 kHz for the hop pattern, and the resting frame returns."></p>
@@ -101,7 +102,8 @@
 <span class="line"><span>cd osstaglab</span></span>
 <span class="line"><span>python3 server.py</span></span></code></pre>
 <p>Open <a href="http://127.0.0.1:8765">http://127.0.0.1:8765</a> and press <strong>Start listening</strong>.</p>
-<p>The project is independent, built by listening to one set of tags. The codes for all 12 clubs, the decoder, its tests and short recordings are in the repo, ready to be carried to a phone or a microcontroller.</p>
+<p>The project is independent, built by listening to one set of tags. The decoder, its tests and short recordings are in the repo, ready to be carried to a phone or a microcontroller.</p>
+<p>The data from my club tags is in the repo, but yours will most likely be different. A frame holds six symbols with 8 possible values each, so there can be up to 262,144 unique club tag sounds.</p>
 <ul>
 <li><a href="https://github.com/OSSGolf/osstaglab">osstaglab (web app, decoder, recordings)</a></li>
 </ul>

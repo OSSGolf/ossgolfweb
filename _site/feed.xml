@@ -7,7 +7,7 @@
     <language>en</language>
     <atom:link href="https://ossgolf.com/feed.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="https://pubsubhubbub.appspot.com" rel="hub"/>
-    <lastBuildDate>Tue, 24 Nov 2026 16:47:18 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 16:50:27 GMT</lastBuildDate>
     <image>
       <url>https://ossgolf.com/icon.png</url>
       <title>OSSGolf</title>
@@ -16,7 +16,7 @@
       <height>144</height>
     </image>
     <item>
-      <title>OSSTagLab: decoding the sound of golf club tags</title>
+      <title>OSSTagLab: Decoding the Sound of Golf Club Tags</title>
       <link>https://ossgolf.com/posts/osstaglab/index.html</link>
       <description>&lt;p&gt;My curiosity around club tags started when someone borrowing my putter said, “Your putter is making weird noises.” I couldn’t hear a thing. It turns out the sound coming out of my putter was near ultrasonic.&lt;/p&gt;
 &lt;p&gt;My putter had an Arccos Gen 4 club tag screwed onto the end of the grip. I had been using club tags for around six months and I loved them. I recorded my lowest round with them and my longest drive. I learned about my miss tendencies and club distances on the course.&lt;/p&gt;
@@ -117,15 +117,15 @@
       <enclosure url="https://ossgolf.com/images/osstaglab-9-iron-timeline-v1.png" type="image/png"/>
     </item>
     <item>
-      <title>Open source golf is exploding</title>
+      <title>Open Source Golf is Exploding</title>
       <link>https://ossgolf.com/posts/open-source-golf-is-exploding/index.html</link>
       <description>&lt;p&gt;People are building launch monitors, shot trackers, course databases, and simulator engines in the open, and the list keeps getting longer.&lt;/p&gt;
 &lt;p&gt;Here are the projects we are watching right now.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;/images/open-source-golf-landscape-map-v3.png&quot;&gt;&lt;img src=&quot;/images/open-source-golf-landscape-map-v3-1920.png&quot; alt=&quot;Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking.&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Tap the map to open it full size.&lt;/p&gt;
 &lt;h2&gt;Hardware&lt;/h2&gt;
-&lt;h3&gt;Launch monitors&lt;/h3&gt;
-&lt;h4&gt;Radar based&lt;/h4&gt;
+&lt;h3&gt;Launch Monitors&lt;/h3&gt;
+&lt;h4&gt;Radar Based&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/open-flight/openflight&quot;&gt;OpenFlight&lt;/a&gt;&lt;/strong&gt;: A DIY golf launch monitor built around the OPS243-A Doppler radar on a Raspberry Pi, reporting ball speed, club speed, smash factor and estimated carry, with an optional TI IWR6843 radar for launch angle.
 &lt;ul&gt;
@@ -135,7 +135,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Camera based&lt;/h4&gt;
+&lt;h4&gt;Camera Based&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/PiTracLM/PiTrac&quot;&gt;PiTrac&lt;/a&gt;&lt;/strong&gt;: A launch monitor that uses low-cost Raspberry Pi computers and cameras to measure ball launch speed, angles and spin in three dimensions. It feeds GSPro and E6/TruGolf simulators and a standalone web app.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/r87-e/LaunchTrac&quot;&gt;LaunchTrac&lt;/a&gt;&lt;/strong&gt;: A DIY golf launch monitor in Rust for a Raspberry Pi 5, using two global shutter cameras and IR strobes to measure ball speed, launch angles and spin.&lt;/li&gt;
@@ -144,12 +144,12 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/thomasjhook/launch-monitor&quot;&gt;launch-monitor&lt;/a&gt;&lt;/strong&gt;: A DIY golf launch monitor on a Raspberry Pi 5 that combines a camera for launch angle and spin, a 10.5 GHz Doppler radar with FFT for ball speed, and an IR trigger for timing.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;On-course trackers&lt;/h3&gt;
+&lt;h3&gt;On-Course Trackers&lt;/h3&gt;
 &lt;h4&gt;GPS&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/open-flight/open-gps&quot;&gt;open-gps&lt;/a&gt;&lt;/strong&gt;: A handheld golf shot tracker on an ESP32-S3 with a u-blox GPS module. It saves each shot’s start and landing coordinates and distance in yards, exportable over USB as GeoJSON or CSV.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Training aids&lt;/h3&gt;
+&lt;h3&gt;Training Aids&lt;/h3&gt;
 &lt;h4&gt;Tempo&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/OSSGolf/osstempo&quot;&gt;OSSTempo&lt;/a&gt;&lt;/strong&gt;: A golf tempo trainer built from an ESP32 and a WS2812B LED strip, where a light comet sweeps the strip to pace the stroke. A Web Bluetooth page controls it.
@@ -159,16 +159,16 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Biomechanics&lt;/h3&gt;
-&lt;h4&gt;Force plates&lt;/h4&gt;
+&lt;h4&gt;Force Plates&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/open-flight/open-fp&quot;&gt;open-fp&lt;/a&gt;&lt;/strong&gt;: Open source golf force plates, one per foot, each with four 50 kg load cells read by an Arduino UNO Q. It reports vertical force, center of pressure and weight shift on a web dashboard. Still in hardware bring-up.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;3D printable&lt;/h3&gt;
-&lt;h4&gt;Swing trainers&lt;/h4&gt;
+&lt;h3&gt;3D Printable&lt;/h3&gt;
+&lt;h4&gt;Swing Trainers&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.printables.com/model/1163073-golf-zwing-trainer-v4&quot;&gt;Golf Zwing Trainer V4&lt;/a&gt;&lt;/strong&gt;: A 3D printable swing plane trainer for left and right handers. It holds printed alignment sticks at set angles to guide a shallower downswing, and the base can be weighted with lead or BBs.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Range accessories&lt;/h4&gt;
+&lt;h4&gt;Range Accessories&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://makerworld.com/en/models/1295289-golf-ball-dispenser-pro&quot;&gt;Golf Ball Dispenser Pro&lt;/a&gt;&lt;/strong&gt;: A fully 3D printed golf ball dispenser with no extra hardware. Its magazine holds 25 balls and a foot pedal places one ball on the tee per press. Sized to print on an A1 mini.&lt;/li&gt;
 &lt;/ul&gt;
@@ -184,21 +184,21 @@
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/rroojrooj/Open-Birdie&quot;&gt;Open-Birdie&lt;/a&gt;&lt;/strong&gt;: An Electron desktop golf simulator that plays OpenStreetMap courses with AWS terrain elevation data and accepts shots from GSPro Open Connect launch monitors such as the Uneekor EYEMINI LITE.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/digitalhand/uopengolf&quot;&gt;uopengolf&lt;/a&gt;&lt;/strong&gt;: An open source golf game for Windows and Linux built in Unreal Engine 5 with C++, with a savanna driving range, a 400-yard par 4, and Square Home or Open Connect launch monitor support.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Ball flight physics&lt;/h4&gt;
+&lt;h4&gt;Ball Flight Physics&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/markccchiang/Simple-Golf-Simulator&quot;&gt;Simple-Golf-Simulator&lt;/a&gt;&lt;/strong&gt;: A Python and Tkinter program that simulates a golf swing from a two-degree-of-freedom model, then computes launch speed and the ball’s flight with drag, lift, spin and wind.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/digitalhand/openfairway&quot;&gt;openfairway&lt;/a&gt;&lt;/strong&gt;: A Godot 4 physics addon, usable from C# and GDScript, that computes ball flight, bounce and surface interaction from aerodynamic drag and Magnus lift fits.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/gdifiore/libgolf&quot;&gt;libgolf&lt;/a&gt;&lt;/strong&gt;: A C++20 library that simulates a golf ball’s full flight from launch conditions: aerial arc, bounce, and roll. Aerodynamics, bounce, and roll models are pluggable, and it builds to WebAssembly.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/divotmaker/dimple&quot;&gt;dimple&lt;/a&gt;&lt;/strong&gt;: A pure Rust crate, with no dependencies, that turns launch-monitor numbers into a full golf shot: flight, bounce, and roll on turf. Air density and wind are configurable.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Course building&lt;/h4&gt;
+&lt;h4&gt;Course Building&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/chadrockey/TGC-Designer-Tools&quot;&gt;TGC-Designer-Tools&lt;/a&gt;&lt;/strong&gt;: Python tools for course creation and lidar terrain generation in The Golf Club 2019. The main entry points are a GUI, a lidar map API, and an image-based terrain tool.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/OpenGolfSim/course-terrain-tool&quot;&gt;course-terrain-tool&lt;/a&gt;&lt;/strong&gt;: A desktop app that searches free lidar sources, merges and crops LAZ or DEM files, and outputs raw Unity height maps and satellite overlay images for golf simulator courses.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/OpenGolfSim/course-meshery-tool&quot;&gt;course-meshery-tool&lt;/a&gt;&lt;/strong&gt;: A JavaScript course-building tool from OpenGolfSim that generates base course meshes from an SVG file and a raw height map.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Launch monitor connectivity&lt;/h3&gt;
-&lt;h4&gt;Protocol libraries&lt;/h4&gt;
+&lt;h3&gt;Launch Monitor Connectivity&lt;/h3&gt;
+&lt;h4&gt;Protocol Libraries&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/mholow/gsp-r10-adapter&quot;&gt;gsp-r10-adapter&lt;/a&gt;&lt;/strong&gt;: A C# utility that bridges a Garmin Approach R10 launch monitor to GSPro, with direct Bluetooth, an E6 Connect compatible server, and webcam putting options.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/divotmaker/10over&quot;&gt;10over&lt;/a&gt;&lt;/strong&gt;: A Rust client library for the Garmin R10 Bluetooth protocol that decodes BLE, GFDI, and protobuf messages into shot data through a poll-based API.&lt;/li&gt;
@@ -207,7 +207,7 @@
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/OSSGolf/unofficial-r10-ios-sdk&quot;&gt;R10Kit&lt;/a&gt;&lt;/strong&gt;: A pure Swift package that connects to a Garmin R10 launch monitor over Bluetooth Low Energy and exposes shot metrics, including practice swings without a ball, for iOS, watchOS and macOS apps.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/flightrelay/spec&quot;&gt;Flight Relay Protocol&lt;/a&gt;&lt;/strong&gt;: An open JSON message spec, released under CC0, for sending launch monitor shot data over a local WebSocket to simulators, stat trackers and other tools.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Bridges to simulators&lt;/h4&gt;
+&lt;h4&gt;Bridges to Simulators&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/springbok/MLM2PRO-GSPro-Connector&quot;&gt;MLM2PRO-GSPro-Connector&lt;/a&gt;&lt;/strong&gt;: A Windows GUI application written in Python that sends Rapsodo MLM2PRO and Mevo+ shots to GSPro, with optional webcam or ExPutt putting support.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/Duwaynef/MLM2PRO-BT-APP&quot;&gt;MLM2PRO-BT-APP&lt;/a&gt;&lt;/strong&gt;: A beta Windows app in C# that connects a Rapsodo MLM2PRO to simulator software over direct Bluetooth through the Open API, with an optional API relay for other connectors.&lt;/li&gt;
@@ -216,8 +216,8 @@
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/brettveenstra/gspro-bridge&quot;&gt;gspro-bridge&lt;/a&gt;&lt;/strong&gt;: A C# Windows bridge, in early development, intended to send Garmin R10 and optional webcam putting shots to GSPro. The README says it is not yet ready for use.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/401Unauthorized/fairway-bridge&quot;&gt;fairway-bridge&lt;/a&gt;&lt;/strong&gt;: A Go application that connects launch monitors, simulators and cameras over a network, with a web UI, shot data logging to CSV, and virtual shot emulation for testing.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Swing analysis&lt;/h3&gt;
-&lt;h4&gt;Video and pose&lt;/h4&gt;
+&lt;h3&gt;Swing Analysis&lt;/h3&gt;
+&lt;h4&gt;Video and Pose&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/ryanboscobanze/GolfPosePro&quot;&gt;GolfPosePro&lt;/a&gt;&lt;/strong&gt;: A Jupyter notebook for Google Colab that uses MediaPipe Pose to track wrist motion, split a swing into phases, and compare student and pro frames in annotated slow-motion videos.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/ktakenos/GolfSwingAnalyzer&quot;&gt;GolfSwingAnalyzer&lt;/a&gt;&lt;/strong&gt;: A Python PyQt5 app that estimates body joints in 3D from two synchronized videos of a swing, plotting the skeleton with OpenGL and exporting joint coordinates to CSV.&lt;/li&gt;
@@ -233,12 +233,12 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/ChillVeen/iSwing&quot;&gt;iSwing&lt;/a&gt;&lt;/strong&gt;: A watchOS and iOS app that records golf swings with Apple Watch motion sensors and reports swing speed, attack angle, tempo and a machine-learning quality rating.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Camera ball tracking&lt;/h3&gt;
+&lt;h3&gt;Camera Ball Tracking&lt;/h3&gt;
 &lt;h4&gt;Putting&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/alleexx/cam-putting-py&quot;&gt;cam-putting-py&lt;/a&gt;&lt;/strong&gt;: A webcam putting simulator for GSPro that tracks a colored ball to calculate putt speed in mph and horizontal launch angle. Shots go to a Garmin R10 or MLM2PRO connector, which passes them to GSPro.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Course data&lt;/h3&gt;
+&lt;h3&gt;Course Data&lt;/h3&gt;
 &lt;h4&gt;Databases and APIs&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/Jacobbrewer1/golf-data-docs&quot;&gt;golf-data-docs&lt;/a&gt;&lt;/strong&gt;: Generated documentation for the Golf Data API, covering clubs, courses, markers and holes. The API currently holds only UK course data.&lt;/li&gt;
@@ -249,20 +249,20 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/TheMapSmith/GeoJSON-GolfCourses&quot;&gt;GeoJSON-GolfCourses&lt;/a&gt;&lt;/strong&gt;: A GeoJSON file of named golf course boundaries in North America, extracted from OpenStreetMap ways tagged leisure=golf_course. European courses are listed as coming soon.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Stats and scoring&lt;/h3&gt;
-&lt;h4&gt;Launch monitor data&lt;/h4&gt;
+&lt;h3&gt;Stats and Scoring&lt;/h3&gt;
+&lt;h4&gt;Launch Monitor Data&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/criticalberne/TrackPull&quot;&gt;TrackPull&lt;/a&gt;&lt;/strong&gt;: A Chrome extension that pulls shot data from Trackman reports and Trackman portal sessions, then exports it as CSV, copies it to Google Sheets, or builds a prompt for an AI chatbot.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/thraizz/r10progress&quot;&gt;r10progress&lt;/a&gt;&lt;/strong&gt;: A TypeScript web app that imports CSV shot exports from the Garmin Approach R10 radar, stores them in Firebase, and charts shot trends with Vega and a sortable ag-Grid table.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Rounds and handicap&lt;/h4&gt;
+&lt;h4&gt;Rounds and Handicap&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/gsingers/garmin_golf&quot;&gt;garmin_golf&lt;/a&gt;&lt;/strong&gt;: Browser scripts that export your own Garmin Connect golf scorecards and CT10 shot data as JSON, since Garmin has no public API. Includes jq and Google Sheets processing.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/n8io/ghin&quot;&gt;ghin&lt;/a&gt;&lt;/strong&gt;: An unofficial TypeScript library, installed from npm, that wraps the GHIN handicap API for handicap lookups, golfer and course search, scoring history and course handicap calculation.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/gmalewicz/golf-app&quot;&gt;golf-app&lt;/a&gt;&lt;/strong&gt;: A Java Spring Boot back-end for online scorecards, round results including Stableford and score differential, tournaments, and player result comparison.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/cner-smith/opengolfapp&quot;&gt;opengolfapp&lt;/a&gt;&lt;/strong&gt;: A free, open source golf tracking app for web, iOS and Android, with a React web app and Expo mobile app that logs shots, computes strokes gained, shot dispersion and handicap index.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Tour data&lt;/h4&gt;
+&lt;h4&gt;Tour Data&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/coreyjs/data-golf-api&quot;&gt;data-golf-api&lt;/a&gt;&lt;/strong&gt;: An unofficial Python client for the DataGolf API, installed from PyPI as data_golf, covering general, prediction, betting and historical endpoints. Requires a paid DataGolf API key.&lt;/li&gt;
 &lt;/ul&gt;
@@ -273,8 +273,8 @@
 <p><a href="/images/open-source-golf-landscape-map-v3.png"><img src="/images/open-source-golf-landscape-map-v3-1920.png" alt="Open Source Golf Landscape: a map of 52 open source golf projects. Hardware covers launch monitors, on-course trackers, training aids, biomechanics and 3D printable gear. Software covers simulators, launch monitor connectivity, swing analysis, stats and scoring, course data and camera ball tracking."></a></p>
 <p>Tap the map to open it full size.</p>
 <h2>Hardware</h2>
-<h3>Launch monitors</h3>
-<h4>Radar based</h4>
+<h3>Launch Monitors</h3>
+<h4>Radar Based</h4>
 <ul>
 <li><strong><a href="https://github.com/open-flight/openflight">OpenFlight</a></strong>: A DIY golf launch monitor built around the OPS243-A Doppler radar on a Raspberry Pi, reporting ball speed, club speed, smash factor and estimated carry, with an optional TI IWR6843 radar for launch angle.
 <ul>
@@ -284,7 +284,7 @@
 </ul>
 </li>
 </ul>
-<h4>Camera based</h4>
+<h4>Camera Based</h4>
 <ul>
 <li><strong><a href="https://github.com/PiTracLM/PiTrac">PiTrac</a></strong>: A launch monitor that uses low-cost Raspberry Pi computers and cameras to measure ball launch speed, angles and spin in three dimensions. It feeds GSPro and E6/TruGolf simulators and a standalone web app.</li>
 <li><strong><a href="https://github.com/r87-e/LaunchTrac">LaunchTrac</a></strong>: A DIY golf launch monitor in Rust for a Raspberry Pi 5, using two global shutter cameras and IR strobes to measure ball speed, launch angles and spin.</li>
@@ -293,12 +293,12 @@
 <ul>
 <li><strong><a href="https://github.com/thomasjhook/launch-monitor">launch-monitor</a></strong>: A DIY golf launch monitor on a Raspberry Pi 5 that combines a camera for launch angle and spin, a 10.5 GHz Doppler radar with FFT for ball speed, and an IR trigger for timing.</li>
 </ul>
-<h3>On-course trackers</h3>
+<h3>On-Course Trackers</h3>
 <h4>GPS</h4>
 <ul>
 <li><strong><a href="https://github.com/open-flight/open-gps">open-gps</a></strong>: A handheld golf shot tracker on an ESP32-S3 with a u-blox GPS module. It saves each shot’s start and landing coordinates and distance in yards, exportable over USB as GeoJSON or CSV.</li>
 </ul>
-<h3>Training aids</h3>
+<h3>Training Aids</h3>
 <h4>Tempo</h4>
 <ul>
 <li><strong><a href="https://github.com/OSSGolf/osstempo">OSSTempo</a></strong>: A golf tempo trainer built from an ESP32 and a WS2812B LED strip, where a light comet sweeps the strip to pace the stroke. A Web Bluetooth page controls it.
@@ -308,16 +308,16 @@
 </li>
 </ul>
 <h3>Biomechanics</h3>
-<h4>Force plates</h4>
+<h4>Force Plates</h4>
 <ul>
 <li><strong><a href="https://github.com/open-flight/open-fp">open-fp</a></strong>: Open source golf force plates, one per foot, each with four 50 kg load cells read by an Arduino UNO Q. It reports vertical force, center of pressure and weight shift on a web dashboard. Still in hardware bring-up.</li>
 </ul>
-<h3>3D printable</h3>
-<h4>Swing trainers</h4>
+<h3>3D Printable</h3>
+<h4>Swing Trainers</h4>
 <ul>
 <li><strong><a href="https://www.printables.com/model/1163073-golf-zwing-trainer-v4">Golf Zwing Trainer V4</a></strong>: A 3D printable swing plane trainer for left and right handers. It holds printed alignment sticks at set angles to guide a shallower downswing, and the base can be weighted with lead or BBs.</li>
 </ul>
-<h4>Range accessories</h4>
+<h4>Range Accessories</h4>
 <ul>
 <li><strong><a href="https://makerworld.com/en/models/1295289-golf-ball-dispenser-pro">Golf Ball Dispenser Pro</a></strong>: A fully 3D printed golf ball dispenser with no extra hardware. Its magazine holds 25 balls and a foot pedal places one ball on the tee per press. Sized to print on an A1 mini.</li>
 </ul>
@@ -333,21 +333,21 @@
 <li><strong><a href="https://github.com/rroojrooj/Open-Birdie">Open-Birdie</a></strong>: An Electron desktop golf simulator that plays OpenStreetMap courses with AWS terrain elevation data and accepts shots from GSPro Open Connect launch monitors such as the Uneekor EYEMINI LITE.</li>
 <li><strong><a href="https://github.com/digitalhand/uopengolf">uopengolf</a></strong>: An open source golf game for Windows and Linux built in Unreal Engine 5 with C++, with a savanna driving range, a 400-yard par 4, and Square Home or Open Connect launch monitor support.</li>
 </ul>
-<h4>Ball flight physics</h4>
+<h4>Ball Flight Physics</h4>
 <ul>
 <li><strong><a href="https://github.com/markccchiang/Simple-Golf-Simulator">Simple-Golf-Simulator</a></strong>: A Python and Tkinter program that simulates a golf swing from a two-degree-of-freedom model, then computes launch speed and the ball’s flight with drag, lift, spin and wind.</li>
 <li><strong><a href="https://github.com/digitalhand/openfairway">openfairway</a></strong>: A Godot 4 physics addon, usable from C# and GDScript, that computes ball flight, bounce and surface interaction from aerodynamic drag and Magnus lift fits.</li>
 <li><strong><a href="https://github.com/gdifiore/libgolf">libgolf</a></strong>: A C++20 library that simulates a golf ball’s full flight from launch conditions: aerial arc, bounce, and roll. Aerodynamics, bounce, and roll models are pluggable, and it builds to WebAssembly.</li>
 <li><strong><a href="https://github.com/divotmaker/dimple">dimple</a></strong>: A pure Rust crate, with no dependencies, that turns launch-monitor numbers into a full golf shot: flight, bounce, and roll on turf. Air density and wind are configurable.</li>
 </ul>
-<h4>Course building</h4>
+<h4>Course Building</h4>
 <ul>
 <li><strong><a href="https://github.com/chadrockey/TGC-Designer-Tools">TGC-Designer-Tools</a></strong>: Python tools for course creation and lidar terrain generation in The Golf Club 2019. The main entry points are a GUI, a lidar map API, and an image-based terrain tool.</li>
 <li><strong><a href="https://github.com/OpenGolfSim/course-terrain-tool">course-terrain-tool</a></strong>: A desktop app that searches free lidar sources, merges and crops LAZ or DEM files, and outputs raw Unity height maps and satellite overlay images for golf simulator courses.</li>
 <li><strong><a href="https://github.com/OpenGolfSim/course-meshery-tool">course-meshery-tool</a></strong>: A JavaScript course-building tool from OpenGolfSim that generates base course meshes from an SVG file and a raw height map.</li>
 </ul>
-<h3>Launch monitor connectivity</h3>
-<h4>Protocol libraries</h4>
+<h3>Launch Monitor Connectivity</h3>
+<h4>Protocol Libraries</h4>
 <ul>
 <li><strong><a href="https://github.com/mholow/gsp-r10-adapter">gsp-r10-adapter</a></strong>: A C# utility that bridges a Garmin Approach R10 launch monitor to GSPro, with direct Bluetooth, an E6 Connect compatible server, and webcam putting options.</li>
 <li><strong><a href="https://github.com/divotmaker/10over">10over</a></strong>: A Rust client library for the Garmin R10 Bluetooth protocol that decodes BLE, GFDI, and protobuf messages into shot data through a poll-based API.</li>
@@ -356,7 +356,7 @@
 <li><strong><a href="https://github.com/OSSGolf/unofficial-r10-ios-sdk">R10Kit</a></strong>: A pure Swift package that connects to a Garmin R10 launch monitor over Bluetooth Low Energy and exposes shot metrics, including practice swings without a ball, for iOS, watchOS and macOS apps.</li>
 <li><strong><a href="https://github.com/flightrelay/spec">Flight Relay Protocol</a></strong>: An open JSON message spec, released under CC0, for sending launch monitor shot data over a local WebSocket to simulators, stat trackers and other tools.</li>
 </ul>
-<h4>Bridges to simulators</h4>
+<h4>Bridges to Simulators</h4>
 <ul>
 <li><strong><a href="https://github.com/springbok/MLM2PRO-GSPro-Connector">MLM2PRO-GSPro-Connector</a></strong>: A Windows GUI application written in Python that sends Rapsodo MLM2PRO and Mevo+ shots to GSPro, with optional webcam or ExPutt putting support.</li>
 <li><strong><a href="https://github.com/Duwaynef/MLM2PRO-BT-APP">MLM2PRO-BT-APP</a></strong>: A beta Windows app in C# that connects a Rapsodo MLM2PRO to simulator software over direct Bluetooth through the Open API, with an optional API relay for other connectors.</li>
@@ -365,8 +365,8 @@
 <li><strong><a href="https://github.com/brettveenstra/gspro-bridge">gspro-bridge</a></strong>: A C# Windows bridge, in early development, intended to send Garmin R10 and optional webcam putting shots to GSPro. The README says it is not yet ready for use.</li>
 <li><strong><a href="https://github.com/401Unauthorized/fairway-bridge">fairway-bridge</a></strong>: A Go application that connects launch monitors, simulators and cameras over a network, with a web UI, shot data logging to CSV, and virtual shot emulation for testing.</li>
 </ul>
-<h3>Swing analysis</h3>
-<h4>Video and pose</h4>
+<h3>Swing Analysis</h3>
+<h4>Video and Pose</h4>
 <ul>
 <li><strong><a href="https://github.com/ryanboscobanze/GolfPosePro">GolfPosePro</a></strong>: A Jupyter notebook for Google Colab that uses MediaPipe Pose to track wrist motion, split a swing into phases, and compare student and pro frames in annotated slow-motion videos.</li>
 <li><strong><a href="https://github.com/ktakenos/GolfSwingAnalyzer">GolfSwingAnalyzer</a></strong>: A Python PyQt5 app that estimates body joints in 3D from two synchronized videos of a swing, plotting the skeleton with OpenGL and exporting joint coordinates to CSV.</li>
@@ -382,12 +382,12 @@
 <ul>
 <li><strong><a href="https://github.com/ChillVeen/iSwing">iSwing</a></strong>: A watchOS and iOS app that records golf swings with Apple Watch motion sensors and reports swing speed, attack angle, tempo and a machine-learning quality rating.</li>
 </ul>
-<h3>Camera ball tracking</h3>
+<h3>Camera Ball Tracking</h3>
 <h4>Putting</h4>
 <ul>
 <li><strong><a href="https://github.com/alleexx/cam-putting-py">cam-putting-py</a></strong>: A webcam putting simulator for GSPro that tracks a colored ball to calculate putt speed in mph and horizontal launch angle. Shots go to a Garmin R10 or MLM2PRO connector, which passes them to GSPro.</li>
 </ul>
-<h3>Course data</h3>
+<h3>Course Data</h3>
 <h4>Databases and APIs</h4>
 <ul>
 <li><strong><a href="https://github.com/Jacobbrewer1/golf-data-docs">golf-data-docs</a></strong>: Generated documentation for the Golf Data API, covering clubs, courses, markers and holes. The API currently holds only UK course data.</li>
@@ -398,20 +398,20 @@
 </li>
 <li><strong><a href="https://github.com/TheMapSmith/GeoJSON-GolfCourses">GeoJSON-GolfCourses</a></strong>: A GeoJSON file of named golf course boundaries in North America, extracted from OpenStreetMap ways tagged leisure=golf_course. European courses are listed as coming soon.</li>
 </ul>
-<h3>Stats and scoring</h3>
-<h4>Launch monitor data</h4>
+<h3>Stats and Scoring</h3>
+<h4>Launch Monitor Data</h4>
 <ul>
 <li><strong><a href="https://github.com/criticalberne/TrackPull">TrackPull</a></strong>: A Chrome extension that pulls shot data from Trackman reports and Trackman portal sessions, then exports it as CSV, copies it to Google Sheets, or builds a prompt for an AI chatbot.</li>
 <li><strong><a href="https://github.com/thraizz/r10progress">r10progress</a></strong>: A TypeScript web app that imports CSV shot exports from the Garmin Approach R10 radar, stores them in Firebase, and charts shot trends with Vega and a sortable ag-Grid table.</li>
 </ul>
-<h4>Rounds and handicap</h4>
+<h4>Rounds and Handicap</h4>
 <ul>
 <li><strong><a href="https://github.com/gsingers/garmin_golf">garmin_golf</a></strong>: Browser scripts that export your own Garmin Connect golf scorecards and CT10 shot data as JSON, since Garmin has no public API. Includes jq and Google Sheets processing.</li>
 <li><strong><a href="https://github.com/n8io/ghin">ghin</a></strong>: An unofficial TypeScript library, installed from npm, that wraps the GHIN handicap API for handicap lookups, golfer and course search, scoring history and course handicap calculation.</li>
 <li><strong><a href="https://github.com/gmalewicz/golf-app">golf-app</a></strong>: A Java Spring Boot back-end for online scorecards, round results including Stableford and score differential, tournaments, and player result comparison.</li>
 <li><strong><a href="https://github.com/cner-smith/opengolfapp">opengolfapp</a></strong>: A free, open source golf tracking app for web, iOS and Android, with a React web app and Expo mobile app that logs shots, computes strokes gained, shot dispersion and handicap index.</li>
 </ul>
-<h4>Tour data</h4>
+<h4>Tour Data</h4>
 <ul>
 <li><strong><a href="https://github.com/coreyjs/data-golf-api">data-golf-api</a></strong>: An unofficial Python client for the DataGolf API, installed from PyPI as data_golf, covering general, prediction, betting and historical endpoints. Requires a paid DataGolf API key.</li>
 </ul>
@@ -454,32 +454,32 @@
       <category>open-source</category>
     </item>
     <item>
-      <title>OSSTempo: a DIY LED tempo trainer for golf</title>
+      <title>OSSTempo: A DIY LED Tempo Trainer for Golf</title>
       <link>https://ossgolf.com/posts/osstempo/index.html</link>
       <description>&lt;p&gt;OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving “comet” of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consistent stroke.&lt;/p&gt;
 &lt;p&gt;It is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. Control happens over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo and stroke length.&lt;/p&gt;
 &lt;p&gt;Here it is running a putting stroke:&lt;/p&gt;
 &lt;p&gt;&lt;video controls preload=&quot;metadata&quot; playsinline poster=&quot;/images/osstempo-still.jpg&quot; aria-label=&quot;OSSTempo running a putting stroke on a practice mat: the white comet sweeps the LED strip beside the ball while the green dot marks impact, powered by an ESP32 on a breadboard&quot;&gt;&lt;source src=&quot;/media/osstempo-putting.mp4&quot; type=&quot;video/mp4&quot;&gt;OSSTempo running a putting stroke on a practice mat: the white comet sweeps the LED strip beside the ball while the green dot marks impact, powered by an ESP32 on a breadboard&lt;/video&gt;&lt;/p&gt;
-&lt;h2&gt;Two modes&lt;/h2&gt;
+&lt;h2&gt;Two Modes&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Putting (2:1).&lt;/strong&gt; The comet sweeps from center out to the top of the backswing, eases to a stop, then accelerates back through center at impact and out the far side on the follow through.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Full swing.&lt;/strong&gt; The firmware models a full swing arc projected onto the one dimensional strip, so a one meter strip can represent a stroke that travels back and up behind you. Reference dots mark the ball, the top of the backswing, and an optional aim point.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Build it two ways&lt;/h2&gt;
+&lt;h2&gt;Build It Two Ways&lt;/h2&gt;
 &lt;p&gt;Same firmware, same app, two hardware paths:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Full DIY.&lt;/strong&gt; A bare ESP32 dev board, a strip, one resistor, and one capacitor on a breadboard. Lowest cost.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;QuinLED Dig2go.&lt;/strong&gt; A pre assembled controller.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Both are documented end to end: bill of materials, wiring, flashing, and a pinned, ready to flash sketch.&lt;/p&gt;
-&lt;h2&gt;Print a case and a jig&lt;/h2&gt;
+&lt;h2&gt;Print a Case and a Jig&lt;/h2&gt;
 &lt;p&gt;The repo now has two 3D printed parts. Each comes with STL files and a Bambu Studio project for the A1 mini.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Case.&lt;/strong&gt; A snap shut case for the carrier PCB, an optional board the ESP32 plugs into. The board sits on four pegs through its mounting holes and the lid clips on by hand, with openings for the USB and strip cables. The golf ball badge and the oss/golf nameplate are separate parts that press into the lid, so they can be printed in a second color.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/osstempo-case-closed.jpg&quot; alt=&quot;Render of the 3D printed OSSTempo case, closed: an orange lid with a golf ball badge and an oss/golf nameplate set into it in a second color&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/osstempo-case-open.jpg&quot; alt=&quot;Render of the case open: the carrier board sits on four pegs in the base, with the lid, the golf ball badge and the nameplate beside it&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Alignment jig.&lt;/strong&gt; A flat plate that holds two sticks parallel, 8 inches apart, with alignment lines grooved along it.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/osstempo-alignment-jig.jpg&quot; alt=&quot;Render of the 3D printed alignment jig: a flat plate with a channel at each end for a stick and alignment lines grooved along it&quot;&gt;&lt;/p&gt;
-&lt;h2&gt;What is here today&lt;/h2&gt;
+&lt;h2&gt;What is Here Today&lt;/h2&gt;
 &lt;p&gt;The firmware, the Web Bluetooth control page, and a native SwiftUI iOS controller are all open source and working on real hardware. The build guides cover both hardware paths.&lt;/p&gt;
 &lt;p&gt;The clip above shows a putting stroke on a practice mat. For the full hardware spec and code, see GitHub.&lt;/p&gt;
 &lt;ul&gt;
@@ -491,26 +491,26 @@
 <p>It is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. Control happens over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo and stroke length.</p>
 <p>Here it is running a putting stroke:</p>
 <p><video controls preload="metadata" playsinline poster="/images/osstempo-still.jpg" aria-label="OSSTempo running a putting stroke on a practice mat: the white comet sweeps the LED strip beside the ball while the green dot marks impact, powered by an ESP32 on a breadboard"><source src="/media/osstempo-putting.mp4" type="video/mp4">OSSTempo running a putting stroke on a practice mat: the white comet sweeps the LED strip beside the ball while the green dot marks impact, powered by an ESP32 on a breadboard</video></p>
-<h2>Two modes</h2>
+<h2>Two Modes</h2>
 <ul>
 <li><strong>Putting (2:1).</strong> The comet sweeps from center out to the top of the backswing, eases to a stop, then accelerates back through center at impact and out the far side on the follow through.</li>
 <li><strong>Full swing.</strong> The firmware models a full swing arc projected onto the one dimensional strip, so a one meter strip can represent a stroke that travels back and up behind you. Reference dots mark the ball, the top of the backswing, and an optional aim point.</li>
 </ul>
-<h2>Build it two ways</h2>
+<h2>Build It Two Ways</h2>
 <p>Same firmware, same app, two hardware paths:</p>
 <ul>
 <li><strong>Full DIY.</strong> A bare ESP32 dev board, a strip, one resistor, and one capacitor on a breadboard. Lowest cost.</li>
 <li><strong>QuinLED Dig2go.</strong> A pre assembled controller.</li>
 </ul>
 <p>Both are documented end to end: bill of materials, wiring, flashing, and a pinned, ready to flash sketch.</p>
-<h2>Print a case and a jig</h2>
+<h2>Print a Case and a Jig</h2>
 <p>The repo now has two 3D printed parts. Each comes with STL files and a Bambu Studio project for the A1 mini.</p>
 <p><strong>Case.</strong> A snap shut case for the carrier PCB, an optional board the ESP32 plugs into. The board sits on four pegs through its mounting holes and the lid clips on by hand, with openings for the USB and strip cables. The golf ball badge and the oss/golf nameplate are separate parts that press into the lid, so they can be printed in a second color.</p>
 <p><img src="/images/osstempo-case-closed.jpg" alt="Render of the 3D printed OSSTempo case, closed: an orange lid with a golf ball badge and an oss/golf nameplate set into it in a second color"></p>
 <p><img src="/images/osstempo-case-open.jpg" alt="Render of the case open: the carrier board sits on four pegs in the base, with the lid, the golf ball badge and the nameplate beside it"></p>
 <p><strong>Alignment jig.</strong> A flat plate that holds two sticks parallel, 8 inches apart, with alignment lines grooved along it.</p>
 <p><img src="/images/osstempo-alignment-jig.jpg" alt="Render of the 3D printed alignment jig: a flat plate with a channel at each end for a stick and alignment lines grooved along it"></p>
-<h2>What is here today</h2>
+<h2>What is Here Today</h2>
 <p>The firmware, the Web Bluetooth control page, and a native SwiftUI iOS controller are all open source and working on real hardware. The build guides cover both hardware paths.</p>
 <p>The clip above shows a putting stroke on a practice mat. For the full hardware spec and code, see GitHub.</p>
 <ul>
@@ -527,13 +527,13 @@
       <enclosure url="https://ossgolf.com/images/osstempo-still.jpg" type="image/jpeg"/>
     </item>
     <item>
-      <title>R10Kit: an unofficial Swift SDK for the Garmin R10</title>
+      <title>R10Kit: An Unofficial Swift SDK for the Garmin R10</title>
       <link>https://ossgolf.com/posts/r10kit/index.html</link>
       <description>&lt;p&gt;R10Kit is a native Swift SDK that connects directly to the Garmin Approach R10 launch monitor over Bluetooth Low Energy. No first party app, no PC tether. Your iPhone talks to the R10 and reads every shot it emits.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This is an unofficial SDK. The protocol layer is reverse engineered from publicly available work (&lt;a href=&quot;https://github.com/mholow/gsp-r10-adapter&quot;&gt;mholow/gsp-r10-adapter&lt;/a&gt;).&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2&gt;The practice swing unlock&lt;/h2&gt;
+&lt;h2&gt;The Practice Swing Unlock&lt;/h2&gt;
 &lt;p&gt;The interesting part is what the R10 gives you without a ball. On a full practice swing with no ball, the radar still reports club speed, club path, attack angle, and the full swing timing in milliseconds. R10Kit exposes all of it. That means you can build a tempo trainer around a launch monitor you already own, not just a ball flight tracer.&lt;/p&gt;
 &lt;p&gt;Ball metrics (ball speed, launch angle and direction, spin rate, spin axis) populate only when the radar sees a ball leave. Everything else populates on every swing.&lt;/p&gt;
 &lt;h2&gt;Screenshots&lt;/h2&gt;
@@ -541,7 +541,7 @@
 &lt;p&gt;&lt;img src=&quot;/images/r10-shot-list.png&quot; alt=&quot;R10Kit demo showing connection state, device model and firmware, battery level, and a list of recent shots labeled by club speed&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/r10-shot-detail.png&quot; alt=&quot;Shot detail showing identity fields and club metrics: club speed, club path, and attack angle&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/r10-tempo.png&quot; alt=&quot;Shot detail scrolled to swing timing and the derived metrics: backswing, downswing, follow through, total duration, and tempo ratio&quot;&gt;&lt;/p&gt;
-&lt;h2&gt;What it parses&lt;/h2&gt;
+&lt;h2&gt;What It Parses&lt;/h2&gt;
 &lt;p&gt;R10Kit does full proto parsing for every shot the device emits: club speed, ball speed, launch angle and direction, spin rate with axis and provenance, attack angle, club face and path, swing timing in milliseconds, shot type, and tilt at impact. The API is AsyncStream first, modern Swift Concurrency, no delegates.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;iOS 17+, watchOS 10+, macOS 14+. Pure Swift package.&lt;/li&gt;
@@ -549,7 +549,7 @@
 &lt;li&gt;Real byte regression fixtures captured from the device, so future changes cannot silently break protocol compatibility.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Tested against an R10 on firmware 4.50 with an iPhone 16 Pro.&lt;/p&gt;
-&lt;h2&gt;Get it&lt;/h2&gt;
+&lt;h2&gt;Get It&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/OSSGolf/unofficial-r10-ios-sdk&quot;&gt;unofficial-r10-ios-sdk on GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -559,7 +559,7 @@
 <blockquote>
 <p>This is an unofficial SDK. The protocol layer is reverse engineered from publicly available work (<a href="https://github.com/mholow/gsp-r10-adapter">mholow/gsp-r10-adapter</a>).</p>
 </blockquote>
-<h2>The practice swing unlock</h2>
+<h2>The Practice Swing Unlock</h2>
 <p>The interesting part is what the R10 gives you without a ball. On a full practice swing with no ball, the radar still reports club speed, club path, attack angle, and the full swing timing in milliseconds. R10Kit exposes all of it. That means you can build a tempo trainer around a launch monitor you already own, not just a ball flight tracer.</p>
 <p>Ball metrics (ball speed, launch angle and direction, spin rate, spin axis) populate only when the radar sees a ball leave. Everything else populates on every swing.</p>
 <h2>Screenshots</h2>
@@ -567,7 +567,7 @@
 <p><img src="/images/r10-shot-list.png" alt="R10Kit demo showing connection state, device model and firmware, battery level, and a list of recent shots labeled by club speed"></p>
 <p><img src="/images/r10-shot-detail.png" alt="Shot detail showing identity fields and club metrics: club speed, club path, and attack angle"></p>
 <p><img src="/images/r10-tempo.png" alt="Shot detail scrolled to swing timing and the derived metrics: backswing, downswing, follow through, total duration, and tempo ratio"></p>
-<h2>What it parses</h2>
+<h2>What It Parses</h2>
 <p>R10Kit does full proto parsing for every shot the device emits: club speed, ball speed, launch angle and direction, spin rate with axis and provenance, attack angle, club face and path, swing timing in milliseconds, shot type, and tilt at impact. The API is AsyncStream first, modern Swift Concurrency, no delegates.</p>
 <ul>
 <li>iOS 17+, watchOS 10+, macOS 14+. Pure Swift package.</li>
@@ -575,7 +575,7 @@
 <li>Real byte regression fixtures captured from the device, so future changes cannot silently break protocol compatibility.</li>
 </ul>
 <p>Tested against an R10 on firmware 4.50 with an iPhone 16 Pro.</p>
-<h2>Get it</h2>
+<h2>Get It</h2>
 <ul>
 <li><a href="https://github.com/OSSGolf/unofficial-r10-ios-sdk">unofficial-r10-ios-sdk on GitHub</a></li>
 </ul>

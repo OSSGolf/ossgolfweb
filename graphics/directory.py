@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write the project directory into the "Open source golf is exploding" post.
+"""Write the project directory into the "Open Source Golf is Exploding" post.
 
 The map in that post is an image, so its projects cannot be clicked, searched or read aloud. This
 script turns the same data (graphics/landscape.json) into a text list: one heading per side
@@ -23,6 +23,19 @@ START = "Tap the map to open it full size."     # the list goes after this line.
 END = "We will keep adding to this list"        # ...and before the paragraph that starts with this
 
 
+SMALL = {"a", "an", "and", "at", "for", "in", "is", "of", "on", "or", "the", "to", "with"}
+
+
+def title_case(text: str) -> str:
+    """Headings on the site are capitalized. Words that already carry a capital (APIs, GPS, 3D) stay."""
+    def cap(word: str, first: bool) -> str:
+        if word.lower() in SMALL and not first:
+            return word.lower()
+        return word if word != word.lower() else word[:1].upper() + word[1:]
+    words = text.split(" ")
+    return " ".join("-".join(cap(part, i == 0) for part in w.split("-")) for i, w in enumerate(words))
+
+
 def entry(it: dict, indent: str = "") -> str:
     missing = [k for k in ("url", "description") if not it.get(k)]
     if missing:
@@ -33,11 +46,11 @@ def entry(it: dict, indent: str = "") -> str:
 def directory(d: dict) -> str:
     out = []
     for side in d["sides"]:
-        out += [f'## {side["name"]}', ""]
+        out += [f'## {title_case(side["name"])}', ""]
         for seg in side["segments"]:
-            out += [f'### {seg["name"]}', ""]
+            out += [f'### {title_case(seg["name"])}', ""]
             for group in seg["groups"]:
-                out += [f'#### {group["name"]}', ""]
+                out += [f'#### {title_case(group["name"])}', ""]
                 for it in group["items"]:
                     out.append(entry(it))
                     out += [entry(kid, "  ") for kid in it.get("with", [])]

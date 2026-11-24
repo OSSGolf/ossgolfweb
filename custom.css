@@ -162,7 +162,7 @@ body > header .site-tagline {
 .header-gh:hover { color: var(--color-link); }
 .header-gh:visited { color: var(--color-muted); }
 
-/* The project directory in "Open source golf is exploding" has three heading levels in a row:
+/* The project directory in "Open Source Golf is Exploding" has three heading levels in a row:
    side, segment, group. RSS Lobster moves post headings down one level, so those are h3, h4 and
    h5. The side is the loud one, the group label the quiet one. */
 article h3 { margin-top: 2.5rem; font-size: 1.5rem; }

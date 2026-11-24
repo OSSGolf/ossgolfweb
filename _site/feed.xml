@@ -7,7 +7,7 @@
     <language>en</language>
     <atom:link href="https://ossgolf.com/feed.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="https://pubsubhubbub.appspot.com" rel="hub"/>
-    <lastBuildDate>Tue, 24 Nov 2026 13:50:07 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 16:07:25 GMT</lastBuildDate>
     <image>
       <url>https://ossgolf.com/icon.png</url>
       <title>OSSGolf</title>
@@ -18,7 +18,11 @@
     <item>
       <title>OSSTagLab: decoding the sound of golf club tags</title>
       <link>https://ossgolf.com/posts/osstaglab/index.html</link>
-      <description>&lt;p&gt;A shot tracking tag has one job: tell a phone which club left the bag and when it struck the ball. It does that with sound, in short tones between 17 and 20 &lt;a href=&quot;https://en.wikipedia.org/wiki/Hertz&quot;&gt;kHz&lt;/a&gt;, just above what most adults hear and well inside what a laptop microphone records.&lt;/p&gt;
+      <description>&lt;p&gt;My curiosity around club tags started when someone borrowing my putter said, “your putter is making weird noises.” I couldn’t hear a thing. It turns out the sound coming out of my putter was near ultrasonic.&lt;/p&gt;
+&lt;p&gt;My putter had an Arccos Gen 4 club tag screwed on to the end of the grip. I had been using club tags for around six months and I loved them. I recorded my lowest round with them and my longest drive. I learned about my miss tendencies and club distances on course.&lt;/p&gt;
+&lt;p&gt;The software experience was overall smooth. However, when I wanted to play one of my favorite short par 3 courses, a 4 hole Joe Balander in Austin, Texas, I ran into one of the shortcomings. The app reported 6 holes instead of the actual 4.&lt;/p&gt;
+&lt;p&gt;I emailed Arccos support and they told me the software simply didn’t support 4 hole courses. They only supported 6, 9, 12, and 18 hole courses. This limitation seemed like a hard coded arbitrary rule. Now I had motivation to go along with my curiosity. And so began the journey of &lt;a href=&quot;https://github.com/OSSGolf/osstaglab&quot;&gt;OSSTagLab&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A shot tracking tag has one job: tell a phone which club left the bag and when it struck the ball. It does that with sound, in short tones between 17 and 20 &lt;a href=&quot;https://en.wikipedia.org/wiki/Hertz&quot;&gt;kHz&lt;/a&gt;, just above what most adults hear and well inside what a laptop microphone records.&lt;/p&gt;
 &lt;p&gt;A set of 12 Arccos Gen 4 tags, a MacBook microphone and a flashlight were enough to work out what the tags say. OSSTagLab is the open source web app that came out of it, built to open club tagging to anybody.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/osstaglab-9-iron-timeline-v1.png&quot; alt=&quot;Spectrogram of a 9 iron tag over four seconds. A wake tone at 18.80 kHz, then the resting frame repeating around a rest tone of 17.91 kHz, then a hit and a hop pattern at 18.91 kHz.&quot;&gt;&lt;/p&gt;
 &lt;h2&gt;Listening at 18 kHz&lt;/h2&gt;
@@ -58,7 +62,11 @@
 &lt;li&gt;&lt;a href=&quot;https://github.com/OSSGolf/osstaglab&quot;&gt;osstaglab (web app, decoder, recordings)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-      <content:encoded><![CDATA[<p>A shot tracking tag has one job: tell a phone which club left the bag and when it struck the ball. It does that with sound, in short tones between 17 and 20 <a href="https://en.wikipedia.org/wiki/Hertz">kHz</a>, just above what most adults hear and well inside what a laptop microphone records.</p>
+      <content:encoded><![CDATA[<p>My curiosity around club tags started when someone borrowing my putter said, “your putter is making weird noises.” I couldn’t hear a thing. It turns out the sound coming out of my putter was near ultrasonic.</p>
+<p>My putter had an Arccos Gen 4 club tag screwed on to the end of the grip. I had been using club tags for around six months and I loved them. I recorded my lowest round with them and my longest drive. I learned about my miss tendencies and club distances on course.</p>
+<p>The software experience was overall smooth. However, when I wanted to play one of my favorite short par 3 courses, a 4 hole Joe Balander in Austin, Texas, I ran into one of the shortcomings. The app reported 6 holes instead of the actual 4.</p>
+<p>I emailed Arccos support and they told me the software simply didn’t support 4 hole courses. They only supported 6, 9, 12, and 18 hole courses. This limitation seemed like a hard coded arbitrary rule. Now I had motivation to go along with my curiosity. And so began the journey of <a href="https://github.com/OSSGolf/osstaglab">OSSTagLab</a>.</p>
+<p>A shot tracking tag has one job: tell a phone which club left the bag and when it struck the ball. It does that with sound, in short tones between 17 and 20 <a href="https://en.wikipedia.org/wiki/Hertz">kHz</a>, just above what most adults hear and well inside what a laptop microphone records.</p>
 <p>A set of 12 Arccos Gen 4 tags, a MacBook microphone and a flashlight were enough to work out what the tags say. OSSTagLab is the open source web app that came out of it, built to open club tagging to anybody.</p>
 <p><img src="/images/osstaglab-9-iron-timeline-v1.png" alt="Spectrogram of a 9 iron tag over four seconds. A wake tone at 18.80 kHz, then the resting frame repeating around a rest tone of 17.91 kHz, then a hit and a hop pattern at 18.91 kHz."></p>
 <h2>Listening at 18 kHz</h2>

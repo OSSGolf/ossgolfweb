@@ -7,7 +7,7 @@
     <language>en</language>
     <atom:link href="https://ossgolf.com/feed.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="https://pubsubhubbub.appspot.com" rel="hub"/>
-    <lastBuildDate>Tue, 24 Nov 2026 16:50:27 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 21:01:42 GMT</lastBuildDate>
     <image>
       <url>https://ossgolf.com/icon.png</url>
       <title>OSSGolf</title>
@@ -15,6 +15,77 @@
       <width>144</width>
       <height>144</height>
     </image>
+    <item>
+      <title>3D Printable Golf Things</title>
+      <link>https://ossgolf.com/posts/3d-printable-golf-things/index.html</link>
+      <description>&lt;p&gt;A 3D printer turns a spool of plastic into golf gear. Two prints from the &lt;a href=&quot;/posts/open-source-golf-is-exploding/&quot;&gt;open source golf landscape&lt;/a&gt; have earned a place in my practice: a ball dispenser and a swing plane trainer. Both came off a Bambu Lab A1 mini.&lt;/p&gt;
+&lt;h2&gt;Golf Ball Dispenser Pro&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://makerworld.com/en/models/1295289-golf-ball-dispenser-pro&quot;&gt;Golf Ball Dispenser Pro&lt;/a&gt; by christofer.jh is fully 3D printable. It needs no screws, springs or rubber bands, only golf balls. The magazine holds 25 balls and each press of the pedal places one on the tee. It is great for practicing into a net in the backyard or in a sim setup.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/3d-prints-dispenser-slicer-v1.jpg&quot; alt=&quot;The Golf Ball Dispenser Pro project open in the slicer for an A1 mini. Six plates hold the fine parts, the tower, the ball garage, the arm and two sets of optional legs.&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The project fills six plates: the tower, the ball garage, the arm, the fine parts and two optional sets of legs. It takes almost a whole roll of filament and roughly 9 hours to print.&lt;/p&gt;
+&lt;p&gt;&lt;video controls preload=&quot;metadata&quot; playsinline poster=&quot;/images/3d-prints-dispenser-printing-poster-v1.jpg&quot; aria-label=&quot;The spiral ball garage of the dispenser printing in white on a Bambu Lab A1 mini&quot;&gt;&lt;source src=&quot;/media/3d-prints-dispenser-printing-v1.mp4&quot; type=&quot;video/mp4&quot;&gt;The spiral ball garage of the dispenser printing in white on a Bambu Lab A1 mini&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/3d-prints-dispenser-tower-v1.jpg&quot; alt=&quot;The finished dispenser tower in white, still on the print bed of the A1 mini&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Three things to know before printing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use real golf balls. Foam balls are too light to feed.&lt;/li&gt;
+&lt;li&gt;The arm is the longest part. On a small printer like the A1 mini it prints in two pieces that must be glued together.&lt;/li&gt;
+&lt;li&gt;The model is free to download under MakerWorld’s Standard Digital File License, so technically it is not open source.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;video controls preload=&quot;metadata&quot; playsinline poster=&quot;/images/3d-prints-dispenser-demo-poster-v1.jpg&quot; aria-label=&quot;The finished dispenser at work. A press of the green pedal swings the arm down and places a golf ball on the tee.&quot;&gt;&lt;source src=&quot;/media/3d-prints-dispenser-demo-v1.mp4&quot; type=&quot;video/mp4&quot;&gt;The finished dispenser at work. A press of the green pedal swings the arm down and places a golf ball on the tee.&lt;/video&gt;&lt;/p&gt;
+&lt;h2&gt;Golf Zwing Trainer&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.printables.com/model/1163073-golf-zwing-trainer-v4&quot;&gt;Golf Zwing Trainer V4&lt;/a&gt; by WeighingMyOptions is a simple and effective tool for grooving swing plane. It is based on the Blue Brick training aid, so any training video for that one applies here. The design is in the public domain.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/3d-prints-zwing-top-v1.jpg&quot; alt=&quot;The top of a green Zwing Trainer. Holes on each side are labeled 72 degrees for a sand wedge, 60 for a 6 iron and 48 for a driver, for left and right handers.&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Most beginners swing too steep. The trainer holds alignment sticks at set angles for a wedge, an iron and a driver, left or right handed, and swinging under the stick teaches the feel of a flatter plane.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/3d-prints-zwing-in-use-v1.jpg&quot; alt=&quot;The Zwing Trainer on the floor holding two alignment sticks, one angled up to mark the swing plane and one flat along the target line&quot;&gt;&lt;/p&gt;
+&lt;p&gt;A set of alignment sticks is needed. The holes are 9 mm wide, and I had to cut the rubber ends off my sticks for them to fit.&lt;/p&gt;
+&lt;p&gt;This one is partly printed. The base and lid close with four M5 screws, and the cavity inside needs weight to keep the trainer planted. The documentation suggests weighing it down with pennies. I used what I had on hand: clay in one and BBs in another.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/3d-prints-zwing-clay-v1.jpg&quot; alt=&quot;The base of a green Zwing Trainer with its three cavities packed with clay, next to its lid&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/3d-prints-zwing-bbs-v1.jpg&quot; alt=&quot;The base of a blue Zwing Trainer with its three cavities filled with copper BBs&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;video controls preload=&quot;metadata&quot; playsinline poster=&quot;/images/3d-prints-zwing-printing-poster-v1.jpg&quot; aria-label=&quot;The lid of a green Zwing Trainer printing on a Bambu Lab A1 mini&quot;&gt;&lt;source src=&quot;/media/3d-prints-zwing-printing-v1.mp4&quot; type=&quot;video/mp4&quot;&gt;The lid of a green Zwing Trainer printing on a Bambu Lab A1 mini&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;I recommend printing two. Used together, they set a guide plane above and below your swing.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://makerworld.com/en/models/1295289-golf-ball-dispenser-pro&quot;&gt;Golf Ball Dispenser Pro (MakerWorld)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.printables.com/model/1163073-golf-zwing-trainer-v4&quot;&gt;Golf Zwing Trainer V4 (Printables)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <content:encoded><![CDATA[<p>A 3D printer turns a spool of plastic into golf gear. Two prints from the <a href="/posts/open-source-golf-is-exploding/">open source golf landscape</a> have earned a place in my practice: a ball dispenser and a swing plane trainer. Both came off a Bambu Lab A1 mini.</p>
+<h2>Golf Ball Dispenser Pro</h2>
+<p><a href="https://makerworld.com/en/models/1295289-golf-ball-dispenser-pro">Golf Ball Dispenser Pro</a> by christofer.jh is fully 3D printable. It needs no screws, springs or rubber bands, only golf balls. The magazine holds 25 balls and each press of the pedal places one on the tee. It is great for practicing into a net in the backyard or in a sim setup.</p>
+<p><img src="/images/3d-prints-dispenser-slicer-v1.jpg" alt="The Golf Ball Dispenser Pro project open in the slicer for an A1 mini. Six plates hold the fine parts, the tower, the ball garage, the arm and two sets of optional legs."></p>
+<p>The project fills six plates: the tower, the ball garage, the arm, the fine parts and two optional sets of legs. It takes almost a whole roll of filament and roughly 9 hours to print.</p>
+<p><video controls preload="metadata" playsinline poster="/images/3d-prints-dispenser-printing-poster-v1.jpg" aria-label="The spiral ball garage of the dispenser printing in white on a Bambu Lab A1 mini"><source src="/media/3d-prints-dispenser-printing-v1.mp4" type="video/mp4">The spiral ball garage of the dispenser printing in white on a Bambu Lab A1 mini</video></p>
+<p><img src="/images/3d-prints-dispenser-tower-v1.jpg" alt="The finished dispenser tower in white, still on the print bed of the A1 mini"></p>
+<p>Three things to know before printing:</p>
+<ul>
+<li>Use real golf balls. Foam balls are too light to feed.</li>
+<li>The arm is the longest part. On a small printer like the A1 mini it prints in two pieces that must be glued together.</li>
+<li>The model is free to download under MakerWorld’s Standard Digital File License, so technically it is not open source.</li>
+</ul>
+<p><video controls preload="metadata" playsinline poster="/images/3d-prints-dispenser-demo-poster-v1.jpg" aria-label="The finished dispenser at work. A press of the green pedal swings the arm down and places a golf ball on the tee."><source src="/media/3d-prints-dispenser-demo-v1.mp4" type="video/mp4">The finished dispenser at work. A press of the green pedal swings the arm down and places a golf ball on the tee.</video></p>
+<h2>Golf Zwing Trainer</h2>
+<p><a href="https://www.printables.com/model/1163073-golf-zwing-trainer-v4">Golf Zwing Trainer V4</a> by WeighingMyOptions is a simple and effective tool for grooving swing plane. It is based on the Blue Brick training aid, so any training video for that one applies here. The design is in the public domain.</p>
+<p><img src="/images/3d-prints-zwing-top-v1.jpg" alt="The top of a green Zwing Trainer. Holes on each side are labeled 72 degrees for a sand wedge, 60 for a 6 iron and 48 for a driver, for left and right handers."></p>
+<p>Most beginners swing too steep. The trainer holds alignment sticks at set angles for a wedge, an iron and a driver, left or right handed, and swinging under the stick teaches the feel of a flatter plane.</p>
+<p><img src="/images/3d-prints-zwing-in-use-v1.jpg" alt="The Zwing Trainer on the floor holding two alignment sticks, one angled up to mark the swing plane and one flat along the target line"></p>
+<p>A set of alignment sticks is needed. The holes are 9 mm wide, and I had to cut the rubber ends off my sticks for them to fit.</p>
+<p>This one is partly printed. The base and lid close with four M5 screws, and the cavity inside needs weight to keep the trainer planted. The documentation suggests weighing it down with pennies. I used what I had on hand: clay in one and BBs in another.</p>
+<p><img src="/images/3d-prints-zwing-clay-v1.jpg" alt="The base of a green Zwing Trainer with its three cavities packed with clay, next to its lid"></p>
+<p><img src="/images/3d-prints-zwing-bbs-v1.jpg" alt="The base of a blue Zwing Trainer with its three cavities filled with copper BBs"></p>
+<p><video controls preload="metadata" playsinline poster="/images/3d-prints-zwing-printing-poster-v1.jpg" aria-label="The lid of a green Zwing Trainer printing on a Bambu Lab A1 mini"><source src="/media/3d-prints-zwing-printing-v1.mp4" type="video/mp4">The lid of a green Zwing Trainer printing on a Bambu Lab A1 mini</video></p>
+<p>I recommend printing two. Used together, they set a guide plane above and below your swing.</p>
+<ul>
+<li><a href="https://makerworld.com/en/models/1295289-golf-ball-dispenser-pro">Golf Ball Dispenser Pro (MakerWorld)</a></li>
+<li><a href="https://www.printables.com/model/1163073-golf-zwing-trainer-v4">Golf Zwing Trainer V4 (Printables)</a></li>
+</ul>
+]]></content:encoded>
+      <pubDate>Tue, 24 Nov 2026 20:54:27 GMT</pubDate>
+      <guid isPermaLink="true">https://ossgolf.com/posts/3d-printable-golf-things/index.html</guid>
+      <author>OSSGolf</author>
+      <category>3d-printing</category>
+      <category>training-aids</category>
+      <category>hardware</category>
+      <enclosure url="https://ossgolf.com/images/3d-prints-dispenser-tower-v1.jpg" type="image/jpeg"/>
+    </item>
     <item>
       <title>OSSTagLab: Decoding the Sound of Golf Club Tags</title>
       <link>https://ossgolf.com/posts/osstaglab/index.html</link>

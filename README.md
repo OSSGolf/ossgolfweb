@@ -40,6 +40,8 @@ rsslobster dev
 
 ## Add a post
 
+Write the post to [WRITING.md](WRITING.md), the writing guide for every post and README.
+
 ```
 rsslobster publish "$(cat body.md)" --type post --title "Title" --slug my-slug --tags "a,b,c"
 ./build.sh

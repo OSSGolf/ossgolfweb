@@ -7,7 +7,7 @@
     <language>en</language>
     <atom:link href="https://ossgolf.com/feed.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="https://pubsubhubbub.appspot.com" rel="hub"/>
-    <lastBuildDate>Tue, 24 Nov 2026 21:01:42 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 00:23:27 GMT</lastBuildDate>
     <image>
       <url>https://ossgolf.com/icon.png</url>
       <title>OSSGolf</title>
@@ -38,7 +38,7 @@
 &lt;p&gt;Most beginners swing too steep. The trainer holds alignment sticks at set angles for a wedge, an iron and a driver, left or right handed, and swinging under the stick teaches the feel of a flatter plane.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/3d-prints-zwing-in-use-v1.jpg&quot; alt=&quot;The Zwing Trainer on the floor holding two alignment sticks, one angled up to mark the swing plane and one flat along the target line&quot;&gt;&lt;/p&gt;
 &lt;p&gt;A set of alignment sticks is needed. The holes are 9 mm wide, and I had to cut the rubber ends off my sticks for them to fit.&lt;/p&gt;
-&lt;p&gt;This one is partly printed. The base and lid close with four M5 screws, and the cavity inside needs weight to keep the trainer planted. The documentation suggests weighing it down with pennies. I used what I had on hand: clay in one and BBs in another.&lt;/p&gt;
+&lt;p&gt;The base and lid close with four M5 screws, and the cavity inside needs weight to keep the trainer planted. The documentation suggests weighing it down with pennies. I used what I had on hand: clay in one and BBs in another.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/3d-prints-zwing-clay-v1.jpg&quot; alt=&quot;The base of a green Zwing Trainer with its three cavities packed with clay, next to its lid&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/3d-prints-zwing-bbs-v1.jpg&quot; alt=&quot;The base of a blue Zwing Trainer with its three cavities filled with copper BBs&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;video controls preload=&quot;metadata&quot; playsinline poster=&quot;/images/3d-prints-zwing-printing-poster-v1.jpg&quot; aria-label=&quot;The lid of a green Zwing Trainer printing on a Bambu Lab A1 mini&quot;&gt;&lt;source src=&quot;/media/3d-prints-zwing-printing-v1.mp4&quot; type=&quot;video/mp4&quot;&gt;The lid of a green Zwing Trainer printing on a Bambu Lab A1 mini&lt;/video&gt;&lt;/p&gt;
@@ -68,7 +68,7 @@
 <p>Most beginners swing too steep. The trainer holds alignment sticks at set angles for a wedge, an iron and a driver, left or right handed, and swinging under the stick teaches the feel of a flatter plane.</p>
 <p><img src="/images/3d-prints-zwing-in-use-v1.jpg" alt="The Zwing Trainer on the floor holding two alignment sticks, one angled up to mark the swing plane and one flat along the target line"></p>
 <p>A set of alignment sticks is needed. The holes are 9 mm wide, and I had to cut the rubber ends off my sticks for them to fit.</p>
-<p>This one is partly printed. The base and lid close with four M5 screws, and the cavity inside needs weight to keep the trainer planted. The documentation suggests weighing it down with pennies. I used what I had on hand: clay in one and BBs in another.</p>
+<p>The base and lid close with four M5 screws, and the cavity inside needs weight to keep the trainer planted. The documentation suggests weighing it down with pennies. I used what I had on hand: clay in one and BBs in another.</p>
 <p><img src="/images/3d-prints-zwing-clay-v1.jpg" alt="The base of a green Zwing Trainer with its three cavities packed with clay, next to its lid"></p>
 <p><img src="/images/3d-prints-zwing-bbs-v1.jpg" alt="The base of a blue Zwing Trainer with its three cavities filled with copper BBs"></p>
 <p><video controls preload="metadata" playsinline poster="/images/3d-prints-zwing-printing-poster-v1.jpg" aria-label="The lid of a green Zwing Trainer printing on a Bambu Lab A1 mini"><source src="/media/3d-prints-zwing-printing-v1.mp4" type="video/mp4">The lid of a green Zwing Trainer printing on a Bambu Lab A1 mini</video></p>

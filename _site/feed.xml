@@ -7,7 +7,7 @@
     <language>en</language>
     <atom:link href="https://ossgolf.com/feed.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="https://pubsubhubbub.appspot.com" rel="hub"/>
-    <lastBuildDate>Wed, 25 Nov 2026 08:35:47 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 08:38:24 GMT</lastBuildDate>
     <image>
       <url>https://ossgolf.com/icon.png</url>
       <title>OSSGolf</title>
@@ -18,7 +18,7 @@
     <item>
       <title>3D Printable Golf Things</title>
       <link>https://ossgolf.com/posts/3d-printable-golf-things/index.html</link>
-      <description>&lt;p&gt;A 3D printer turns a spool of plastic into golf gear. Two prints from the &lt;a href=&quot;/posts/open-source-golf-is-exploding/&quot;&gt;open source golf landscape&lt;/a&gt; have earned a place in my practice: a ball dispenser and a swing plane trainer. Both came off a Bambu Lab A1 mini.&lt;/p&gt;
+      <description>&lt;p&gt;A 3D printer turns a spool of plastic into golf gear. Two prints from the &lt;a href=&quot;/posts/open-source-golf-is-exploding/&quot;&gt;open source golf landscape&lt;/a&gt; are now part of my practice: a ball dispenser and a swing plane trainer. Both came off a Bambu Lab A1 mini.&lt;/p&gt;
 &lt;h2&gt;Golf Ball Dispenser Pro&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://makerworld.com/en/models/1295289-golf-ball-dispenser-pro&quot;&gt;Golf Ball Dispenser Pro&lt;/a&gt; by christofer.jh is fully 3D printable. It needs no screws, springs or rubber bands, only golf balls. The magazine holds 25 balls and each press of the pedal places one on the tee. It is great for practicing into a net in the backyard or in a sim setup.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/3d-prints-dispenser-slicer-v1.jpg&quot; alt=&quot;The Golf Ball Dispenser Pro project open in the slicer for an A1 mini. Six plates hold the fine parts, the tower, the ball garage, the arm and two sets of optional legs.&quot;&gt;&lt;/p&gt;
@@ -27,28 +27,28 @@
 &lt;p&gt;&lt;img src=&quot;/images/3d-prints-dispenser-tower-v1.jpg&quot; alt=&quot;The finished dispenser tower in white, still on the print bed of the A1 mini&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Three things to know before printing:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Use real golf balls. Foam balls are too light to feed.&lt;/li&gt;
+&lt;li&gt;Use real golf balls. Foam balls are too light to work in it.&lt;/li&gt;
 &lt;li&gt;The arm is the longest part. On a small printer like the A1 mini it prints in two pieces that must be glued together.&lt;/li&gt;
 &lt;li&gt;The model is free to download under MakerWorld’s Standard Digital File License, so technically it is not open source.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;video controls preload=&quot;metadata&quot; playsinline poster=&quot;/images/3d-prints-dispenser-demo-poster-v1.jpg&quot; aria-label=&quot;The finished dispenser at work. A press of the green pedal swings the arm down and places a golf ball on the tee.&quot;&gt;&lt;source src=&quot;/media/3d-prints-dispenser-demo-v1.mp4&quot; type=&quot;video/mp4&quot;&gt;The finished dispenser at work. A press of the green pedal swings the arm down and places a golf ball on the tee.&lt;/video&gt;&lt;/p&gt;
 &lt;h2&gt;Golf Zwing Trainer&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.printables.com/model/1163073-golf-zwing-trainer-v4&quot;&gt;Golf Zwing Trainer V4&lt;/a&gt; by WeighingMyOptions is a simple and effective tool for grooving swing plane. It is based on the Blue Brick training aid, so any training video for that one applies here. The design is in the public domain.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.printables.com/model/1163073-golf-zwing-trainer-v4&quot;&gt;Golf Zwing Trainer V4&lt;/a&gt; by WeighingMyOptions is a simple and effective tool for grooving swing plane. It is based on the Blue Brick training aid, so any training video made for it works for this one too. The design is in the public domain.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/3d-prints-zwing-top-v1.jpg&quot; alt=&quot;The top of a green Zwing Trainer. Holes on each side are labeled 72 degrees for a sand wedge, 60 for a 6 iron and 48 for a driver, for left and right handers.&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Most beginners swing too steep. The trainer holds alignment sticks at set angles for a wedge, an iron and a driver, left or right handed, and swinging under the stick teaches the feel of a flatter plane.&lt;/p&gt;
+&lt;p&gt;Most beginners swing too steep. The trainer holds alignment sticks at set angles for a wedge, an iron and a driver, left or right handed, and swinging under the stick helps you feel a flatter swing plane.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/3d-prints-zwing-in-use-v1.jpg&quot; alt=&quot;The Zwing Trainer on the floor holding two alignment sticks, one angled up to mark the swing plane and one flat along the target line&quot;&gt;&lt;/p&gt;
 &lt;p&gt;A set of alignment sticks is needed. The holes are 9 mm wide, and I had to cut the rubber ends off my sticks for them to fit.&lt;/p&gt;
-&lt;p&gt;The base and lid close with four M5 screws, and the cavity inside needs weight to keep the trainer planted. The documentation suggests weighing it down with pennies. I used what I had on hand: clay in one and BBs in another.&lt;/p&gt;
+&lt;p&gt;The base and lid close with four M5 screws, and the cavity inside needs weight so the trainer stays put. The documentation suggests weighing it down with pennies. I used what I had on hand: clay in one and BBs in another.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/3d-prints-zwing-clay-v1.jpg&quot; alt=&quot;The base of a green Zwing Trainer with its three cavities packed with clay, next to its lid&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/3d-prints-zwing-bbs-v1.jpg&quot; alt=&quot;The base of a blue Zwing Trainer with its three cavities filled with copper BBs&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;video controls preload=&quot;metadata&quot; playsinline poster=&quot;/images/3d-prints-zwing-printing-poster-v1.jpg&quot; aria-label=&quot;The lid of a green Zwing Trainer printing on a Bambu Lab A1 mini&quot;&gt;&lt;source src=&quot;/media/3d-prints-zwing-printing-v1.mp4&quot; type=&quot;video/mp4&quot;&gt;The lid of a green Zwing Trainer printing on a Bambu Lab A1 mini&lt;/video&gt;&lt;/p&gt;
-&lt;p&gt;I recommend printing two. Used together, they set a guide plane above and below your swing.&lt;/p&gt;
+&lt;p&gt;I recommend printing two. Used together, they give you a guide above and below your swing.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://makerworld.com/en/models/1295289-golf-ball-dispenser-pro&quot;&gt;Golf Ball Dispenser Pro (MakerWorld)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.printables.com/model/1163073-golf-zwing-trainer-v4&quot;&gt;Golf Zwing Trainer V4 (Printables)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-      <content:encoded><![CDATA[<p>A 3D printer turns a spool of plastic into golf gear. Two prints from the <a href="/posts/open-source-golf-is-exploding/">open source golf landscape</a> have earned a place in my practice: a ball dispenser and a swing plane trainer. Both came off a Bambu Lab A1 mini.</p>
+      <content:encoded><![CDATA[<p>A 3D printer turns a spool of plastic into golf gear. Two prints from the <a href="/posts/open-source-golf-is-exploding/">open source golf landscape</a> are now part of my practice: a ball dispenser and a swing plane trainer. Both came off a Bambu Lab A1 mini.</p>
 <h2>Golf Ball Dispenser Pro</h2>
 <p><a href="https://makerworld.com/en/models/1295289-golf-ball-dispenser-pro">Golf Ball Dispenser Pro</a> by christofer.jh is fully 3D printable. It needs no screws, springs or rubber bands, only golf balls. The magazine holds 25 balls and each press of the pedal places one on the tee. It is great for practicing into a net in the backyard or in a sim setup.</p>
 <p><img src="/images/3d-prints-dispenser-slicer-v1.jpg" alt="The Golf Ball Dispenser Pro project open in the slicer for an A1 mini. Six plates hold the fine parts, the tower, the ball garage, the arm and two sets of optional legs."></p>
@@ -57,22 +57,22 @@
 <p><img src="/images/3d-prints-dispenser-tower-v1.jpg" alt="The finished dispenser tower in white, still on the print bed of the A1 mini"></p>
 <p>Three things to know before printing:</p>
 <ul>
-<li>Use real golf balls. Foam balls are too light to feed.</li>
+<li>Use real golf balls. Foam balls are too light to work in it.</li>
 <li>The arm is the longest part. On a small printer like the A1 mini it prints in two pieces that must be glued together.</li>
 <li>The model is free to download under MakerWorld’s Standard Digital File License, so technically it is not open source.</li>
 </ul>
 <p><video controls preload="metadata" playsinline poster="/images/3d-prints-dispenser-demo-poster-v1.jpg" aria-label="The finished dispenser at work. A press of the green pedal swings the arm down and places a golf ball on the tee."><source src="/media/3d-prints-dispenser-demo-v1.mp4" type="video/mp4">The finished dispenser at work. A press of the green pedal swings the arm down and places a golf ball on the tee.</video></p>
 <h2>Golf Zwing Trainer</h2>
-<p><a href="https://www.printables.com/model/1163073-golf-zwing-trainer-v4">Golf Zwing Trainer V4</a> by WeighingMyOptions is a simple and effective tool for grooving swing plane. It is based on the Blue Brick training aid, so any training video for that one applies here. The design is in the public domain.</p>
+<p><a href="https://www.printables.com/model/1163073-golf-zwing-trainer-v4">Golf Zwing Trainer V4</a> by WeighingMyOptions is a simple and effective tool for grooving swing plane. It is based on the Blue Brick training aid, so any training video made for it works for this one too. The design is in the public domain.</p>
 <p><img src="/images/3d-prints-zwing-top-v1.jpg" alt="The top of a green Zwing Trainer. Holes on each side are labeled 72 degrees for a sand wedge, 60 for a 6 iron and 48 for a driver, for left and right handers."></p>
-<p>Most beginners swing too steep. The trainer holds alignment sticks at set angles for a wedge, an iron and a driver, left or right handed, and swinging under the stick teaches the feel of a flatter plane.</p>
+<p>Most beginners swing too steep. The trainer holds alignment sticks at set angles for a wedge, an iron and a driver, left or right handed, and swinging under the stick helps you feel a flatter swing plane.</p>
 <p><img src="/images/3d-prints-zwing-in-use-v1.jpg" alt="The Zwing Trainer on the floor holding two alignment sticks, one angled up to mark the swing plane and one flat along the target line"></p>
 <p>A set of alignment sticks is needed. The holes are 9 mm wide, and I had to cut the rubber ends off my sticks for them to fit.</p>
-<p>The base and lid close with four M5 screws, and the cavity inside needs weight to keep the trainer planted. The documentation suggests weighing it down with pennies. I used what I had on hand: clay in one and BBs in another.</p>
+<p>The base and lid close with four M5 screws, and the cavity inside needs weight so the trainer stays put. The documentation suggests weighing it down with pennies. I used what I had on hand: clay in one and BBs in another.</p>
 <p><img src="/images/3d-prints-zwing-clay-v1.jpg" alt="The base of a green Zwing Trainer with its three cavities packed with clay, next to its lid"></p>
 <p><img src="/images/3d-prints-zwing-bbs-v1.jpg" alt="The base of a blue Zwing Trainer with its three cavities filled with copper BBs"></p>
 <p><video controls preload="metadata" playsinline poster="/images/3d-prints-zwing-printing-poster-v1.jpg" aria-label="The lid of a green Zwing Trainer printing on a Bambu Lab A1 mini"><source src="/media/3d-prints-zwing-printing-v1.mp4" type="video/mp4">The lid of a green Zwing Trainer printing on a Bambu Lab A1 mini</video></p>
-<p>I recommend printing two. Used together, they set a guide plane above and below your swing.</p>
+<p>I recommend printing two. Used together, they give you a guide above and below your swing.</p>
 <ul>
 <li><a href="https://makerworld.com/en/models/1295289-golf-ball-dispenser-pro">Golf Ball Dispenser Pro (MakerWorld)</a></li>
 <li><a href="https://www.printables.com/model/1163073-golf-zwing-trainer-v4">Golf Zwing Trainer V4 (Printables)</a></li>
@@ -528,7 +528,7 @@
       <title>OSSTempo: A DIY LED Tempo Trainer for Golf</title>
       <link>https://ossgolf.com/posts/osstempo/index.html</link>
       <description>&lt;p&gt;OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving “comet” of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consistent stroke.&lt;/p&gt;
-&lt;p&gt;It is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. Control happens over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo and stroke length.&lt;/p&gt;
+&lt;p&gt;It is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. You control it over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo and stroke length.&lt;/p&gt;
 &lt;p&gt;Here it is running a putting stroke:&lt;/p&gt;
 &lt;p&gt;&lt;video controls preload=&quot;metadata&quot; playsinline poster=&quot;/images/osstempo-still.jpg&quot; aria-label=&quot;OSSTempo running a putting stroke on a practice mat: the white comet sweeps the LED strip beside the ball while the green dot marks impact, powered by an ESP32 on a breadboard&quot;&gt;&lt;source src=&quot;/media/osstempo-putting.mp4&quot; type=&quot;video/mp4&quot;&gt;OSSTempo running a putting stroke on a practice mat: the white comet sweeps the LED strip beside the ball while the green dot marks impact, powered by an ESP32 on a breadboard&lt;/video&gt;&lt;/p&gt;
 &lt;h2&gt;Two Modes&lt;/h2&gt;
@@ -539,7 +539,7 @@
 &lt;h2&gt;Build It Two Ways&lt;/h2&gt;
 &lt;p&gt;Same firmware, same app, two hardware paths:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Full DIY.&lt;/strong&gt; A bare ESP32 dev board, a strip, one resistor, and one capacitor on a breadboard. Lowest cost.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Full DIY.&lt;/strong&gt; A bare ESP32 dev board, a strip, one resistor, and one capacitor on a breadboard. This is the cheapest option.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;QuinLED Dig2go.&lt;/strong&gt; A pre assembled controller.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Both are documented end to end: bill of materials, wiring, flashing, and a pinned, ready to flash sketch.&lt;/p&gt;
@@ -559,7 +559,7 @@
 &lt;/ul&gt;
 </description>
       <content:encoded><![CDATA[<p>OSSTempo is an open source golf tempo trainer. A WS2812B LED strip animates a moving “comet” of light that sweeps along a channel, and you match your putter or club head to the dot to groove a consistent stroke.</p>
-<p>It is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. Control happens over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo and stroke length.</p>
+<p>It is a TempoStik style trainer built entirely from open hardware and firmware. An ESP32 drives a 144 LED per meter strip over a single data pin. You control it over Bluetooth Low Energy, so a web page or the companion iOS app can set the tempo and stroke length.</p>
 <p>Here it is running a putting stroke:</p>
 <p><video controls preload="metadata" playsinline poster="/images/osstempo-still.jpg" aria-label="OSSTempo running a putting stroke on a practice mat: the white comet sweeps the LED strip beside the ball while the green dot marks impact, powered by an ESP32 on a breadboard"><source src="/media/osstempo-putting.mp4" type="video/mp4">OSSTempo running a putting stroke on a practice mat: the white comet sweeps the LED strip beside the ball while the green dot marks impact, powered by an ESP32 on a breadboard</video></p>
 <h2>Two Modes</h2>
@@ -570,7 +570,7 @@
 <h2>Build It Two Ways</h2>
 <p>Same firmware, same app, two hardware paths:</p>
 <ul>
-<li><strong>Full DIY.</strong> A bare ESP32 dev board, a strip, one resistor, and one capacitor on a breadboard. Lowest cost.</li>
+<li><strong>Full DIY.</strong> A bare ESP32 dev board, a strip, one resistor, and one capacitor on a breadboard. This is the cheapest option.</li>
 <li><strong>QuinLED Dig2go.</strong> A pre assembled controller.</li>
 </ul>
 <p>Both are documented end to end: bill of materials, wiring, flashing, and a pinned, ready to flash sketch.</p>
@@ -600,20 +600,20 @@
     <item>
       <title>R10Kit: An Unofficial Swift SDK for the Garmin R10</title>
       <link>https://ossgolf.com/posts/r10kit/index.html</link>
-      <description>&lt;p&gt;R10Kit is a native Swift SDK that connects directly to the Garmin Approach R10 launch monitor over Bluetooth Low Energy. No first party app, no PC tether. Your iPhone talks to the R10 and reads every shot it emits.&lt;/p&gt;
+      <description>&lt;p&gt;R10Kit is a native Swift SDK that connects directly to the Garmin Approach R10 launch monitor over Bluetooth Low Energy. No first party app, no PC tether. Your iPhone talks to the R10 and reads every shot it sends.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This is an unofficial SDK. The protocol layer is reverse engineered from publicly available work (&lt;a href=&quot;https://github.com/mholow/gsp-r10-adapter&quot;&gt;mholow/gsp-r10-adapter&lt;/a&gt;).&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;The Practice Swing Unlock&lt;/h2&gt;
 &lt;p&gt;The interesting part is what the R10 gives you without a ball. On a full practice swing with no ball, the radar still reports club speed, club path, attack angle, and the full swing timing in milliseconds. R10Kit exposes all of it. That means you can build a tempo trainer around a launch monitor you already own, not just a ball flight tracer.&lt;/p&gt;
-&lt;p&gt;Ball metrics (ball speed, launch angle and direction, spin rate, spin axis) populate only when the radar sees a ball leave. Everything else populates on every swing.&lt;/p&gt;
+&lt;p&gt;Ball metrics (ball speed, launch angle and direction, spin rate, spin axis) are filled in only when the radar sees a ball leave. Everything else is filled in on every swing.&lt;/p&gt;
 &lt;h2&gt;Screenshots&lt;/h2&gt;
 &lt;p&gt;The repo ships a runnable demo app. It shows connection state, device info, and a live list of recent shots. Tap a shot to see every field the SDK exposes.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/r10-shot-list.png&quot; alt=&quot;R10Kit demo showing connection state, device model and firmware, battery level, and a list of recent shots labeled by club speed&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/r10-shot-detail.png&quot; alt=&quot;Shot detail showing identity fields and club metrics: club speed, club path, and attack angle&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/r10-tempo.png&quot; alt=&quot;Shot detail scrolled to swing timing and the derived metrics: backswing, downswing, follow through, total duration, and tempo ratio&quot;&gt;&lt;/p&gt;
 &lt;h2&gt;What It Parses&lt;/h2&gt;
-&lt;p&gt;R10Kit does full proto parsing for every shot the device emits: club speed, ball speed, launch angle and direction, spin rate with axis and provenance, attack angle, club face and path, swing timing in milliseconds, shot type, and tilt at impact. The API is AsyncStream first, modern Swift Concurrency, no delegates.&lt;/p&gt;
+&lt;p&gt;R10Kit does full proto parsing for every shot the device sends: club speed, ball speed, launch angle and direction, spin rate with axis and provenance, attack angle, club face and path, swing timing in milliseconds, shot type, and tilt at impact. The API is AsyncStream first, modern Swift Concurrency, no delegates.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;iOS 17+, watchOS 10+, macOS 14+. Pure Swift package.&lt;/li&gt;
 &lt;li&gt;70 unit tests covering framing, COBS, CRC, proto parsing, time base conversion, and the swing rejection detector.&lt;/li&gt;
@@ -626,20 +626,20 @@
 &lt;/ul&gt;
 &lt;p&gt;Builds on &lt;a href=&quot;https://github.com/mholow/gsp-r10-adapter&quot;&gt;mholow/gsp-r10-adapter&lt;/a&gt;, under the same MIT license.&lt;/p&gt;
 </description>
-      <content:encoded><![CDATA[<p>R10Kit is a native Swift SDK that connects directly to the Garmin Approach R10 launch monitor over Bluetooth Low Energy. No first party app, no PC tether. Your iPhone talks to the R10 and reads every shot it emits.</p>
+      <content:encoded><![CDATA[<p>R10Kit is a native Swift SDK that connects directly to the Garmin Approach R10 launch monitor over Bluetooth Low Energy. No first party app, no PC tether. Your iPhone talks to the R10 and reads every shot it sends.</p>
 <blockquote>
 <p>This is an unofficial SDK. The protocol layer is reverse engineered from publicly available work (<a href="https://github.com/mholow/gsp-r10-adapter">mholow/gsp-r10-adapter</a>).</p>
 </blockquote>
 <h2>The Practice Swing Unlock</h2>
 <p>The interesting part is what the R10 gives you without a ball. On a full practice swing with no ball, the radar still reports club speed, club path, attack angle, and the full swing timing in milliseconds. R10Kit exposes all of it. That means you can build a tempo trainer around a launch monitor you already own, not just a ball flight tracer.</p>
-<p>Ball metrics (ball speed, launch angle and direction, spin rate, spin axis) populate only when the radar sees a ball leave. Everything else populates on every swing.</p>
+<p>Ball metrics (ball speed, launch angle and direction, spin rate, spin axis) are filled in only when the radar sees a ball leave. Everything else is filled in on every swing.</p>
 <h2>Screenshots</h2>
 <p>The repo ships a runnable demo app. It shows connection state, device info, and a live list of recent shots. Tap a shot to see every field the SDK exposes.</p>
 <p><img src="/images/r10-shot-list.png" alt="R10Kit demo showing connection state, device model and firmware, battery level, and a list of recent shots labeled by club speed"></p>
 <p><img src="/images/r10-shot-detail.png" alt="Shot detail showing identity fields and club metrics: club speed, club path, and attack angle"></p>
 <p><img src="/images/r10-tempo.png" alt="Shot detail scrolled to swing timing and the derived metrics: backswing, downswing, follow through, total duration, and tempo ratio"></p>
 <h2>What It Parses</h2>
-<p>R10Kit does full proto parsing for every shot the device emits: club speed, ball speed, launch angle and direction, spin rate with axis and provenance, attack angle, club face and path, swing timing in milliseconds, shot type, and tilt at impact. The API is AsyncStream first, modern Swift Concurrency, no delegates.</p>
+<p>R10Kit does full proto parsing for every shot the device sends: club speed, ball speed, launch angle and direction, spin rate with axis and provenance, attack angle, club face and path, swing timing in milliseconds, shot type, and tilt at impact. The API is AsyncStream first, modern Swift Concurrency, no delegates.</p>
 <ul>
 <li>iOS 17+, watchOS 10+, macOS 14+. Pure Swift package.</li>
 <li>70 unit tests covering framing, COBS, CRC, proto parsing, time base conversion, and the swing rejection detector.</li>
